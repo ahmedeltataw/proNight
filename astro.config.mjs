@@ -12,8 +12,8 @@ export default defineConfig({
         inlineStylesheets: 'never',
         format: 'file',
         site: "https://ryn-proNight.com/",
-        base: '/',
-        assetsPrefix: './'
+        // base: '/',
+        // assetsPrefix: './'
     },
 
     image: {
