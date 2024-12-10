@@ -1,15 +1,15 @@
 import { defineConfig } from 'astro/config';
 
-
+// https://purgecss.com/configuration.html#configuration-file
 import purgecss from 'astro-purgecss';
 
-
+// https://github.com/jonathantneal/astro-icon
 import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
     build: {
-        assets: 'assets',
-        inlineStylesheets: 'never',
+        assets: '_astro',
+        inlineStylesheets: 'auto',
         format: 'file',
         site: "https://ryn-proNight.com/",
         // base: '/',
