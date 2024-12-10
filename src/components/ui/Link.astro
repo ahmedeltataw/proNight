@@ -1,0 +1,70 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+interface Props {
+  title?: string;
+  href: string;
+  target?: string;
+  Class: string;
+  id?: string;
+  aria?: string;
+  icon?: {
+    name?: string ,
+    side: "left" | "right",
+    ClassIcon?:string,
+  };
+  text?: string ;
+  Img?:{
+    alt: string,
+    side?: "left" | "right",
+    Class?:string,
+  }
+  ImageSrc?: string |any;
+}
+const {
+  title,
+  href,
+  target,
+  Class,
+  id,
+  icon = false,
+  aria,
+  text,
+  Img,
+  ImageSrc,
+  ...rest
+} = Astro.props;
+---
+
+<a
+  href={href}
+  title={title}
+  target={target}
+  class={Class}
+  id={id}
+  aria-label={aria}
+  {...rest}
+>
+  {
+    icon && icon.name && icon.side === "left" && (
+      <Icon name={icon.name} height="24" width="24" class={icon.ClassIcon}  />
+    )
+  }
+  {
+    Img&&ImageSrc && Img.side  === "left" && (
+      <Image src={ImageSrc} alt={Img.alt} format="webp" class={Img.Class ?? ''}  />
+    )
+  }
+  {text && text}
+  {
+    icon && icon.name && icon.side === "right" && (
+      <Icon name={icon.name} height="24" width="24" class={icon.ClassIcon}  />
+    )
+  }
+  {
+    Img &&ImageSrc && Img.side === "right" && (
+      <Image src={ImageSrc} alt={Img.alt} format="webp"  />
+    )
+  }
+</a>

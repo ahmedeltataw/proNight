@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon/components";
+interface Props {
+  ClassName: string;
+  type: "submit" | "reset" | "button";
+  aria: string | any;
+  id?: string;
+  ariaEx?: boolean | any;
+  controll?: string | any;
+  // style?: string;
+  text?: string;
+  icon?: {
+    Class: string;
+    side: "left" | "right";
+    name: string;
+  };
+  isBorder?: boolean;
+}
+const { ClassName, type, aria, id, ariaEx, controll, text, isBorder,icon=false, ...rest } =
+  Astro.props;
+---
+
+<button
+  class:list={[` ${ClassName}` , {border:isBorder}]}
+  type={type}
+  aria-label={aria}
+  id={id}
+  aria-expanded={ariaEx}
+  aria-controls={controll}
+  {...rest}
+>
+  {
+    icon && icon.name && icon.side === "left" && (
+      <Icon name={icon.name} height="24" width="24" class={icon.Class} />
+    )
+  }
+  {text}
+  <slot />
+  {
+    icon && icon.name && icon.side === "right" && (
+      <Icon name={icon.name} height="24" width="24" class={icon.Class} />
+    )
+  }
+</button>

@@ -1,0 +1,33 @@
+---
+import { AstroFont } from "astro-font";
+---
+
+<AstroFont
+  config={[
+    {
+      src: [
+        {
+          style: "normal",
+          weight: "300",
+          path: "./public/fonts/Almarai-Light.woff2",
+        },
+        {
+          style: "normal",
+          weight: "400",
+          path: "./public/fonts/Almarai-Regular.woff2",
+        },
+        {
+          style: "normal",
+          weight: "700",
+          path: "./public/fonts/Almarai-Bold.woff2",
+        },
+      ],
+      // googleFontsURL:'https://fonts.googleapis.com/css2?family=Montserrat:wght@1,100..900&display=swap',
+      name: "Almarai",
+      preload: true,
+      display: "swap",
+      selector: "body",
+      fallback: "sans-serif",
+    },
+  ]}
+/>

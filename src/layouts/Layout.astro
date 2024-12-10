@@ -1,0 +1,26 @@
+---
+import "@styles/scss/core.scss";
+import BaseHead from "@components/layout/BaseHead.astro";
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+import Header from "@components/header/Header.astro";
+---
+
+<!doctype html>
+<html lang="ar">
+  <head>
+    <BaseHead
+      title={`proNight | ${title}`}
+      description="اكتشف أفضل عروض الإيجارات عبر موقعنا المتخصص في تأجير المنازل، الشقق، والعقارات التجارية. نوفر لك خيارات متنوعة تناسب احتياجاتك بأسعار تنافسية ومواقع مميزة. سهولة البحث، تفاصيل دقيقة، ودعم عملاء مميز يجعل تجربتك معنا فريدة ومثالية. تصفح الآن واستمتع بإيجاد العقار المثالي بكل سهولة وسرعة."
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <script src="../scripts/global.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+@use "./helpers/color";
+@use "./helpers/mixin" as *;
+// components
+@use "./components/header";
+@use "./components/hero";
+// ui components
+@use "./components/ui/mainHeading";
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--hover-main);
+    border-radius: 8px;
+    height: 180px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+}
+
+// global code
+body {
+    background-color: var(--mainBG);
+}
+
+a {
+    color: var(--blackY);
+    
+}
+span ,svg,a{
+    transition: var(--t-s);
+}
+figure {
+    margin: 0;
+}
+
+.btn {
+    background-color: var(--hover-main);
+    padding: .5em 1em;
+    overflow: hidden;
+
+    &.border {
+        background-color: var(--w);
+        border-color: var(--hover-main);
+        &:has(svg, a, span) {
+            color: var(--hover-main);
+            
+        }
+    }
+
+
+    &.btn-edit,
+    &.btn-delete {
+        color: var(--w);
+    }
+
+    &.btn-edit {
+        background-color: hsl(210.25deg 53.85% 56.67%);
+    }
+
+    &.btn-delete {
+        background-color: #dc3545;
+    }
+}
+
+.btn-round {
+    color: var(--w);
+
+    &:has(svg, a, span) {
+        color: var(--w);
+        
+    }
+    border: 1px solid var(--hover-main);
+    &::before {
+        content: "";
+        position: absolute;
+        top: -140%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 140%;
+        height: 140%;
+        border-radius: 50%;
+        background-color: var(--w);
+        transition: var(--t-s);
+        transition-duration: 600ms;
+
+    }
+    &.border::before{
+        background-color: var(--hover-main);
+    }
+    span{
+        transition-duration: 600ms; 
+    }
+
+    &:hover {
+        &:has(svg, a, span):hover{
+            color: var(--hover-main);
+        }
+        &.border{
+            &:has(svg, a, span):hover{
+                color: var(--w);
+            }
+        }
+        &::before {
+            top: -20%;
+        }
+    }
+
+
+}
+
+
+
+
+
+.overLay {
+    cursor: url('https://demo-morata.myshopify.com/cdn/shop/t/3/assets/cursor-close.png?v=93210088594709752341700037392'), pointer;
+
+    &.active {
+        @include overlay(100%, 100%, rgba($color: #000000, $alpha: .3), inset, 0);
+
+        &::before {
+            z-index: 9999;
+            position: fixed;
+            backdrop-filter: blur(1px);
+            height: 100%;
+        }
+
+    }
+
+}
+
+section:not(.hero) {
+    min-height: 100vh;
+    padding-top: 4vh;
+}
+
+

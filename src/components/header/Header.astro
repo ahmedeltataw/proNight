@@ -1,0 +1,78 @@
+---
+import Logo from "@assets/logo.png";
+import Link from "@components/ui/Link.astro";
+import { linkHeader } from "@data/data";
+import type { LinkType } from "../../type/type";
+import Button from "@components/ui/Button.astro";
+---
+
+<header class="relative">
+  <div class="container-full">
+    <nav class="d-flex align-items-center justify-between py-6">
+      <div class="firstSide d-flex align-items-center gap-4">
+        <Button type="button" aria={`mobileMenu`} ClassName="icon-nav-base2 lg:d-none" id="mobileMenu" controll="responsiveMenu" ariaEx={false}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </Button>
+        <Link
+          href="/"
+          Class="logo h-28"
+          aria="logo proNight"
+          Img={{ alt: "logo", Class: "img-cover", side: "left" }}
+          ImageSrc={Logo}
+        />
+      </div>
+      <ul
+        id="responsiveMenu"
+        class="navLinks d-flex align-items-center gap-9  lg-max:flex-col lg-max:fixed lg-max:ps-10 lg-max:inset-s-0 lg-max:align-items-start lg-max:w-120 lg-max:max-w-full lg-max:h-screen lg-max:py-8 lg-max:d-none"
+      >
+        {
+          linkHeader.map((link: LinkType) => (
+            <li>
+              <Link
+                href={link.href}
+                Class="navLink fs-16 fw-700"
+                aria={link.text}
+                text={link.text}
+              />
+            </li>
+          ))
+        }
+        <li class="lg:d-none">
+          <Link
+            href="/"
+            Class="navLink fs-16 fw-700 "
+            aria="تسجيل الدخول"
+            text="تسجيل الدخول"
+          />
+        </li>
+        <li class="lg:d-none">
+          <Link
+            href="/"
+            Class="navLink fs-16 fw-700 "
+            aria="تسجيل "
+            text="تسجيل "
+          />
+        </li>
+      </ul>
+      <div class="leftSide d-flex align-items-center gap-3">
+        <Button
+          type="button"
+          aria="button"
+          ClassName="btn btn-round relative round-4 lg-max:d-none"
+        >
+          <span class="fs-16 fw-700 relative">تسجيل الدخول</span>
+        </Button>
+        <Button
+          type="button"
+          aria="button"
+          ClassName="btn btn-round  relative round-4"
+          isBorder
+        >
+          <span class="fs-16 fw-700 relative">اللغة العربية</span>
+        </Button>
+      </div>
+    </nav>
+  </div>
+</header>

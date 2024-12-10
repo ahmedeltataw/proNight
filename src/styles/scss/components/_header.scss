@@ -1,0 +1,82 @@
+@use "../helpers/extend" as *;
+
+header {
+    background-color: var(--w);
+
+    .navLinks {
+        .navLink {
+
+            &:hover,
+            &.active {
+                color: var(--hover-main);
+            }
+        }
+
+        &.responsiveLink {
+            background-color: var(--blackY);
+            top: 80px;
+            opacity: 0;
+            inset-inline-start: -240px;
+            // transform: scale(.2);
+            transition: cubic-bezier(.44,.66,.74,.48).5s;
+
+            .navLink {
+                color: var(--w);
+            }
+
+            &.open {
+                opacity: 1;
+                inset-inline-start: 0;
+                // transform: scale(1);
+            }
+        }
+
+
+
+    }
+
+    .icon-nav-base2 {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        width: 40px;
+        height: 35px;
+
+        span {
+            background-color: var(--hover-main);
+            width: 35px;
+            height: 3px;
+            border-radius: 4px;
+            display: block;
+            margin-block: 7px;
+            transition: var(--t-s);
+
+            &:nth-child(2) {
+                width: 25px;
+            }
+
+            &:nth-child(3) {
+                width: 15px;
+            }
+
+        }
+
+        &.active {
+            span {
+                &:nth-child(1) {
+                    transform: translateY(10px) rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:nth-child(3) {
+                    width: 35px;
+                    transform: translateY(-10px) rotate(-45deg);
+                }
+            }
+        }
+    }
+}

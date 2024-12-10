@@ -1,0 +1,29 @@
+body[data-theme="light"] {
+    --mainBG: #fffbf2;
+    --subBG1: #f2ebda;
+    --subBG2: #e5e2da;
+    --blackY: #0d0903;
+    --hover-main: #d49a2f;
+    --hoverLight: #f2b035;
+    --black: rgb(0, 0, 0);
+    --border-color: #bebebe;
+    --w: hsla(0, 0%, 100%, 1);
+    --t-l: 500ms ease-in-out;
+    --t-s: 250ms ease-in-out;
+}
+
+:root {
+    --mainBG: #f1f1f1;
+    --subBG1: #fcfbfb;
+    --subBG2: #f2f7f6;
+    --hover-main: #60ba86;
+    --yellow: #f3bd1a;
+    --red:#ec5778;
+    --blue:hsl(210.25deg 53.85% 56.67%);
+    --blackY: #161616;
+    --black: rgb(0, 0, 0);
+    --border-color: #bebebe;
+    --w: hsla(0, 0%, 100%, 1);
+    --t-l: 500ms ease-in-out;
+    --t-s: 250ms ease-in-out;
+}

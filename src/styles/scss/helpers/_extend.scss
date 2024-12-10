@@ -1,0 +1,329 @@
+@use './color' as*;
+@use './mixin' as *;
+
+// %responsive-text {
+//     display: -webkit-box;
+//     -webkit-box-orient: vertical;
+//     -webkit-line-clamp: 1;
+//     line-clamp: 1;
+//     overflow: hidden;
+//     // text-overflow: ellipsis;
+// }
+
+
+
+// %grid-center {
+//     display: grid;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// %centerPosition {
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%, -50%);
+// }
+
+// %grid-system {
+//     grid-template-columns: repeat(auto-fill, minmax(350px, auto));
+//     justify-content: center;
+//     gap: 20px 10px;
+// }
+
+// %visible {
+//     opacity: 1;
+//     transform: translateY(0);
+//     transform: translateX(0);
+// }
+
+// %AE_Scrolling {
+//     opacity: 0;
+// }
+
+// %label-focus {
+//     top: -10px;
+//     background-color: #fff;
+//     transform: scale(.9);
+//     color: var(--hover-1);
+// }
+
+// %btn-skew-border {
+//     &.btn-skew {
+//         background-color: transparent;
+//         border: 1px solid var(--hover-1);
+//         color: var(--hover-1);
+
+//         a {
+//             color: var(--hover-1);
+//             transition: $t-s;
+//         }
+
+//         &:hover {
+//             color: var(--w);
+
+//             a {
+//                 color: var(--w);
+//             }
+
+
+//         }
+
+
+//     }
+// }
+
+// 
+// %inputAuth {
+//     @include input(40px, 100%, #9f9f9f61);
+
+// }
+
+// %Hide {
+//     opacity: 0;
+//     transform: translateY(-100%);
+//     filter: blur(2px);
+// }
+
+// %Show {
+//     transform: translateY(0);
+//     filter: blur(0);
+//     opacity: 1;
+// }
+
+// %section {
+//     min-height: 100dvh;
+//     padding-bottom: 5vh;
+// }
+
+// scooter
+%A_B {
+    content: '';
+    position: absolute;
+    transition: var(--t-s);
+}
+
+%centerY {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+%centerX {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+// e-commerce
+%col-5 {
+    @include gridCol(280px, auto);
+    gap: 10px;
+
+    @media(max-width:600px) {
+        @include gridCol(200px, 1fr);
+    }
+}
+
+%col-4 {
+    @include gridCol(250px, 1fr);
+
+    @media(max-width:380px) {
+        @include gridCol(100%, 1fr);
+    }
+}
+
+%col-3 {
+    @include gridCol(320px, 1fr);
+
+    @media(max-width:380px) {
+        @include gridCol(100%, 1fr);
+    }
+}
+
+// %aside {
+//     position: fixed;
+//     // bottom: 0;
+//     inset: 0;
+//     overflow-y: scroll;
+//     background-color: var(--w);
+//     z-index: 99999;
+//     max-width: 100%;
+//     transition: $t-l;
+//     transform: translateX(250px) scale(.8);
+//     opacity: 0;
+
+//     &::-webkit-scrollbar-thumb {
+//         background-color: transparent;
+//     }
+
+//     &::-webkit-scrollbar-track {
+//         background-color: transparent;
+//     }
+
+//     &::-webkit-scrollbar-button {
+//         height: 2px;
+//     }
+
+//     &:is(:hover, :focus-within) {
+
+
+//         &::-webkit-scrollbar-thumb {
+//             background-color: var(--hover);
+//         }
+
+
+//     }
+
+
+//     &.open {
+//         transform: translateX(0) scale(1);
+//         opacity: 1;
+
+//     }
+// }
+
+// %closeAside {
+//     position: absolute;
+//     top: 15px;
+//     left: 5px;
+//     width: 25px;
+//     aspect-ratio: 1;
+//     background-color: var(--hover);
+//     border-radius: 50%;
+//     transition: $t-s;
+
+//     &:hover {
+//         background-color: var(--hover-1);
+//         box-shadow: 0 0 9px #2f2f2f6b;
+//     }
+
+//     svg {
+//         width: 20px;
+//         margin: 0 auto;
+//         color: var(--w);
+//     }
+// }
+
+// %ProDetail {
+//     .imageGallery {
+//         grid-template-columns: 1fr;
+//         grid-template-rows: 420px 120px;
+
+//         .mainImg,
+//         figure {
+//             background-color: var(--BG);
+//             width: 100%;
+//             height: 100%;
+
+//             img {
+//                 transition: $t-s;
+//             }
+//         }
+
+//         .subImg {
+//             img {
+//                 border-color: var(--border-color);
+//                 cursor: pointer;
+//                 transition: $t-s;
+
+//                 &.active,
+//                 &:hover {
+//                     opacity: 1;
+//                     border-color: var(--hover-1);
+//                 }
+//             }
+//         }
+//     }
+
+//     .cardDetails {
+//         @media(max-width:991px) {
+//             margin-top: 15px;
+//         }
+
+//         h3 {
+//             font-size: clamp(20px, 1vw + 1.2rem, 28px);
+//         }
+
+//         .price {
+//             span {
+//                 color: var(--hover);
+//                 font-size: clamp(24px, 1vw + 1.1rem, 28px);
+//             }
+
+
+//         }
+
+//         .des {
+//             width: min(100%, 500px);
+//         }
+
+//         .name,
+//         label {
+//             min-width: 150px;
+//         }
+
+//         .nameX {
+//             min-width: 50px;
+//         }
+
+//         .formGroup {
+//             align-items: center;
+
+//             select {
+//                 @include input(45px, 50%, transparent);
+//                 background-color: var(--BG);
+//                 font-size: 14px;
+//             }
+//         }
+
+//         .btn-run,
+//         .btn-runBorder {
+//             width: 100%;
+//             height: 50px;
+//         }
+
+//     }
+// }
+
+// %cartBox {
+//     color: var(--subtitle);
+
+//     h3 {
+//         @extend %responsive-text;
+//     }
+
+// }
+
+// %btn-delete {
+//     background-color: #e15757;
+//     inset-inline-end: 0;
+//     border-radius: 0% 100% 100% 0% / 100% 0%;
+//     border-top-left-radius: 8px;
+
+//     svg {
+//         color: var(--w);
+//     }
+
+// }
+
+// %uploadImg {
+//     width: 100%;
+//     height: 250px;
+//     border-color: #e2e2e2;
+//     // background-color: rgba($color: $BG, $alpha: .2);
+//     max-width: 100%;
+//     transition: $t-s;
+//     label {
+//         inset: 0;
+//         width: 100%;
+//         height: 100%;
+//         cursor: pointer;
+//     }
+
+//     &:hover {
+//         border-color: var(--hover);
+//     }
+//     @media (max-width:480px) {
+//         width: 100%;
+//         height: 100%;
+//     }
+// }

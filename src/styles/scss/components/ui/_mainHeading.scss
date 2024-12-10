@@ -1,0 +1,32 @@
+@use "../../helpers/animation" as *;
+@use "../../helpers/extend" as *;
+
+
+.mainHeading {
+    padding-bottom: 8vh;
+    h2 {
+        color: var(--blackY);
+        &::after , &::before{
+            @extend %A_B;
+        }
+        &::before {
+            width: 100%;
+            height: 1.5px;
+            background-color: var(--hover-main);
+            bottom: -2.5px;
+        }
+
+        &::after {
+            @extend %centerX;
+            width: 50px;
+            height: 5px;
+            background-color: var(--hoverLight);
+            bottom: -4px;
+            border-radius: 12px;
+            animation: MovingLine 10s cubic-bezier(.84, .36, .23, .85) infinite;
+        }
+    }
+
+}
+
+@include movingLine(MovingLine);
