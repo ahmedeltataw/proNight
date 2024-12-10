@@ -56,7 +56,7 @@ export default defineConfig({
     },
 
     integrations: [purgecss({
-        // safelist: [], // Keep these classes
+        safelist: ['a'], // Keep these classes
         content: [
             process.cwd() + '/src/**/*.{astro,vue}' // Watching astro and vue sources (read SSR docs below)
         ],
