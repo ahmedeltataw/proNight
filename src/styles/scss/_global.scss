@@ -2,9 +2,13 @@
 @use "./helpers/mixin" as *;
 // components
 @use "./components/header";
-@use "./components/hero";
+@use "./components/sections/hero";
+@use "./components/sections/infoRent";
 // ui components
 @use "./components/ui/mainHeading";
+@use "./components/ui/dropDownMenu";
+@use "./components/ui/buttons/buttonRound";
+@use "./components/ui/smallFilter";
 
 ::-webkit-scrollbar {
     width: 6px;
@@ -21,94 +25,34 @@
 }
 
 // global code
+html[lang="en"]{
+    svg.ChangeDir{
+        transform: rotate(180deg);
+    }
+}
 body {
-    background-color: var(--mainBG);
+    background-color: var(--subBG1);
 }
 
 a {
     color: var(--blackY);
-    
+
 }
-span ,svg,a{
-    transition: var(--t-s);
+
+span,
+svg,
+a {
+    transition: color var(--t-s);
 }
+
 figure {
     margin: 0;
 }
 
-.btn {
-    background-color: var(--hover-main);
-    padding: .5em 1em;
-    overflow: hidden;
-
-    &.border {
-        background-color: var(--w);
-        border-color: var(--hover-main);
-        &:has(svg, a, span) {
-            color: var(--hover-main);
-            
-        }
-    }
-
-
-    &.btn-edit,
-    &.btn-delete {
-        color: var(--w);
-    }
-
-    &.btn-edit {
-        background-color: hsl(210.25deg 53.85% 56.67%);
-    }
-
-    &.btn-delete {
-        background-color: #dc3545;
-    }
-}
-
-.btn-round {
-    color: var(--w);
-
-    &:has(svg, a, span) {
-        color: var(--w);
-        
-    }
-    border: 1px solid var(--hover-main);
-    &::before {
-        content: "";
-        position: absolute;
-        top: -140%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 140%;
-        height: 140%;
-        border-radius: 50%;
-        background-color: var(--w);
-        transition: var(--t-s);
-        transition-duration: 600ms;
-
-    }
-    &.border::before{
-        background-color: var(--hover-main);
-    }
-    span{
-        transition-duration: 600ms; 
-    }
-
-    &:hover {
-        &:has(svg, a, span):hover{
-            color: var(--hover-main);
-        }
-        &.border{
-            &:has(svg, a, span):hover{
-                color: var(--w);
-            }
-        }
-        &::before {
-            top: -20%;
-        }
-    }
-
-
+input , select{
+    outline: none;
+    border: 1px solid var(--border-color);
+    background-color: var(--subBG2);
 }
 
 
@@ -132,9 +76,11 @@ figure {
 
 }
 
-section:not(.hero) {
+section:not(.hero , .smallFilter ,.infoRent) {
     min-height: 100vh;
     padding-top: 4vh;
 }
 
-
+:is(h1,h2,h3){
+    color: var(--blackY);
+}

@@ -1,0 +1,82 @@
+@use "../../../helpers/extend" as*;
+@use "../../../helpers/mixin" as*;
+.btn {
+    background-color: var(--hover-main);
+    padding: .5em 1em;
+    overflow: hidden;
+
+    &.border {
+        background-color: var(--w);
+        border-color: var(--hover-main);
+
+        :is(svg, a, span) {
+            color: var(--hover-main);
+
+        }
+    }
+
+
+    &.btn-edit,
+    &.btn-delete {
+        color: var(--w);
+    }
+
+    &.btn-edit {
+        background-color: hsl(210.25deg 53.85% 56.67%);
+    }
+
+    &.btn-delete {
+        background-color: #dc3545;
+    }
+}
+
+.btn-round {
+    color: var(--w);
+
+    :is(svg, a, span){
+        color: var(--w);
+
+    }
+    svg{
+        transition: color 600ms ease-in-out, transform 300ms ease-in-out;
+    }
+
+    border: 1px solid var(--hover-main);
+
+    &::before {
+        @extend %A_B;
+        @include circle(140%);
+        top: -140%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--w);
+        transition-duration: 600ms;
+
+    }
+
+    &.border::before {
+        background-color: var(--hover-main);
+    }
+
+    :is(span , a) {
+        transition-duration: 600ms;
+    }
+
+    &:hover {
+        :is(svg, a, span) {
+            color: var(--hover-main);
+        }
+
+        &.border {
+            :is(svg, a, span) {
+                color: var(--w);
+            }
+        }
+
+        &::before {
+            top: -20%;
+        }
+    }
+
+
+}

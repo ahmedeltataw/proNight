@@ -1,0 +1,28 @@
+---
+interface Props {
+    id: string | any;
+    title?: string,
+    ClassName?: string
+    SelectClass?:string
+    labelClass?:string
+    isIcon?:{
+        names?: string,
+        Class?:string
+    }
+}
+import { Icon } from "astro-icon/components";
+const { id , title ,ClassName ,SelectClass , labelClass,isIcon=false} = Astro.props
+---
+<div class={`formGroup relative  ${ClassName}`}>
+    {
+        title && <label for={id} class={labelClass}> {title}</label>
+    }
+    <select name={id}  id={id} class={` ${SelectClass}`}>
+        <slot />
+    </select>
+    {
+        isIcon &&  (
+            <Icon name={isIcon.names} class={isIcon.Class} />
+        )
+    }
+</div> 

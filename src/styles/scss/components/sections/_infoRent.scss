@@ -1,0 +1,81 @@
+@use "../../helpers/extend" as *;
+
+.infoRent {
+    padding-top: 12vh;
+    min-height: 90vh;
+    background-color: var(--subBG1);
+    .mainHeading{
+        padding-bottom: 5vh;
+    }
+    .infoRentCard {
+        .containerIcon {
+            border-color: var(--blue);
+
+            img {
+                background-color: var(--blue);
+
+            }
+        }
+
+        p {
+            line-height: 1.6;
+            color: var(--subTitle);
+            width: min(100% ,300px);
+        }
+
+        &::before {
+            @extend %A_B;
+            width: calc(100% - 95px);
+            border: 1px dashed #DBDBDB;
+            inset-inline-end: 0;
+            inset-inline-start: calc(50% + 52px);
+            top: 80px;
+
+        }
+        &::after{
+            @extend %A_B;
+            @extend %centerX;
+            width: 90%;
+            bottom: 0;
+            height: 1px;
+            background-color: var(--blue);
+        }
+
+        &:first-child {
+            .containerIcon {
+                border-color: var(--red);
+
+                img {
+                    background-color: var(--red);
+
+                }
+            }
+            &::after{
+                background-color: var(--red);
+            }
+        }
+
+        &:last-child {
+            .containerIcon {
+                border-color: var(--hover-main);
+
+                img {
+                    background-color: var(--hover-main);
+
+                }
+            }
+            &::after{
+                background-color: var(--hover-main);
+            }
+            &::before {
+                display: none;
+            }
+        }
+
+        @media(max-width:991px) {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}

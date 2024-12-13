@@ -1,0 +1,91 @@
+---
+import Button from "./Button.astro";
+import Link from "./Link.astro";
+import type {LinkType} from "../../type/type";
+interface Props {
+    BtnText: string;
+    ClassName: string;
+    id:string;
+    type:'Icon' | 'Image' |'Text';
+    data: LinkType[];
+}
+const { ClassName, id ,type,data ,BtnText} = Astro.props;
+---
+
+<div class:list={['dropDownMenu relative ', ClassName]} id={id}  >
+  <Button
+    type="button"
+    aria="button"
+    ClassName="btn btn-round  relative round-4 btn-dropDown d-flex align-items-center gap-2"
+    isBorder
+    ariaEx={false}
+    controll={id}
+    icon={{
+        Class: "w-10 h-10 relative arrowSvg",
+        side: "right",
+        name:"arrow-down"
+      }}
+
+  >
+    <span class="fs-16 fw-700 relative"> {BtnText}</span>
+  </Button>
+  <ul class="dropDownMenuList d-none h-fit absolute round-4 p-in-4 o-0 inset-s--8" >
+    {
+      type === 'Image' &&(
+      
+      data.map((link: LinkType) => (
+        <li>
+        <Link
+          href={link.href}
+          Class="fs-16 fw-500 d-flex align-items-center gap-3"
+          aria={link.aria}
+          text={link.text}
+          Img={{ alt: `${link.Img?.alt}`, Class: "img-cover w-12", side: "left" }}
+          ImageSrc={link.ImageSrc}
+        />
+      </li>
+      )
+   
+      )
+    )
+
+     
+        
+      
+    }
+     {
+       type === 'Icon' &&(
+
+    data.map((link: LinkType) => (
+    <li>
+      <Link
+        href={link.href}
+        Class="fs-16 fw-500 d-flex align-items-center gap-3"
+        aria={link.aria}
+        text={link.text}
+        icon={{ name: link.icon?.names, ClassIcon: link.icon?.ClassIcon, side: "left" }}
+      />
+    </li>
+      )
+      )
+  )
+    }
+    {
+       type === 'Text' &&(
+       data.map((link: LinkType) => (
+    <li>
+      <Link
+        href={link.href}
+        Class="fs-16 fw-500 "
+        aria={link.aria}
+        text={link.text}
+      />
+    </li>
+      )
+      )
+      )
+    }
+
+
+  </ul>
+</div>

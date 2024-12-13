@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import Img from "@assets/banner/hero-2.png";
+import Button from "@components/ui/Button.astro";
+import Link from "@components/ui/Link.astro";
+---
+
+<section class="hero relative">
+  <figure class="ImgContainer absolute inset-0">
+    <Image src={Img} alt="hero" class="img-cover" quality={70} format="webp" />
+  </figure>
+  <div class="heroText  relative d-grid place-items-center mx-auto text-center">
+    
+    <h1 class="fs-48 sm-max:fs-36 fw-700 mb-12">  استأجر فيلتك، وحدتك السكنية، أو فندقك المثالي بكل سهولة   </h1>
+    <Button type="button" aria={`اكتشف المزيد`} ClassName="btn btn-round relative round-4">
+      <Link
+        href="#!"
+        Class="fs-18 fw-700 relative d-flex align-items-center gap-3"
+        aria="اكتشف المزيد من الوحدات"
+        text="اكتشف الان"
+        icon={{
+          ClassIcon: "w-14 h-14 relative ChangeDir",
+          side: "left",
+          name:"arrow"
+        }}
+      />
+    </Button>
+  </div>
+  
+</section>

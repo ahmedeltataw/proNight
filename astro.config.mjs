@@ -9,7 +9,9 @@ import icon from 'astro-icon';
 export default defineConfig({
     build: {
         assets: '_astro',
+        // assets: 'assets',
         inlineStylesheets: 'auto',
+        // inlineStylesheets: 'never',
         format: 'file',
         site: "https://ryn-proNight.com/",
         // base: '/',

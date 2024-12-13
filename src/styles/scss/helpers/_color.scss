@@ -24,6 +24,10 @@ body[data-theme="light"] {
     --black: rgb(0, 0, 0);
     --border-color: #bebebe;
     --w: hsla(0, 0%, 100%, 1);
+    --subTitle:#676767;
+    --shadowColor:  rgba(225, 225, 225, 0.25);
+    --shadowColor2:  #6b6b6b42;
+    --bottom-gra:linear-gradient(180deg,rgba(4, 21, 45, 0) 0%,#fcfbfb 95.17%);
     --t-l: 500ms ease-in-out;
     --t-s: 250ms ease-in-out;
 }

@@ -1,4 +1,5 @@
-import type { LinkType, RosaryType } from "../type/type";
+import type { LinkType } from "../type/type";
+
 
 export const linkHeader:LinkType[] = [
     {
@@ -26,38 +27,24 @@ export const linkHeader:LinkType[] = [
     //     href:'#!',
     // }
 ]
+import ArFlag from "@assets/flag/flagAr.png";
+import EnFlag from "@assets/flag/flagEn.webp";
+export const DropDownLangData:LinkType[] = [
+    {
+        text:"العربية",
+        aria:"العربية",
+        href:'#!',
+        ImageSrc:ArFlag,
+        Img:{
+            alt:"العربية",}
+    },
+    {
+        text:"English",
+        aria:"English",
+        href:'#!',
+        ImageSrc:EnFlag,
+        Img:{
+            alt:"English",}
 
-export const rosaryData:RosaryType[] = [
-    {
-        id:"1",
-        title:'سبحان الله'
     },
-    {
-        id:"2",
-        title:'الحمد لله'
-    },
-    {
-        id:"3",
-        title:'لا اله الا الله'
-    },
-    {
-        id:"4",
-        title:'الله اكبر'
-    },
-    {
-        id:"5",
-        title:'سبحان الله وبحمده'
-    },
-    {
-        id:"6",
-        title:'استغفر الله'
-    },
-    {
-        id:"7",
-        title:'لا حول ولا قوة الا بالله'
-    },
-    {
-        id:"8",
-        title:'اللهم صلي علي محمد'
-    },
-]
+] 

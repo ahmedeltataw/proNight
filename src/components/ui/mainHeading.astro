@@ -1,11 +1,19 @@
 ---
 interface Props {
   title: string;
+  dabble?: {
+    des: string;
+  };
 }
 
-const { title } = Astro.props;
+const { title ,dabble} = Astro.props;
 ---
 
 <div class="mainHeading text-center ">
-  <h2 class="fs-36 sm-max:fs-24 fw-900 d-inline-block relative">{title}</h2>
+  <h2 class="fs-36 sm-max:fs-24 fw-900 d-inline-block relative pb-4">{title}</h2>
+  {
+    dabble && (
+      <p class="mt-8 fs-18 fw-500 o-70 mx-auto">{dabble.des}</p>
+    )
+  }
 </div>

@@ -1,0 +1,60 @@
+---
+import SelectForm from "@components/ui/SelectForm.astro";
+import FormGroup from "@components/ui/FormGroup.astro";
+import Button from "@components/ui/Button.astro";
+---
+
+<section class="smallFilter relative">
+  <div class="container">
+    <form class="d-grid gap-4  lg:grid-col-5 md:grid-col-3 sm:grid-col-2 lg:p-11 md:p-9 p-8 round-5">
+      <SelectForm
+        id={`city`}
+        title={`المدينة`}
+        ClassName={`selectForm `}
+        SelectClass={`w-full h-24 ps-4 round-4`}
+        labelClass={`fs-18 fw-700 ps-3 pb-2 d-inline-block o-80`}
+        isIcon={{names:'arrow-down' , Class:'w-10 h-10 absolute'}}
+      >
+        <option value="0">جدة</option>
+      </SelectForm>
+      <FormGroup
+        type="date"
+        isLabel={true}
+        place="تاريخ بداية الحجز"
+        name="dataStartBooking"
+        id="StartBooking"
+        title="بداية الحجز"
+        FormClassName=""
+        LabelClassName="fs-18 fw-700 ps-3 pb-2 d-inline-block o-80"
+        InputClassName="w-full h-24 ps-4 round-4 relative"
+        data-value="false"
+      />
+      <FormGroup
+        type="date"
+        isLabel={true}
+        place="تاريخ نهاية الحجز"
+        name="dataEndBooking"
+        id="EndBooking"
+        title="نهاية الحجز"
+        FormClassName=""
+        LabelClassName="fs-18 fw-700 ps-3 pb-2 d-inline-block o-80"
+        InputClassName="w-full h-24 ps-4 round-4 relative"
+        data-value="false"
+      />
+      <FormGroup
+        type="text"
+        isLabel={true}
+        place="بالغ-طفل"
+        name="NumberOfGuests"
+        id="Guests"
+        title="الضيوف"
+        FormClassName=""
+        LabelClassName="fs-18 fw-700 ps-3 pb-2 d-inline-block o-80"
+        InputClassName="w-full h-24 ps-4 round-4 "
+      />
+      <Button type="submit" aria={`ابحث`} ClassName="btn btn-round relative round-4 h-24 md:mt-12 md-max:0 "  >
+        <span class="fs-18 fw-700 relative">بحث</span>
+      </Button>
+    </form>
+  </div>
+</section>

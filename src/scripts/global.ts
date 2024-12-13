@@ -1,3 +1,5 @@
+
+
 let overlay = document.getElementById("overLay") as HTMLDivElement
 function calcMaxHeight(items: NodeListOf<HTMLLIElement> | HTMLLIElement[]): number {
     let maxHeight: number = 0;
@@ -31,6 +33,20 @@ const animationSlide = (dir: 'up' | 'down', totalHeight: NodeListOf<HTMLLIElemen
 
     // Start the animation loop
     requestAnimationFrame(animate);
+}
+// ===============debounce=================
+function debounce<F extends (...args: any[]) => any>(func: F, delay: number) {
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+    
+    return (...args: Parameters<F>) => {
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+        
+        timeoutId = setTimeout(() => {
+            func(...args);
+        }, delay);
+    };
 }
 // =====aria expanded=============
 const setAriaExpanded = (btn: HTMLButtonElement | null, EX: boolean) => {
@@ -82,9 +98,9 @@ const toggleAsideMenu = (action: 'open' | 'close', asideEl: HTMLUListElement | H
 
 // ========toggle aside menu with same button==========
 
-const toggleAsideMenuSameBtn = (asideEl: HTMLUListElement | HTMLDivElement | HTMLFormElement, ClassName: string | null, RemoveClass: string, Btn: HTMLButtonElement | null,  isOverlay: boolean, isEffectLink: boolean)=>{
+const toggleAsideMenuSameBtn = (action: 'toggle' | 'remove',asideEl: HTMLUListElement | HTMLDivElement | HTMLFormElement, ClassName: string | null, RemoveClass: string, Btn: HTMLButtonElement | null,  isOverlay: boolean, isEffectLink: boolean)=>{
     if (!asideEl || !Btn) return;
-    toggleClass(Btn , ['active'], 'toggle');
+    toggleClass(Btn , ['active'], action);
     if(Btn.classList.contains('active')){
         toggleClass(asideEl ,[RemoveClass] ,'remove');
         if (ClassName) toggleClass(asideEl, [ClassName], 'add');
@@ -99,6 +115,15 @@ const toggleAsideMenuSameBtn = (asideEl: HTMLUListElement | HTMLDivElement | HTM
         requestAnimationFrame(() => {
             toggleClass(asideEl, ['open'], 'add');
         })
+        const handleClickOutside = (e: Event) => {
+            const target = e.target as HTMLElement;
+            if (!Btn.contains(target) && !asideEl.contains(target)) {
+                toggleAsideMenuSameBtn('remove',asideEl ,'responsiveLink' , 'lg-max:d-none', Btn, true, true)
+                console.log('x')
+            }
+        };
+        document.addEventListener('click', handleClickOutside, { capture: true });
+        (Btn as any).__outsideClickHandler = handleClickOutside;
     }else{
         toggleClass(asideEl, ['open'], 'remove');
         setAriaExpanded(Btn, false);
@@ -107,10 +132,79 @@ const toggleAsideMenuSameBtn = (asideEl: HTMLUListElement | HTMLDivElement | HTM
             toggleClass(asideEl, [RemoveClass], 'add');
             if (ClassName) toggleClass(asideEl, [ClassName], 'remove');
         }, 500)
+        const handleClickOutside = (Btn as any).__outsideClickHandler;
+        if (handleClickOutside) {
+            document.removeEventListener('click', handleClickOutside, { capture: true });
+            delete (Btn as any).__outsideClickHandler;
+        }
     }
 }
     
+// ========toggle dropDown menu==========
+
+const toggleDropDownMenu = (action: 'toggle' | 'remove', dropList: HTMLUListElement, Btn: HTMLButtonElement | null) => {
+    if (!dropList || !Btn) return;
+
+    toggleClass(Btn, ['active'], action);
+
+    if (Btn.classList.contains('active')) {
+        toggleClass(dropList, ['d-none'], 'remove');
+        setAriaExpanded(Btn, true);
+        requestAnimationFrame(() => {
+            toggleClass(dropList, ['open'], 'add');
+        });
+        const handleClickOutside = (e: Event) => {
+            const target = e.target as HTMLElement;
+            if (!Btn.contains(target) && !dropList.contains(target)) {
+                toggleDropDownMenu('remove', dropList, Btn);
+                console.log('y')
+            }
+        };
+        document.addEventListener('click', handleClickOutside, { capture: true });
+        (Btn as any).__outsideClickHandler = handleClickOutside;
+    } else {
+        toggleClass(dropList, ['open'], 'remove');
+        setAriaExpanded(Btn, false);
+
+        setTimeout(() => {
+            toggleClass(dropList, ['d-none'], 'add');
+        }, 300);
+        const handleClickOutside = (Btn as any).__outsideClickHandler;
+        if (handleClickOutside) {
+            document.removeEventListener('click', handleClickOutside, { capture: true });
+            delete (Btn as any).__outsideClickHandler;
+        }
+    }
+};
+
+
+const changeDateValue = (input:HTMLInputElement)=>{
+    input.setAttribute('data-value' , 'true')
+    
+}
+let inputDate = document.querySelectorAll("input[type='date']") as NodeListOf<HTMLInputElement>;
+function ChangeDate() {
+    inputDate.forEach((input)=>{
+        input.addEventListener('change' , ()=>{
+            changeDateValue(input)
+        })
+    })
+}
+document.addEventListener('DOMContentLoaded', ChangeDate);
 
 let mobileMenu = document.getElementById("mobileMenu") as HTMLButtonElement;
 let responsiveMenu = document.getElementById("responsiveMenu") as HTMLDivElement;
-if(mobileMenu)mobileMenu.addEventListener('click', () => toggleAsideMenuSameBtn(responsiveMenu ,'responsiveLink' , 'lg-max:d-none', mobileMenu, false, false))
+if(mobileMenu)mobileMenu.addEventListener('click', () => toggleAsideMenuSameBtn('toggle',responsiveMenu ,'responsiveLink' , 'lg-max:d-none', mobileMenu, true, true));
+//
+let dropDownMenu = document.querySelector("#langDropMenu .dropDownMenuList") as HTMLUListElement;
+let btnDropDown = document.querySelector("#langDropMenu .btn-dropDown") as HTMLButtonElement;
+
+if(btnDropDown) btnDropDown.addEventListener("click" , ()=> toggleDropDownMenu('toggle' , dropDownMenu , btnDropDown));
+let header = document.querySelector("header") as HTMLDivElement
+window.addEventListener('scroll',()=>{
+    if(window.scrollY >= 150){
+        header.classList.add('scroll')
+    }else{
+        header.classList.remove('scroll')
+    }
+})

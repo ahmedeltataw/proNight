@@ -1,14 +1,15 @@
 ---
 import Logo from "@assets/logo.png";
 import Link from "@components/ui/Link.astro";
-import { linkHeader } from "@data/data";
+import { linkHeader ,DropDownLangData } from "@data/data";
 import type { LinkType } from "../../type/type";
 import Button from "@components/ui/Button.astro";
+import DropDownMenu from "@components/ui/DropDownMenu.astro";
 ---
 
-<header class="relative">
-  <div class="container-full">
-    <nav class="d-flex align-items-center justify-between py-6">
+<header class="absolute w-full top-0">
+  <div class="container-full lg:px-10">
+    <nav class="d-flex align-items-center justify-between py-6 p-in-8 mt-5 round-8">
       <div class="firstSide d-flex align-items-center gap-4">
         <Button type="button" aria={`mobileMenu`} ClassName="icon-nav-base2 lg:d-none" id="mobileMenu" controll="responsiveMenu" ariaEx={false}>
           <span></span>
@@ -29,17 +30,17 @@ import Button from "@components/ui/Button.astro";
       >
         {
           linkHeader.map((link: LinkType) => (
-            <li>
+            <li class="lg-max:w-9/10 relative">
               <Link
                 href={link.href}
-                Class="navLink fs-16 fw-700"
+                Class="navLink fs-16 fw-700 relative"
                 aria={link.text}
                 text={link.text}
               />
             </li>
           ))
         }
-        <li class="lg:d-none">
+        <li class="lg:d-none lg-max:w-9/10 relative">
           <Link
             href="/"
             Class="navLink fs-16 fw-700 "
@@ -47,7 +48,7 @@ import Button from "@components/ui/Button.astro";
             text="تسجيل الدخول"
           />
         </li>
-        <li class="lg:d-none">
+        <li class="lg:d-none lg-max:w-9/10 relative">
           <Link
             href="/"
             Class="navLink fs-16 fw-700 "
@@ -64,14 +65,8 @@ import Button from "@components/ui/Button.astro";
         >
           <span class="fs-16 fw-700 relative">تسجيل الدخول</span>
         </Button>
-        <Button
-          type="button"
-          aria="button"
-          ClassName="btn btn-round  relative round-4"
-          isBorder
-        >
-          <span class="fs-16 fw-700 relative">اللغة العربية</span>
-        </Button>
+      
+        <DropDownMenu id="langDropMenu" ClassName="" BtnText="اللغة العرية" type="Image" data={DropDownLangData}  />
       </div>
     </nav>
   </div>

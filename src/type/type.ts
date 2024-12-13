@@ -8,11 +8,12 @@ export interface LinkType {
     icon?: {
         names?: string;
         side: "left" | "right";
+        ClassIcon?: string;
     };
     text: string;
     Img?: {
         alt: string,
-        side: "left" | "right",
+        side?: "left" | "right",
     },
     ImageSrc?: string | any,
 }
@@ -20,3 +21,4 @@ export interface RosaryType {
     id:string;
     title:string;
 }
+
