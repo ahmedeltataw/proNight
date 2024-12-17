@@ -5,7 +5,7 @@ import purgecss from 'astro-purgecss';
 
 // https://github.com/jonathantneal/astro-icon
 import icon from 'astro-icon';
-// https://astro.build/config
+
 export default defineConfig({
     build: {
         assets: '_astro',
@@ -28,6 +28,14 @@ export default defineConfig({
     output: 'static',
 
     vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: `@use "src/styles/scss/helpers/_color.scss" as *; @use "src/styles/scss/helpers/_mixin.scss" as *;`,
+                    quietDeps: true,
+                }
+            }
+        },
         build: {
             rollupOptions: {
                 output: {
@@ -58,9 +66,9 @@ export default defineConfig({
     },
 
     integrations: [purgecss({
-        safelist: ['a' , 'li'], // Keep these classes
+        safelist: ['a', 'li'], // Keep these classes
         content: [
-            process.cwd() + '/src/**/*.{astro,vue}' // Watching astro and vue sources (read SSR docs below)
+            process.cwd() + '/src/**/*.{astro,vue}' // Watching astro and vue sources
         ],
         css: ['./dist/**/*.css'],
         extractors: [
