@@ -4,10 +4,26 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '@components/Hero/Hero.astro';
 import SmallFilter from '@components/filter/SmallFilter.astro';
 import InfoRent from '@components/sections/InfoRent.astro';
+import Popular from '@components/sections/Popular.astro';
+import ExploreKsa from '@components/sections/ExploreKsa.astro';
+import CityRent from '@components/sections/CityRent.astro';
+import ClientReview from '@components/sections/ClientReview.astro';
+import WhyChoose from '@components/sections/WhyChoose.astro';
+//style swiper
+import 'swiper/scss';
+import 'swiper/scss/navigation';
 ---
 
 <Layout title='الرئيسية' >
+	
 	<Hero />
 	<SmallFilter />
 	<InfoRent />
+	<Popular />
+	<ExploreKsa />
+	<CityRent />
+	<ClientReview />
+	<WhyChoose />
 </Layout>
+<script src="../scripts/Swiper.ts"></script>
+

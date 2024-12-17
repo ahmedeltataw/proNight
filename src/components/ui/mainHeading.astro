@@ -4,12 +4,17 @@ interface Props {
   dabble?: {
     des: string;
   };
+  aos?:{
+        effect?:string |any,
+        time:string |any,
+        delay?:string |any,
+    }
 }
 
-const { title ,dabble} = Astro.props;
+const { title ,dabble , aos=false } = Astro.props;
 ---
 
-<div class="mainHeading text-center ">
+<div class="mainHeading text-center " {...aos && { 'data-aos': aos.effect, 'data-aos-duration': aos.time ,'data-aos-delay': aos.delay } } >
   <h2 class="fs-36 sm-max:fs-24 fw-900 d-inline-block relative pb-4">{title}</h2>
   {
     dabble && (

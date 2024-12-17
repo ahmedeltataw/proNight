@@ -1,0 +1,51 @@
+---
+import CardPro from "@components/Card/CardPro.astro";
+import MainHeading from "@components/ui/mainHeading.astro";
+import Button from "@components/ui/Button.astro";
+import Link from "@components/ui/Link.astro";
+---
+
+<section 
+    class="cityRent" 
+    
+>
+    <MainHeading title="مدينة جدة" dabble={{des:"  استكشف مدينة جدة والواحدات المتوفرة فيها والاكثر طلبا" }} aos={{effect:'fade-down',time:800}} />
+    <div class="container h-full relative">
+        <div class="swiper cityRentSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide ">
+                <CardPro/>
+              </div>
+              <div class="swiper-slide ">
+                <CardPro/>
+              </div>
+              <div class="swiper-slide ">
+                <CardPro/>
+              </div>
+              <div class="swiper-slide ">
+                <CardPro/>
+              </div>
+            </div>
+            
+          </div>
+          <div class="btn-swiper cityRentSwiper-navigation absolute top-0 w-full sm-max:w-9/10">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        <div class="btnMore w-full d-flex justify-center mt-8">
+            <Button type="button" aria={`اكتشف المزيد`} ClassName="btn btn-round relative round-4  " isBorder>
+                <Link
+                  href="#!"
+                  Class="fs-18 fw-700 relative d-flex align-items-center gap-3"
+                  aria="اكتشف المزيد من الوحدات"
+                  text="اكتشف المزيد"
+                  icon={{
+                    ClassIcon: "w-14 h-14 relative ChangeDir",
+                    side: "left",
+                    name:"arrow"
+                  }}
+                />
+            </Button>
+        </div>
+    </div>
+</section>

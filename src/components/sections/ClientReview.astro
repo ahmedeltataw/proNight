@@ -1,0 +1,30 @@
+---
+import MainHeading from "@components/ui/mainHeading.astro";
+import CardClientReview from "@components/Card/CardClientReview.astro";
+---
+<section class="clientReview">
+    <MainHeading title="ماذا يقول العملاء عننا" dabble={{des:"ماذا يقول العملاء عننا، وماذا يقولون عن انتصارنا"}} aos={{effect:'fade-down',time:800}} />
+    <div class="container relative h-full">
+        <div class="swiper clientReviewSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide ">
+                <CardClientReview/>
+              </div>
+              <div class="swiper-slide ">
+                <CardClientReview/>
+              </div>
+              <div class="swiper-slide ">
+                <CardClientReview/>
+              </div>
+              <div class="swiper-slide ">
+                <CardClientReview/>
+              </div>
+            </div>
+            
+        </div>
+        <div class="btn-swiper clientReviewSwiper-navigation absolute  w-full sm-max:w-9/10">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</section>

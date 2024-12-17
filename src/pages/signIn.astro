@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Form from '@components/Auth/Form.astro';
+import Breadcrumb from '@components/ui/Breadcrumb.astro';
+---
+
+<Layout title='تسجيل دخول'>
+    <Breadcrumb title="تسجيل دخول" />
+    <Form AuthType="login" />
+</Layout>

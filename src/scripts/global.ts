@@ -208,3 +208,25 @@ window.addEventListener('scroll',()=>{
         header.classList.remove('scroll')
     }
 })
+
+// auth 
+// ====show password=====
+const togglePassword = (action: 'show' | 'hide',input:HTMLInputElement, openEye:HTMLElement , closeEye:HTMLElement)=>{
+    if(action === 'show'){
+        input.type = 'text';
+        openEye.classList.remove('d-none')
+        closeEye.classList.add('d-none')
+    }else{
+        input.type = 'password';
+        openEye.classList.add('d-none')
+        closeEye.classList.remove('d-none')
+    }
+    
+}
+
+let openEye = document.getElementById('openEye') as HTMLElement
+let closeEye = document.getElementById('closeEye') as HTMLElement
+let inputPassword = document.getElementById('password') as HTMLInputElement;
+
+if(openEye)openEye.addEventListener('click',()=>togglePassword('hide',inputPassword,openEye,closeEye))
+if(closeEye)closeEye.addEventListener('click',()=>togglePassword('show',inputPassword,openEye,closeEye))

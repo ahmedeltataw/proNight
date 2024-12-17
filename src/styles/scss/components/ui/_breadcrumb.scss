@@ -1,0 +1,25 @@
+
+.breadcrumb{
+    height: 40vh;
+    background-color: var(--blackY);
+    color: var(--w);
+    h2{
+        margin-top: 10vh;
+    }
+    h2 ,a{
+        color: var(--w);
+    }
+    li{
+        &:nth-child(3){
+            color: var(--hover-main);
+        }
+    }
+    .pattern{
+        top: 62%;
+        transform: translateY(-50%);
+        inset-inline-start: 120px;
+    }
+    .pattern2{
+        transform: rotate(-10deg);
+    }
+}

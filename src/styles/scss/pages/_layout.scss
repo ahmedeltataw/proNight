@@ -1,0 +1,102 @@
+@use "../helpers/mixin" as *;
+@use "../helpers/extend" as *;
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--hover-main);
+    border-radius: 8px;
+    height: 180px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+}
+
+// global code
+html[lang="en"]{
+    svg.ChangeDir{
+        transform: rotate(180deg);
+    }
+}
+body {
+    background-color: var(--subBG1);
+}
+
+a {
+    color: var(--blackY);
+
+}
+
+span,
+svg,
+a {
+    transition: color var(--t-s);
+}
+
+figure {
+    margin: 0;
+}
+
+input , select{
+    outline: none;
+    border: 1px solid var(--border-color);
+    background-color: var(--subBG2);
+    transition: var(--t-s);
+    &:focus{
+        border-color: var(--hover-main);
+        background-color: var(--w);
+    }
+    
+}
+label{
+    cursor: pointer;
+}
+
+
+
+
+
+.overLay {
+    cursor: url('https://demo-morata.myshopify.com/cdn/shop/t/3/assets/cursor-close.png?v=93210088594709752341700037392'), pointer;
+
+    &.active {
+        @include overlay(100%, 100%, rgba($color: #000000, $alpha: .3), inset, 0);
+
+        &::before {
+            z-index: 9999;
+            position: fixed;
+            backdrop-filter: blur(1px);
+            height: 100%;
+        }
+
+    }
+
+}
+
+section:not(.hero , .smallFilter  ,.breadcrumb ,.Auth  ,.clientReview ) {
+    min-height: auto;
+    height: auto;
+    @extend %sectionOffset;
+}
+
+:is(h1,h2,h3){
+    color: var(--blackY);
+}
+input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    // text-align: center;
+    font-size: 18px;
+  }
+
+

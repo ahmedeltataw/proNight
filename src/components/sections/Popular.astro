@@ -1,0 +1,15 @@
+---
+import MainHeading from "@components/ui/mainHeading.astro";
+import CardPro from "@components/Card/CardPro.astro";
+---
+<section class="popular">
+    <MainHeading title="استكشف الوحدات الاكثر مبيعا" dabble={{des:"بعض الوحدات الأكثر مبيعا على مستوى العالم، بناءً على المبيعات وتفضيلات العملاء"}} aos={{effect:'fade-down',time:800}} />
+    <div class="container d-grid gap-5 lg:grid-col-3 md:grid-col-2 grid-col-1" >
+        <CardPro aos={{effect:'fade-up',time:1000,delay:100}} />
+        <CardPro aos={{effect:'fade-up',time:1000,delay:200}}/>
+        <CardPro aos={{effect:'fade-up',time:1000,delay:300}}/>
+        <CardPro aos={{effect:'fade-up',time:1000,delay:400}}/>
+        <CardPro aos={{effect:'fade-up',time:1000,delay:500}}/>
+        <CardPro aos={{effect:'fade-up',time:1000,delay:600}}/>
+    </div>
+</section>

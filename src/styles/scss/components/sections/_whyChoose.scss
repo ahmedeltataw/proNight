@@ -1,0 +1,38 @@
+@use "../../helpers/extend" as *;
+.whyChoose{
+    // @extend %sectionOffset;
+    // min-height: 100vh;
+    .whyChooseCard{
+        background-color: var(--w);
+        transition: var(--t-l);
+        box-shadow: 0 0 1.25rem var(--shadowColor);
+        .ImgContainer{
+            background-color: var(--hover-main);
+            
+        }
+        &:nth-child(2){
+            .ImgContainer{
+
+                background-color: var(--red); 
+            }
+        }
+        &:nth-child(3){
+            .ImgContainer{
+
+                background-color: var(--blackY); 
+            }
+        }
+        &:hover{
+            background-color: var(--blackY);
+            .ImgContainer{
+                background-color: var(--w);
+                img{
+                    filter: invert(1);
+                }
+            }
+            :is(h5 , p){
+                color: var(--w);
+            }
+        }
+    }
+}

@@ -1,86 +1,23 @@
 @use "./helpers/color";
-@use "./helpers/mixin" as *;
+
+@use "./pages/layout";
 // components
 @use "./components/header";
+@use "./components/footer";
 @use "./components/sections/hero";
 @use "./components/sections/infoRent";
+@use "./components/sections/popular";
+@use "./components/sections/exploreKsa";
+@use "./components/sections/cityRent";
+@use "./components/sections/ClientReview";
+@use "./components/sections/WhyChoose";
+//page
+@use "./pages/Auth";
 // ui components
 @use "./components/ui/mainHeading";
 @use "./components/ui/dropDownMenu";
 @use "./components/ui/buttons/buttonRound";
 @use "./components/ui/smallFilter";
+@use "./components/ui/breadcrumb";
+@use "./components/ui/proCard";
 
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: var(--hover-main);
-    border-radius: 8px;
-    height: 180px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: #eaeaea;
-}
-
-// global code
-html[lang="en"]{
-    svg.ChangeDir{
-        transform: rotate(180deg);
-    }
-}
-body {
-    background-color: var(--subBG1);
-}
-
-a {
-    color: var(--blackY);
-
-}
-
-span,
-svg,
-a {
-    transition: color var(--t-s);
-}
-
-figure {
-    margin: 0;
-}
-
-input , select{
-    outline: none;
-    border: 1px solid var(--border-color);
-    background-color: var(--subBG2);
-}
-
-
-
-
-
-.overLay {
-    cursor: url('https://demo-morata.myshopify.com/cdn/shop/t/3/assets/cursor-close.png?v=93210088594709752341700037392'), pointer;
-
-    &.active {
-        @include overlay(100%, 100%, rgba($color: #000000, $alpha: .3), inset, 0);
-
-        &::before {
-            z-index: 9999;
-            position: fixed;
-            backdrop-filter: blur(1px);
-            height: 100%;
-        }
-
-    }
-
-}
-
-section:not(.hero , .smallFilter ,.infoRent) {
-    min-height: 100vh;
-    padding-top: 4vh;
-}
-
-:is(h1,h2,h3){
-    color: var(--blackY);
-}

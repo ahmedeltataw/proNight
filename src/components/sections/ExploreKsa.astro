@@ -1,0 +1,69 @@
+---
+import { Image } from "astro:assets";
+import test from "@assets/banner/hero-1.jpg";
+import Link from "@components/ui/Link.astro";
+import MainHeading from "@components/ui/mainHeading.astro";
+---
+
+<section class="exploreKsa">
+    <MainHeading title=" استكشف المملكة العربية السعودية" dabble={{des:"ابحث عن المدينة التي تريدها واستكشف المزيد من الوحدات المتوفرة فيها"}} aos={{effect:'fade-down',time:800}} />
+    <div class="container h-full relative">
+        <div class="swiper exploreSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide text-center">
+                <div class="exploreCard w-full h-full  relative">
+                    <figure class="w-full h-full overflow-hidden round-6 ">
+                        <Image src={test} alt="test" format="webp" quality={70} class={`round-6 img-cover`} />
+                    </figure>
+                    <div class="exploreDetails absolute  ">
+                        <h3 class="fs-30 fw-700"> جدة </h3>
+                        <p class="o-90 fs-18">5 اماكن الاقامة</p>
+                    </div>
+                    <Link href="#!" Class="absolute  inset-0 w-full h-full " aria=" اكتشف مدينة جدة" />
+                </div>
+              </div>
+              <div class="swiper-slide text-center">
+                <div class="exploreCard w-full h-full  relative">
+                    <figure class="w-full h-full overflow-hidden round-6 ">
+                        <Image src={test} alt="test" format="webp" quality={70} class={`round-6 img-cover`} />
+                    </figure>
+                    <div class="exploreDetails absolute  ">
+                        <h3 class="fs-30 fw-700"> جدة </h3>
+                        <p class="o-90 fs-18">5 اماكن الاقامة</p>
+                    </div>
+                    <Link href="#!" Class="absolute  inset-0 w-full h-full " aria=" اكتشف مدينة جدة" />
+                </div>
+              </div>
+              <div class="swiper-slide text-center">
+                <div class="exploreCard w-full h-full  relative">
+                    <figure class="w-full h-full overflow-hidden round-6 ">
+                        <Image src={test} alt="test" format="webp" quality={70} class={`round-6 img-cover`} />
+                    </figure>
+                    <div class="exploreDetails absolute  ">
+                        <h3 class="fs-30 fw-700"> جدة </h3>
+                        <p class="o-90 fs-18">5 اماكن الاقامة</p>
+                    </div>
+                    <Link href="#!" Class="absolute  inset-0 w-full h-full " aria=" اكتشف مدينة جدة" />
+                </div>
+              </div>
+              <div class="swiper-slide text-center">
+                <div class="exploreCard w-full h-full  relative">
+                    <figure class="w-full h-full overflow-hidden round-6 ">
+                        <Image src={test} alt="test" format="webp" quality={70} class={`round-6 img-cover`} />
+                    </figure>
+                    <div class="exploreDetails absolute  ">
+                        <h3 class="fs-30 fw-700"> جدة </h3>
+                        <p class="o-90 fs-18">5 اماكن الاقامة</p>
+                    </div>
+                    <Link href="#!" Class="absolute  inset-0 w-full h-full " aria=" اكتشف مدينة جدة" />
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="btn-swiper exploreSwiper-navigation absolute top-0 w-full sm-max:w-9/10">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+    </div>
+</section>

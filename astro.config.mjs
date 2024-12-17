@@ -24,7 +24,7 @@ export default defineConfig({
 
     compressHTML: true,
 
-    //   optimizeHoistedScript: true,
+      optimizeHoistedScript: true,
     output: 'static',
 
     vite: {
@@ -58,7 +58,7 @@ export default defineConfig({
     },
 
     integrations: [purgecss({
-        safelist: ['a'], // Keep these classes
+        safelist: ['a' , 'li'], // Keep these classes
         content: [
             process.cwd() + '/src/**/*.{astro,vue}' // Watching astro and vue sources (read SSR docs below)
         ],

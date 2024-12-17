@@ -1,0 +1,46 @@
+@use "../helpers/extend" as *;
+footer{
+    background-color: var(--blackY);
+    padding-top: 5vh;
+    min-height: 55vh;
+    :is(h6 ,a ){
+        color: var(--w);
+    }
+    h6{
+        &::before{
+            @extend %A_B;
+            width: 30%;
+            height: 4px;
+            background-color: var(--hover-main);
+            bottom: -4px;
+            // opacity: .7;
+        }
+    }
+    .footerMeta{
+        li{
+            a{
+                svg{
+                    background-color: var(--hover-main);
+                    color: var(--w);
+                }
+                &:hover{
+                    color: var(--hover-main);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .copyRight{
+        background-color: rgba($color: #212121, $alpha: .7);
+        p{
+            color: rgba($color: #ffff, $alpha: .7);
+
+        }
+
+    }
+    @media(max-width:400px){
+        .container{
+            grid-template-columns: 1fr;
+        }
+    }
+}

@@ -1,14 +1,21 @@
 ---
 import MainHeading from "@components/ui/mainHeading.astro";
 import CardInfoRent from "@components/Card/CardInfoRent.astro";
-import Link from "@components/ui/Link.astro";
-import Button from "@components/ui/Button.astro";
+import {infoRentCardData} from "@data/data";
+import type {infoRentCardType} from "../../type/type";
+import { Image } from "astro:assets";
+import pattern from "@assets/Svg/pattern.svg";
 ---
-<section class="infoRent ">
-    <MainHeading title="كيفية استاءجر وحدتك" dabble={{des:"إن  تأجير وحدتك هي عملية مباشرة تتضمن عادةً الخطوات التالية"}} />
+<section class="infoRent relative" >
+    <MainHeading title="كيفية استاءجر وحدتك" dabble={{des:"إن  تأجير وحدتك هي عملية مباشرة تتضمن عادةً الخطوات التالية"}} aos={{effect:'fade-down',time:800}} />
+    <figure class="pattern absolute inset-s-0 top-0">
+        <Image src={pattern} alt="pattern" class="img-cover" />
+    </figure>
     <div class="container d-grid gap-5 lg:grid-col-3 md:grid-col-2 grid-col-1 ">
-        <CardInfoRent/>
-        <CardInfoRent/>
-        <CardInfoRent/>
+        {
+            infoRentCardData.map((card:infoRentCardType) => (
+                <CardInfoRent title={card.title} src={card.src} des={ card.des} aos={card.aos} />
+            ))
+        }
     </div>
 </section>

@@ -1,0 +1,29 @@
+---
+import Link from "@components/ui/Link.astro";
+import pattern from "@assets/pattern/breadcrumb.png";
+import pattern2 from "@assets/pattern/pattern-1.png";
+import { Image } from "astro:assets";
+interface Props {
+    title: string;
+}
+const { title } = Astro.props;
+---
+
+<section class="breadcrumb relative overflow-hidden">
+    <figure class="pattern2 absolute top-0 inset-e-0 o-30  w-100 h-full lg-max:d-none ">
+        <Image src={pattern2} alt="pattern" class="img-cover" quality={70} format="webp" />
+    </figure>
+    <div class="container h-full d-flex align-items-center justify-center flex-col gap-3 relative">
+        <figure class="pattern absolute   w-56 h-56 lg-max:d-none">
+            <Image src={pattern} alt="pattern" class="img-contain" quality={70} format="webp" />
+        </figure>
+        <h2 class="fs-36 fw-700 ">{title}</h2>
+        <ul class="d-flex align-items-center gap-2">
+            <li>
+                <Link href="/" Class="fs-18 fw-500" aria="home" text="الرئيسية" />
+            </li>
+            <li class="fs-18 o-80">/</li>
+            <li class="fs-18 fw-500">{title}</li>
+        </ul>
+    </div>
+</section>

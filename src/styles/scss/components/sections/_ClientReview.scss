@@ -1,0 +1,53 @@
+@use "../../helpers/extend" as *;
+.clientReview {
+    background-color: var(--blackY);
+    @extend %sectionOffset;
+    min-height: 80vh;
+    .mainHeading{
+        :is(h2 , p){
+            color: var(--w);
+        }
+    }
+    .swiper-slide{
+        padding: 15px;
+    }
+    .cardReview{
+        background-color: var(--w);
+        box-shadow: 0 0 1.25rem var(--shadowColor);
+        figure{
+            border-color: var(--subTitle);
+        }
+        .rate{
+            svg{
+                color: var(--yellow);
+            }
+        }
+    }
+    .btn-swiper{
+        bottom: -35px;
+    }
+    .swiper-button-prev, .swiper-button-next{
+        @extend %centerX;
+        @extend %swiperBtnStyle;
+        background-color: transparent;
+        border: 1px solid var(--hover-main);
+        &:hover{
+            background-color: var(--hover-main);
+            &::after{
+                color: var(--w);
+            }
+        }
+        
+    }
+    .swiper-button-next{
+        right: auto;
+        margin-inline: 50px;
+    }
+    .swiper-button-prev{
+        margin-inline: -10px;
+    }
+    @media(max-width:991px){
+        min-height: 95vh;
+    }
+    
+}

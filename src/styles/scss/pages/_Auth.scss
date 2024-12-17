@@ -1,0 +1,59 @@
+@use "../helpers/extend" as *;
+.Auth{
+    padding-block: 8vh;
+    .AuthForm{
+        width: min(100%, 600px);
+        background-color: var(--w);
+        box-shadow: 0px 10px 20px 0px var(--shadowColor2);
+
+        .remember{
+            :is(a,label){
+                color: var(--subTitle);
+            }
+            label{
+                order: 2;
+            }
+            input{
+                accent-color: var(--hover-main);
+            }
+            a:hover{
+                color: var(--hover-main);
+            }
+        }
+        .break{
+            
+            &::before , &::after{
+                content: '';
+                position: absolute;
+                @extend %centerY;
+                width: calc(40% - 110px);
+                height: 1px;
+                background-color: var(--subTitle);
+                opacity: .7;
+                
+            }
+            &::before{
+                inset-inline-start: 52px;
+            }
+            &::after{
+                inset-inline-end: 52px;
+            }
+        }
+        p{
+            color: var(--subTitle);
+        }
+        .notHave a:hover{
+            color: var(--hover-main);
+        }
+        .btn{
+            padding: .7em 1em;
+        }
+        .IsPassword{
+            svg{
+                @extend %centerY;
+                color: var(--subTitle);
+                cursor: pointer;
+            }
+        }
+    }
+}

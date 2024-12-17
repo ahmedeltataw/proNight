@@ -42,7 +42,7 @@ import DropDownMenu from "@components/ui/DropDownMenu.astro";
         }
         <li class="lg:d-none lg-max:w-9/10 relative">
           <Link
-            href="/"
+            href="signIn.html"
             Class="navLink fs-16 fw-700 "
             aria="تسجيل الدخول"
             text="تسجيل الدخول"
@@ -50,7 +50,7 @@ import DropDownMenu from "@components/ui/DropDownMenu.astro";
         </li>
         <li class="lg:d-none lg-max:w-9/10 relative">
           <Link
-            href="/"
+            href="signUp.html"
             Class="navLink fs-16 fw-700 "
             aria="تسجيل "
             text="تسجيل "
@@ -63,7 +63,12 @@ import DropDownMenu from "@components/ui/DropDownMenu.astro";
           aria="button"
           ClassName="btn btn-round relative round-4 lg-max:d-none"
         >
-          <span class="fs-16 fw-700 relative">تسجيل الدخول</span>
+          <Link
+            href="signIn.html"
+            Class="fs-16 fw-700 relative"
+            aria="تسجيل الدخول"
+            text="تسجيل الدخول"
+          />
         </Button>
       
         <DropDownMenu id="langDropMenu" ClassName="" BtnText="اللغة العرية" type="Image" data={DropDownLangData}  />

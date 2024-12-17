@@ -17,8 +17,29 @@ export interface LinkType {
     },
     ImageSrc?: string | any,
 }
-export interface RosaryType {
-    id:string;
+export interface infoRentCardType{
     title:string;
+    src:string | any;
+    des?:string;
+    aos?:{
+        effect:string |any,
+        time:string |any,
+        delay:string |any,
+    }
 }
 
+export interface footerListType{
+    title: string,
+    links:{
+        href: string;
+        text: string;
+        icon?:{
+            name?: string,
+        }
+    }[],
+    aos?:{
+        effect:string |any,
+        time:string |any,
+        delay?:string |any,
+    }
+}

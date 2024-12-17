@@ -1,0 +1,7 @@
+@use "../../helpers/extend" as *;
+@use "../../helpers/mixin" as *;
+.cityRent{
+    background-color: var(--mainBG);
+    @extend %swiperBtn;
+    
+}

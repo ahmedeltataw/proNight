@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import test from "@assets/model-1.png";
+
+---
+
+<div class="cardReview p-10 round-6">
+    <div class="cardTop mb-5 d-flex align-items-center gap-5">
+        <figure class="w-38 h-38 round-cricle border-1 border-solid">
+            <Image src={test} alt="model" class={`round-cricle img-cover`} quality={70} format="webp"/>
+        </figure>
+        <div class="userInfo">
+            <h4>احمد التطاوي</h4>
+            <div class="rate d-flex align-items-center ">
+                <Icon name="star" class="w-12 h-12" />
+                <Icon name="star" class="w-12 h-12" />
+                <Icon name="star" class="w-12 h-12" />
+                <Icon name="star" class="w-12 h-12" />
+                <Icon name="star" class="w-12 h-12" />
+                <span class="fs-18 o-80 ps-2">(5)</span>
+            </div>
+        </div>
+    </div>
+    <p class="comment fw-500 fs-16 o-80">
+        بصفتي مسافرًا متكررًا لأغراض العمل، فأنا أعتمد على ProNight لتلبية جميع احتياجاتي. فتشكيلتها الواسعة من الفنادق ومواقعها الملائمة وأسعارها التنافسية تجعلها خياري المفضل في كل مرة. بالإضافة إلى ذلك، فإن خدمة العملاء التي تقدمها من الدرجة الأولى!
+    </p>
+    
+</div>

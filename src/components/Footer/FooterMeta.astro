@@ -1,0 +1,40 @@
+---
+import Link from "@components/ui/Link.astro"
+interface Props {
+    title: string;
+    link:{
+        href: string;
+        text: string;
+        icon?:{
+            name?: string,
+        }
+    }[];
+    aos?:{
+        effect:string |any,
+        time:string |any,
+        delay?:string |any,
+    }
+    metaType: 'link' | 'contact'
+}
+const {title, link , aos=false ,metaType } = Astro.props;
+---
+<div class="footerMeta" {...aos && { 'data-aos': aos.effect, 'data-aos-duration': aos.time ,'data-aos-delay': aos.delay }}>
+    <h6 class="fs-24 fw-700 pb-4 relative d-inline-block ">{title}</h6>
+    <ul class="pt-8">
+        {
+            metaType === 'link' ? (
+            link.map((item) => (
+            <li class="pb-8">
+                <Link href={item.href} Class="fs-16 fw-500 o-70" aria={item.text} text={item.text} />
+            </li>
+        ))
+            ):(
+            link.map((item) => (
+            <li class="pb-8">
+                <Link href={item.href} Class="fs-16 fw-500 o-100 d-flex align-items-center gap-3" aria={item.text} text={item.text} icon={{name:item.icon?.name, ClassIcon:'w-16 h-16 p-2 round-3' ,side:'left'}} />
+            </li>
+        ))
+            )
+        }
+    </ul>
+</div>

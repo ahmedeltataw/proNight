@@ -1,0 +1,26 @@
+---
+import CopyRight from "./CopyRight.astro";
+import FooterMeta from "./FooterMeta.astro";
+import type {footerListType} from "../../type/type";
+import { footerListData ,footerContactData } from "@data/data";
+import {Image} from "astro:assets";
+import FooterImg from "@assets/pattern/footer-pattern.png";
+---
+<footer class="relative">
+    <figure class="pattern absolute top-0 inset-0 o-20  w-full h-full  ">
+        <Image src={FooterImg} alt="pattern" class="img-cover" quality={70} format="webp" />
+    </figure>
+    <div class="container d-grid lg:grid-col-4 md:grid-col-3 sm:grid-col-2 sm-max:grid-col-2">
+        {
+            footerListData.map((footer:footerListType)=>(
+                <FooterMeta title={footer.title} link={footer.links} aos={footer.aos} metaType={`link`} />
+            ))
+        }
+        {
+            footerContactData.map((footer:footerListType)=>(
+                <FooterMeta title={footer.title} link={footer.links} aos={footer.aos} metaType={`contact`} />
+            ))
+        }
+    </div>
+    <CopyRight/>
+</footer>
