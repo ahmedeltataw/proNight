@@ -28,14 +28,7 @@ export default defineConfig({
     output: 'static',
 
     vite: {
-        css: {
-            preprocessorOptions: {
-                scss: {
-                    additionalData: `@use "src/styles/scss/helpers/_color.scss" as *; @use "src/styles/scss/helpers/_mixin.scss" as *;`,
-                    quietDeps: true,
-                }
-            }
-        },
+        
         build: {
             rollupOptions: {
                 output: {
