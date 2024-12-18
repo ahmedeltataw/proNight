@@ -1,34 +1,20 @@
 import { defineConfig } from 'astro/config';
-
-// https://purgecss.com/configuration.html#configuration-file
 import purgecss from 'astro-purgecss';
-
-// https://github.com/jonathantneal/astro-icon
 import icon from 'astro-icon';
 
 export default defineConfig({
     build: {
         assets: '_astro',
-        // assets: 'assets',
-        inlineStylesheets: 'auto',
-        // inlineStylesheets: 'never',
+        inlineStylesheets: 'never',
         format: 'file',
-        site: "https://ryn-proNight.com/",
-        // base: '/',
-        // assetsPrefix: './'
+        site: "https://ryn-proNight.com/"
     },
-
     image: {
         domains: ["astro.build"]
     },
-
     compressHTML: true,
-
-    //   optimizeHoistedScript: true,
     output: 'static',
-
     vite: {
-        
         build: {
             rollupOptions: {
                 output: {
@@ -54,10 +40,16 @@ export default defineConfig({
                     }
                 }
             }
+        },
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    quietDeps: true,
+                    charset: false
+                }
+            }
         }
-
     },
-
     integrations: [purgecss({
         safelist: ['a', 'li'], // Keep these classes
         content: [
