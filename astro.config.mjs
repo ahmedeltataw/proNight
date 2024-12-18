@@ -44,7 +44,7 @@ export default defineConfig({
         
     },
     integrations: [purgecss({
-        safelist: ['a', 'li'], // Keep these classes
+        safelist: ['a', 'li' ,'p' , 'sm\:w-9\/10'], // Keep these classes
         content: [
             process.cwd() + '/src/**/*.{astro,vue}' // Watching astro and vue sources
         ],
