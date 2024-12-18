@@ -83,9 +83,9 @@ export const infoRentCardData:infoRentCardType[]=[
         }
     },
 ]
-import why from "@assets/svg/why-1.svg";
-import why2 from "@assets/svg/why-2.svg";
-import why3 from "@assets/svg/why-3.svg";
+import why from "@assets/Svg/why-1.svg";
+import why2 from "@assets/Svg/why-2.svg";
+import why3 from "@assets/Svg/why-3.svg";
 
 export const cardWhyChooseData:infoRentCardType[]=[
     {
