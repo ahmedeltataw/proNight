@@ -5,7 +5,7 @@ import icon from 'astro-icon';
 export default defineConfig({
     build: {
         assets: '_astro',
-        inlineStylesheets: 'never',
+        inlineStylesheets: 'auto',
         format: 'file',
         site: "https://ryn-proNight.com/"
     },
@@ -41,14 +41,7 @@ export default defineConfig({
                 }
             }
         },
-        css: {
-            preprocessorOptions: {
-                scss: {
-                    quietDeps: true,
-                    charset: false
-                }
-            }
-        }
+        
     },
     integrations: [purgecss({
         safelist: ['a', 'li'], // Keep these classes
