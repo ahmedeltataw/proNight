@@ -1,6 +1,10 @@
 {
-    "buildCommand": "npm run build",
-    "installCommand": "npm install --force",
-    "framework": "astro",
-    "outputDirectory": "dist"
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "framework": "astro",
+  "outputDirectory": "dist",
+  "version": 2,
+  "env": {
+    "NODE_VERSION": "18.x"
   }
+}
