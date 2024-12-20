@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LayoutFilter from '@components/layout/LayoutFilter.astro';
+import Breadcrumb from '@components/ui/Breadcrumb.astro';
+import SmallFilter from '@components/filter/SmallFilter.astro';
+import AsideFilter from '@components/filter/AsideFilter.astro';
+import UnitsSection from '@components/unitsRent/UnitsSection.astro';
+---
+<Layout title='الوحدات'>
+    <Breadcrumb title="الوحدات" withFilter />
+    <SmallFilter page='another' />
+    <LayoutFilter pageTitle='units' >
+        <AsideFilter />
+        <UnitsSection />
+    </LayoutFilter>
+</Layout>
+<script
+  src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+  type="module"
+></script>

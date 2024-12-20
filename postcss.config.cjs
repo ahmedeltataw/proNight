@@ -24,6 +24,5 @@ module.exports = {
     ), // Enable CSSO minification
     require('postcss-flexbugs-fixes')(),
     require("postcss-pxtorem"),
-
   ]
 };

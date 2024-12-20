@@ -28,6 +28,15 @@
     &.btn-delete {
         background-color: #dc3545;
     }
+    &.btn-noBg{
+        background-color: transparent;
+        svg{
+            color: var(--hover-main);
+        }
+        span{
+            color: var(--red);
+        }
+    }
 }
 
 .btn-round {

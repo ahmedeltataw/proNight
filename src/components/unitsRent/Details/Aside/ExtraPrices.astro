@@ -1,0 +1,55 @@
+---
+import AsideHeading from "./AsideHeading.astro";
+import FormGroup from "@components/ui/FormGroup.astro";
+---
+
+<div class="extraPrices py-4 px-5 round-4 mb-6">
+  <AsideHeading title="السعر الاضافي"/>
+  <form class="extra pt-4">
+    <div class="bigGroup d-flex align-items-center justify-between px-5 mb-3">
+      <FormGroup
+        type="checkbox"
+        title="Lawn garden"
+        name="price"
+        place="السعر الاضافي"
+        isDisabled={false}
+        isLabel={true}
+        LabelClassName="fs-16 fw-700"
+        InputClassName="w-10 h-10"
+        FormClassName="mb-3 d-flex align-items-center gap-2"
+        id="garden"
+      />
+      <span class="fs-16 fw-700">100ريال</span>
+    </div>
+    <div class="bigGroup d-flex align-items-center justify-between px-5 mb-3">
+      <FormGroup
+        type="checkbox"
+        title="Clearning"
+        name="price"
+        place="السعر الاضافي"
+        isDisabled={false}
+        isLabel={true}
+        LabelClassName="fs-16 fw-700"
+        InputClassName="w-10 h-10"
+        FormClassName="mb-3 d-flex align-items-center gap-2"
+        id="Clearning"
+      />
+      <span class="fs-16 fw-700">100ريال</span>
+    </div>
+    <div class="bigGroup d-flex align-items-center justify-between px-5 ">
+      <FormGroup
+        type="checkbox"
+        title="Breakfasts"
+        name="price"
+        place="السعر الاضافي"
+        isDisabled={false}
+        isLabel={true}
+        LabelClassName="fs-16 fw-700"
+        InputClassName="w-10 h-10"
+        FormClassName="mb-3 d-flex align-items-center gap-2"
+        id="Breakfasts"
+      />
+      <span class="fs-16 fw-700">100ريال</span>
+    </div>
+  </form>
+</div>

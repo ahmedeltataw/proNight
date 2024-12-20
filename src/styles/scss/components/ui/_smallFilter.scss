@@ -1,22 +1,24 @@
 @use "../../helpers/extend" as *;
+
 .smallFilter {
     z-index: 4;
+
     form {
         background-color: var(--w);
-        box-shadow: 0 11px 1.25rem var(--shadowColor2);
-        margin-top: -100px  ;
-        
+        box-shadow: 0 11px 1.25rem var(--shadowColor);
+
+
         input[type="date"] {
             appearance: none;
             position: relative;
             cursor: pointer;
             color: transparent;
-            
+
             &::-webkit-datetime-edit {
                 color: var(--blackY);
                 display: none;
             }
-            
+
             &::-webkit-calendar-picker-indicator {
                 position: absolute;
                 width: 100%;
@@ -29,7 +31,7 @@
                 cursor: pointer;
                 z-index: 1;
             }
-            
+
             &::before {
                 content: attr(placeholder);
                 position: absolute;
@@ -42,36 +44,53 @@
 
             &[data-value="true"] {
                 color: var(--blackY);
+
                 &::-webkit-datetime-edit {
                     display: block;
                 }
+
                 &::before {
                     display: none;
                 }
             }
-            
-            & + svg {
+
+            &+svg {
                 inset-inline-end: 8px;
                 @extend %centerY;
                 pointer-events: none;
                 z-index: 0;
             }
         }
-        
-        .selectForm{
-            select{
+
+        .selectForm {
+            select {
                 appearance: none;
             }
-            svg{
+
+            svg {
                 // position: absoppxxlute;
                 inset-inline-end: 8px;
-                @extend %centerY ;
+                @extend %centerY;
                 top: 65%;
                 pointer-events: none;
             }
         }
-        @media (max-width: 566px) {
-            margin-top: -220px  ;
+
+    }
+
+    &.index {
+        form {
+            margin-top: -100px;
+
+            @media (max-width: 566px) {
+                margin-top: -220px;
+            }
         }
     }
+    &.another {
+        form {
+            margin-top: -50px;
+        }
+    }
+
 }

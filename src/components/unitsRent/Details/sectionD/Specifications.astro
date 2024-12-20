@@ -1,0 +1,38 @@
+---
+import AsideHeading from "../Aside/AsideHeading.astro";
+import { Image } from "astro:assets";
+import bed from "@assets/Svg/bed.svg";
+import bathroom from "@assets/Svg/bathroom.svg";
+import BabyCarriage from "@assets/Svg/BabyCarriage.svg";
+import Users from "@assets/Svg/Users.svg";
+import ruler from "@assets/Svg/ruler.svg";
+
+---
+<div class="specification py-4 px-5 round-4 mb-6">
+    <AsideHeading title="مواصفات الوحدة"/>
+    <div class="specificationContainer d-flex align-items-center justify-between flex-wrap py-3 px-4">
+        <div class="speBox d-flex align-items-center gap-3">
+            <Image src={bed} alt="bed" class={`w-18 h-18 round-2 img-cover border-1 border-solid`} quality={70} />
+            <p class="fs-18 fw-700">2اسرة</p>
+        </div>
+        <div class="speBox d-flex align-items-center gap-3">
+            <Image src={ruler} alt="ruler" class={`w-18 h-18 round-2 img-cover border-1 border-solid`} quality={70} />
+            <p class="fs-18 fw-700">120م</p>
+        </div>
+        <div class="speBox d-flex align-items-center gap-3">
+            
+            <Image src={bathroom} alt="bathroom" class={`w-18 h-18 round-2 img-cover border-1 border-solid`} quality={70} />
+            <p class="fs-18 fw-700">2 حمام</p>
+        </div>
+        <div class="speBox d-flex align-items-center gap-3">
+            
+            <Image src={Users} alt="Users" class={`w-18 h-18 round-2 img-cover border-1 border-solid`} quality={70} />
+            <p class="fs-18 fw-700">2 بالغين</p>
+        </div>
+        <div class="speBox d-flex align-items-center gap-3">
+            
+            <Image src={BabyCarriage} alt="BabyCarriage" class={`w-18 h-18 round-2 img-cover border-1 border-solid`} quality={70} />
+            <p class="fs-18 fw-700">2 اطفال</p>
+        </div>
+    </div>
+</div>

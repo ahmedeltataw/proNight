@@ -5,8 +5,9 @@ import pattern2 from "@assets/pattern/pattern-1.png";
 import { Image } from "astro:assets";
 interface Props {
     title: string;
+    withFilter?: boolean; 
 }
-const { title } = Astro.props;
+const { title ,withFilter=false } = Astro.props;
 ---
 
 <section class="breadcrumb relative overflow-hidden">
@@ -17,7 +18,7 @@ const { title } = Astro.props;
         <figure class="pattern absolute   w-56 h-56 lg-max:d-none">
             <Image src={pattern} alt="pattern" class="img-contain" quality={70} format="webp" />
         </figure>
-        <h2 class="fs-36 fw-700 ">{title}</h2>
+        <h2 class:list={['fs-36 fw-700' , withFilter && 'smallMargin']}>{title}</h2>
         <ul class="d-flex align-items-center gap-2">
             <li>
                 <Link href="/" Class="fs-18 fw-500" aria="home" text="الرئيسية" />

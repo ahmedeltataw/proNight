@@ -230,3 +230,68 @@ let inputPassword = document.getElementById('password') as HTMLInputElement;
 
 if(openEye)openEye.addEventListener('click',()=>togglePassword('hide',inputPassword,openEye,closeEye))
 if(closeEye)closeEye.addEventListener('click',()=>togglePassword('show',inputPassword,openEye,closeEye))
+// ====accordion=======
+
+const accordion = document.querySelectorAll(".accordion button") as NodeListOf<HTMLButtonElement>;
+
+const toggleAccordion = ( Btn:HTMLButtonElement)=>{
+    let acc = Btn.nextElementSibling as HTMLDivElement;
+    if(Btn.getAttribute('aria-controls') === acc.id){
+        acc.classList.toggle('show');
+        if(acc.classList.contains('show')){
+            Btn.setAttribute('aria-expanded' , 'true');
+            toggleClass(Btn , ['open'] , 'add')
+        }else{
+            Btn.setAttribute('aria-expanded' , 'false');
+            toggleClass(Btn , ['open'] , 'remove')
+        }
+    }
+}
+const accordionWork = ()=>{
+    accordion.forEach((btn:HTMLButtonElement)=>{
+        btn.addEventListener('click' , ()=>toggleAccordion(btn))
+    })
+}
+document.addEventListener('DOMContentLoaded', accordionWork);
+
+// Price Range Slider
+
+let minVal = document.getElementById('minRange') as HTMLInputElement;
+let maxVal = document.getElementById('maxRange') as HTMLInputElement;
+let sliderTrack = document.querySelector('.track') as HTMLDivElement;
+let tooltipMin = document.querySelector('.tooltipMin') as HTMLDivElement;
+let tooltipMax = document.querySelector('.tooltipMax') as HTMLDivElement;
+let minGap = 0;
+let minRange = minVal && parseInt(minVal.min);
+let maxRange = maxVal && parseInt(maxVal.max);
+
+const slideMove = (action:'less' | 'more')=>{
+    if(!minVal || !maxVal) return;
+    let gap = parseInt(maxVal.value) - parseInt(minVal.value);
+    if(gap <= minGap){
+        action === 'less' &&( minVal.value = (parseInt(maxVal.value) - minGap).toString());
+        action === 'more' &&( maxVal.value = (parseInt(minVal.value) + minGap).toString());
+    }
+    
+    
+    action === 'less' && (tooltipMin.innerText = minVal.value);
+    action === 'more' && (tooltipMax.innerText = maxVal.value);
+    setRange();
+}
+const setRange =()=>{
+    if(!sliderTrack || !tooltipMin || !tooltipMax || !maxRange || !minRange) return;
+    const minPercent = ((Number(minVal.value) - minRange) / (maxRange - minRange)) * 100;
+    const maxPercent = ((Number(maxVal.value) - minRange) / (maxRange - minRange)) * 100;
+    
+    sliderTrack.style.right = minPercent + '%';
+    sliderTrack.style.left = (100 - maxPercent) + '%';
+    
+    tooltipMin.style.right = `calc(${minPercent}% + 15px)`;
+    tooltipMax.style.left = `calc(${100 - maxPercent}% - 18px)`;
+}
+window.addEventListener('load' , ()=>{
+    slideMove('less');
+    slideMove('more');
+})
+if(minVal)minVal.addEventListener('input' , ()=>slideMove('less'));
+if(maxVal)maxVal.addEventListener('input' , ()=>slideMove('more'));

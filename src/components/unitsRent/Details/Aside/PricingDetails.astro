@@ -1,0 +1,17 @@
+---
+import AsideHeading from "./AsideHeading.astro";
+---
+
+<div class="priceDetails py-4 px-5 round-4 mb-6">
+  <AsideHeading title="تفاصيل السعر" />
+  <div class="ownerBox d-flex align-items-center justify-between gap-4 p-3 mt-3 round-4">
+    <div class="price d-flex align-items-center gap-4">
+      <del class="oldPrice fs-20">2000</del>
+      <p class="NewPrice fs-24 fw-700">
+        1000<small class="fs-16">ر.ل</small><span class="fs-16">/لليوم</span>
+      </p>
+    </div>
+    <p class="fs-20 fw-700 pe-2 dis">50%</p>
+  </div>
+  <span class="fs-16 o-80 d-inline-block py-3">السعر لا يشمل الخدمات الاضافية</span>
+</div>

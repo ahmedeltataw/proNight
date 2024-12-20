@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import Breadcrumb from '@components/ui/Breadcrumb.astro';
+import CardPro from '@components/Card/CardPro.astro';
+import Button from '@components/ui/Button.astro';
+---
+
+<Layout title='المفضلة'>
+    <Breadcrumb title="المفضلة" />
+    <section class="Favorites">
+        <div class="container d-grid gap-5 lg:grid-col-3 md:grid-col-2 grid-col-1">
+            <CardPro active={true}/>
+            <CardPro active={true}/>
+            <CardPro active={true}/>
+            <CardPro active={true}/>
+            <CardPro active={true}/>
+            <CardPro active={true}/>
+            <div class="empty mx-auto d-none">
+                <dotlottie-player
+                    src="https://lottie.host/8fd46bec-8e7a-4094-8395-394d974e1f0b/FC3EPZRECg.lottie"
+                    background="transparent"
+                    speed="1"
+                    style="width: 100%; height: 100%"
+                    loop
+                    autoplay
+                    ></dotlottie-player>
+             </div>
+        </div>
+        <Button type='button' aria={`اظهار المزيد`} ClassName="btn btn-noBg w-full  relative round-4 w-100 mt-8" icon={{name:"loader", Class:"w-28 h-28 relative mx-auto" ,side:"left"}} />
+    </section>
+</Layout>
+<script
+  src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+  type="module"
+></script>

@@ -1,0 +1,356 @@
+@use "../helpers/extend" as *;
+
+.layoutPageFilter {
+
+    &.units {
+        .container {
+            grid-template-columns: 300px 1fr;
+
+        }
+
+        @media(max-width:991px) {
+            .container {
+
+                grid-template-columns: 1fr;
+            }
+
+            .asideFilter {
+                height: auto;
+            }
+
+        }
+
+        @media(max-width:380px) {
+            .unitsCard {
+                .d-grid {
+                    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+                }
+            }
+        }
+    }
+
+    &.unitsDetails {
+        .container {
+            grid-template-columns: 400px 1fr;
+            @media(max-width:991px){
+                grid-template-columns:  1fr;
+            }
+        }
+        .AsideHeading {
+            &::before {
+                @extend %A_B;
+                width: 100%;
+                height: 2px;
+                background-color: #F4F4F4;
+                bottom: 0;
+            }
+
+            &::after {
+                @extend %A_B;
+                width: 50px;
+                height: 2px;
+                background-color: var(--hover-main);
+                inset-inline-start: 0;
+                bottom: 0;
+                z-index: 1;
+                border-radius: 6px;
+            }
+        }
+        .bookDetails {
+            background-color: transparent;
+
+           
+
+
+
+            .owner {
+                .ownerBox {
+
+                    @extend %rate;
+
+                    figure {
+                        border-color: var(--w);
+                    }
+                }
+            }
+
+            .extraPrices {
+                .extra {
+                    @extend %checkBox;
+                }
+            }
+
+            .priceDetails {
+                @extend %price;
+
+                span {
+                    color: var(--subTitle);
+                }
+
+                .dis {
+                    color: var(--hover-main);
+                }
+            }
+
+            :is(.owner, .priceDetails) :is(.ownerBox) {
+                background-color: var(--subBG2);
+            }
+        }
+
+        .unitDel {
+            .galleryContainer {
+                max-width: 200px;
+                @media(min-width:380px) {
+                    max-width: 300px;
+                }
+                @media(min-width:580px) {
+                    max-width: 400px;
+                }
+                @media(min-width:768px) {
+                    max-width: 600px;
+                }
+                @media(min-width:992px) {
+                    max-width: 900px;
+                }
+                .main-swiper {
+                    height: 400px;
+
+                    .swiper-button-next,
+                    .swiper-button-prev {
+                        @extend %swiperBtnStyle;
+                    }
+                }
+                .thumb-swiper {
+                    .swiper-slide {
+                        width: 25%;
+                        height: 100%;
+                        opacity: 0.6;
+                        cursor: pointer;
+                    }
+    
+                    .swiper-slide-thumb-active {
+                        opacity: 1;
+                    }
+                }
+            }
+            .specification{
+                .speBox{
+                    img{
+                        border-color: var(--hover-main);
+                        
+                    }
+                    
+                }
+            }
+            .Map{
+                .mapContainer{
+                    width: min(900px ,100%);
+                    height: 400px;
+                    iframe{
+                        width: 100%;
+                        height: 100%
+                    }
+                }
+            }
+            .Review{
+                .reviewContainer{
+                    .reviewRange{
+                        border-color: #e8e8e8;
+                        width: 200px;
+                        h5{
+                            line-height: 1;
+                            color: var(--hover-main);
+                        }
+
+                    }
+                    .progressContainer{
+                        width: calc(100% - 224px);
+                        h6{
+                            min-width: 150px;
+                        }
+                        .progress{
+                            background-color: var(--mainBG);
+                            width: 100%;
+                            height: 7px;
+                            border-radius: 6px;
+                            .progress-bar{
+                                background-color: var(--yellow);
+                                height: 100%;
+                                border-radius: 6px;
+                            }
+                        }
+                        .proBox{
+                            span{
+                                min-width: 15px;
+                            }
+                        }
+                    }
+                    @media(max-width:580px){
+                        .reviewRange , .progressContainer{
+                            width: 100%;
+                        }
+                    }
+                }
+                .userReview{
+                    border-color: #e8e8e8;
+                    h6 , .userReviewBox{
+                        border-bottom: 1px solid var(--border-color);
+                    }
+                    .userInfo{
+                        @extend %rate;
+                        figure{
+                            border-color: var(--border-color);
+                        }
+                    }
+                }
+            }
+            .leaveReview{
+                .formReview{
+                    .btn-round{
+                        &:hover{
+                            span{
+                                color: var(--hover-main);
+                            }
+                        }
+                        span{
+                            color: var(--w);
+                        }
+                    }
+                }
+            }
+            :is(.specification ,.description ,.Review ,.leaveReview ) :is(p ,span){
+                color: var(--subTitle);
+            }
+            
+
+
+
+
+
+
+        }
+
+        :is(.owner, .extraPrices, .checkData, .priceDetails, .galleryContainer ,.specification ,.description ,.Map ,.Review ,.leaveReview) {
+            background-color: var(--w);
+            box-shadow: 0 5px 20px var(--shadowColor);
+        }
+    }
+
+    .unitsCard {
+        .d-grid {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 8px;
+
+            
+        }
+
+    }
+
+    .asideFilter {
+        height: 100vh;
+        background-color: var(--w);
+        box-shadow: 0px 4px 24px var(--shadowColor);
+
+        :is(h3, .accordion) {
+            border-bottom-color: #F4F4F4;
+
+        }
+
+        .accordion {
+            .btn {
+                background-color: transparent;
+                padding: .2em 0;
+                color: var(--subTitle);
+
+                &.open {
+                    svg {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            .formGroup {
+                @extend %checkBox;
+            }
+
+            .accordionList {
+
+                transition: max-height 300ms ease-in-out;
+
+                &::-webkit-scrollbar-thumb {
+                    height: 20px;
+                }
+
+                &.show {
+                    max-height: 180px;
+                    overflow-y: auto;
+                }
+
+                &:not(.show) {
+                    max-height: 0;
+                    overflow-y: hidden;
+                    transition: max-height 0.3s ease-out;
+
+
+                }
+
+            }
+
+            .price-range-container {
+                .rangeSlider {
+                    margin-top: 45px;
+                    background-color: #ccc;
+                    height: 5px;
+
+                    .track {
+                        background-color: var(--hover-main);
+                    }
+
+                    input[type="range"] {
+                        transform: translateY(-50%);
+                        pointer-events: none;
+                        background: none;
+                        inset-inline-start: 0;
+                        appearance: none;
+
+                        &::-webkit-slider-thumb {
+                            width: 25px;
+                            height: 25px;
+                            border-radius: 50%;
+                            background-color: var(--w);
+                            border: 3px solid var(--hover-main);
+                            pointer-events: auto;
+                            appearance: none;
+                            cursor: pointer
+                        }
+                    }
+
+                    .tooltip {
+                        background-color: var(--hover-main);
+                        color: var(--w);
+                        transform: translateX(50%);
+                        bottom: 20px;
+                    }
+                }
+
+
+            }
+
+
+        }
+    }
+}
+
+.topSection {
+    background-color: var(--w);
+    padding-block-end: 5vh;
+    box-shadow: 0 10px 24px var(--shadowColor);
+
+    .boxTop {
+        :is(p, span) {
+            color: var(--subTitle);
+        }
+
+        @extend %rate;
+    }
+}

@@ -1,0 +1,158 @@
+---
+import Button from "@components/ui/Button.astro";
+import FormGroup from "@components/ui/FormGroup.astro";
+import { Image } from "astro:assets";
+import rate_5 from "@assets/Svg/rate-5.svg";
+import rate_4 from "@assets/Svg/rate-4.svg";
+import rate_3 from "@assets/Svg/rate-3.svg";
+import rate_2 from "@assets/Svg/rate-2.svg";
+import rate_1 from "@assets/Svg/rate-1.svg";
+---
+<aside class="asideFilter p-7 round-4">
+    <h3 class="fs-24 fw-700 border-b-1 border-b-solid pb-5">تصفية حسب</h3>
+    <form class="h-full ">
+        <div class="accordion py-2 border-b-1 border-b-solid">
+            <Button type="button" aria={`السعر`} controll={`accordionList_4`} ClassName="btn relative  w-full d-flex align-items-center justify-between fs-20 fw-700 mb-5 open" ariaEx={false} text="السعر" icon={{name:"arrow-down", Class:"w-10 h-10 relative" ,side:"right"}} />
+            <div class="accordionList show " id="accordionList_4">
+                <div class="formGroup pb-5">
+                    <div class="price-range-container p-in-2">
+                        <div class="rangeSlider relative w-full round-2">
+                            <span class="track h-full absolute"></span>
+                            <input type="range" name="minVal" min="300" max="900" id="minRange" value="300" class="absolute top-50 border-none w-full m-0">
+                            <input type="range" name="maxVal" min="300" max="900" id="maxRange" value="900" class="absolute top-50 border-none w-full m-0">
+                            <span class="tooltipMax tooltip absolute p-2 fs-14 round-2 left-50"></span>
+                            <span class="tooltipMin tooltip absolute p-2 fs-14 round-2 right-50"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion py-2 border-b-1 border-b-solid">
+            <Button type="button" aria={`نوع المكان`} controll={`accordionList_1`} ClassName="btn relative  w-full d-flex align-items-center justify-between fs-20 fw-700 mb-5" ariaEx={false} text="نوع المكان" icon={{name:"arrow-down", Class:"w-10 h-10 relative" ,side:"right"}} />
+            <div class="accordionList    " id="accordionList_1">
+                <FormGroup
+                type="checkbox"
+                title=" قاعة المؤتمرات"
+                name="checkbox"
+                id="checkbox1"
+                isLabel={true}
+                LabelClassName="fs-18 fw-500 o-80  d-inline-block "
+                InputClassName="w-10 h-10 round-8"
+                FormClassName="d-flex align-items-center gap-3 pb-5"
+                />
+                <FormGroup
+                type="checkbox"
+                title="مقهى"
+                name="checkbox"
+                id="checkbox2"
+                isLabel={true}
+                LabelClassName="fs-18 fw-500 o-80  d-inline-block "
+                InputClassName="w-10 h-10"
+                FormClassName="d-flex align-items-center gap-3 pb-5"
+                />
+                <FormGroup
+                type="checkbox"
+                title="مكتب"
+                name="checkbox"
+                id="checkbox3"
+                isLabel={true}
+                LabelClassName="fs-18 fw-500 o-80  d-inline-block "
+                InputClassName="w-10 h-10"
+                FormClassName="d-flex align-items-center gap-3 pb-5"
+                />
+                <FormGroup
+                type="checkbox"
+                title="فيلا"
+                name="checkbox"
+                id="checkbox4"
+                isLabel={true}
+                LabelClassName="fs-18 fw-500 o-80  d-inline-block "
+                InputClassName="w-10 h-10"
+                FormClassName="d-flex align-items-center gap-3"
+                />
+                
+            </div>
+        </div>
+        <div class="accordion py-2 border-b-1 border-b-solid">
+            <Button type="button" aria={`تقييم النتيجة`} controll={`accordionList_2`} ClassName="btn relative  w-full d-flex align-items-center justify-between fs-20 fw-700 mb-5" ariaEx={false} text="تقييم النتيجة" icon={{name:"arrow-down", Class:"w-10 h-10 relative" ,side:"right"}} />
+            <div class="accordionList  " id="accordionList_2">
+                <div class="formGroup d-flex align-items-center gap-3 pb-5">
+                    <input type="checkbox" name="checkbox" class="w-10 h-10" id="checkbox5">
+                    <Image src={rate_5} alt="rate-5" class="w-48 " />
+                </div>
+                <div class="formGroup d-flex align-items-center gap-3 pb-5">
+                    <input type="checkbox" name="checkbox" class="w-10 h-10" id="checkbox6">
+                    <Image src={rate_4} alt="rate-4" class="w-48 " />
+                </div>
+                <div class="formGroup d-flex align-items-center gap-3 pb-5">
+                    <input type="checkbox" name="checkbox" class="w-10 h-10" id="checkbox7">
+                    <Image src={rate_3} alt="rate-3" class="w-48 " />
+                </div>
+                <div class="formGroup d-flex align-items-center gap-3 pb-5">
+                    <input type="checkbox" name="checkbox" class="w-10 h-10" id="checkbox8">
+                    <Image src={rate_2} alt="rate-2" class="w-48 " />
+                </div>
+                <div class="formGroup d-flex align-items-center gap-3 pb-5">
+                    <input type="checkbox" name="checkbox" class="w-10 h-10" id="checkbox9">
+                    <Image src={rate_1} alt="rate-1" class="w-10 " />
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="accordion py-2 border-b-1 border-b-solid">
+            <Button type="button" aria={`المرافق`} controll={`accordionList_3`} ClassName="btn relative  w-full d-flex align-items-center justify-between fs-20 fw-700 mb-5" ariaEx={false} text="المرافق" icon={{name:"arrow-down", Class:"w-10 h-10 relative" ,side:"right"}} />
+            <div class="accordionList    " id="accordionList_3">
+                <FormGroup
+                type="checkbox"
+                title="Air Conditioning"
+                name="checkbox"
+                id="checkbox10"
+                isLabel={true}
+                LabelClassName="fs-18 fw-500 o-80  d-inline-block "
+                InputClassName="w-10 h-10 round-8"
+                FormClassName="d-flex align-items-center gap-3 pb-5"
+                />
+                <FormGroup
+                type="checkbox"
+                title="Breakfast"
+                name="checkbox"
+                id="checkbox11"
+                isLabel={true}
+                LabelClassName="fs-18 fw-500 o-80  d-inline-block "
+                InputClassName="w-10 h-10"
+                FormClassName="d-flex align-items-center gap-3 pb-5"
+                />
+                <FormGroup
+                type="checkbox"
+                title="Kitchen"
+                name="checkbox"
+                id="checkbox12"
+                isLabel={true}
+                LabelClassName="fs-18 fw-500 o-80  d-inline-block "
+                InputClassName="w-10 h-10"
+                FormClassName="d-flex align-items-center gap-3 pb-5"
+                />
+                <FormGroup
+                type="checkbox"
+                title="Parking"
+                name="checkbox"
+                id="checkbox13"
+                isLabel={true}
+                LabelClassName="fs-18 fw-500 o-80  d-inline-block "
+                InputClassName="w-10 h-10"
+                FormClassName="d-flex align-items-center gap-3"
+                />
+                
+            </div>
+        </div>
+        <div class="actionFilterBtn mt-8">
+            <Button type="submit" aria={`تطبيق`} ClassName="btn btn-round w-full  relative round-4  d-flex align-items-center justify-center gap-3" icon={{name:"filterBtn", Class:"w-10 h-10 relative" ,side:"left"}} >
+                <span class="fs-18 fw-700 relative">تطبيق</span>
+            </Button>
+            <Button type="button" aria={`إعادة تعيين الفلتر`} ClassName="btn btn-noBg w-full  relative round-4  d-flex align-items-center justify-center gap-3"  >
+                <span class="fs-14 fw-700 relative">إعادة تعيين </span>
+            </Button>
+        </div>
+    </form>
+</aside>

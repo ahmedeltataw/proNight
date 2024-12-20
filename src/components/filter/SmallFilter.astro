@@ -2,9 +2,13 @@
 import SelectForm from "@components/ui/SelectForm.astro";
 import FormGroup from "@components/ui/FormGroup.astro";
 import Button from "@components/ui/Button.astro";
+interface Props {
+  page: 'index' | 'another'
+}
+const { page } = Astro.props;
 ---
 
-<section class="smallFilter relative">
+<section class:list={['smallFilter relative' ,page]}>
   <div class="container">
     <form class="d-grid gap-4  lg:grid-col-5 md:grid-col-3 sm:grid-col-2 lg:p-11 md:p-9 p-8 round-5">
       <SelectForm

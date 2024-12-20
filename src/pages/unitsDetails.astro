@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LayoutFilter from '@components/layout/LayoutFilter.astro';
+import Breadcrumb from '@components/ui/Breadcrumb.astro';
+import AsideDetails from '@components/unitsRent/Details/AsideDetails.astro';
+import UniteDel from '@components/unitsRent/UniteDel.astro';
+import TopSection from '@components/unitsRent/Details/TopSection.astro';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+import 'swiper/css/free-mode';
+import 'star-rating.js/dist/star-rating.min.css';
+---
+<Layout title='تفاصيل الوحدة'>
+    <Breadcrumb title="تفاصيل الوحدة"  />
+    <TopSection/>
+    <LayoutFilter pageTitle='unitsDetails' >
+        <AsideDetails />
+        <UniteDel />
+        
+    </LayoutFilter>
+</Layout>
+<script src="../scripts/Swiper.ts"></script>
+<script src="../scripts/StarRating.js"></script>

@@ -3,22 +3,26 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import Button from "@components/ui/Button.astro";
 import Link from "@components/ui/Link.astro";
-import test from '@assets/banner/hero-1.jpg'
+import test from '@assets/banner/hero-1.jpg';
+import bed from '@assets/Svg/bed.svg';
+import bathroom from '@assets/Svg/bathroom.svg';
+import ruler from '@assets/Svg/ruler.svg';
 interface Props {
   aos?:{
         effect:string |any,
         time:string |any,
         delay:string |any,
     }
+    active?:boolean
 }
-const { aos=false} = Astro.props;
+const { aos=false, active=false } = Astro.props;
 ---
 
-<div class="Card p-7 round-7 relative" {...aos && { 'data-aos': aos.effect, 'data-aos-duration': aos.time ,'data-aos-delay': aos.delay }}>
+<div class="Card p-7 round-7 relative" {...aos && { 'data-aos': aos.effect, 'data-aos-duration': aos.time ,'data-aos-delay': aos.delay }} >
 
   <!-- cardImg -->
    <div class="cardImg  mb-5 relative">
-    <Button type="button" aria={`test`} ClassName="btn btn-heart absolute round-4 w-22 h-22 round-cricle  inset-s-2" icon={{name:"heart", Class:"w-14 h-14 relative mx-auto " ,side:"right"}} />
+    <Button type="button" aria={`test`} ClassName=`btn btn-heart absolute round-4 w-22 h-22 round-cricle  inset-s-2 ${active ? 'active' : ''}` icon={{name:"heart", Class:"w-14 h-14 relative mx-auto " ,side:"right"}} />
     <figure class="overflow-hidden round-6">
       <Image src={test} alt="test" format="webp" quality={70} class={`round-6 img-cover`} />
     </figure>
@@ -29,7 +33,7 @@ const { aos=false} = Astro.props;
   <div class="cardBody">
     <!-- bodyTop -->
     <div class="bodyTop pb-5">
-      <h3 class="fs-24 fw-700">فندق الاندلس مول </h3>
+      <h3 class="fs-20 md:fs-24 fw-700">فندق الاندلس مول </h3>
       <div class="rate d-flex align-items-center ">
         <Icon name="star" class="w-12 h-12" />
         <Icon name="star" class="w-12 h-12" />
@@ -43,15 +47,15 @@ const { aos=false} = Astro.props;
     <!-- bodyMiddle -->
      <ul class="bodyMiddle d-flex align-items-center  pb-5">
         <li class="d-flex align-items-center gap-3">
-          <Icon name={`bed`} class={`w-12 h-12`} />
+          <Image src={bed} alt="bed" class={`w-18 h-18 round-2 img-cover `} quality={70} />
           <span class="fs-18 ">2</span>
         </li>
         <li class="d-flex align-items-center gap-2">
-          <Icon name={`bathroom`} class={`w-12 h-12`} />
+          <Image src={bathroom} alt="bed" class={`w-18 h-18 round-2 img-cover `} quality={70} />
           <span class="fs-18 ">2</span>
         </li>
         <li class="d-flex align-items-center gap-2">
-          <Icon name={`ruler`} class={`w-12 h-12`} />
+          <Image src={ruler} alt="bed" class={`w-18 h-18 round-2 img-cover `} quality={70} />
           <span class="fs-18 ">120م</span>
         </li>
      </ul>
@@ -69,7 +73,7 @@ const { aos=false} = Astro.props;
         </div>
       </div>
   </div>
-  <Link href="#!" Class="absolute  inset-0 w-full h-full " aria="تفاصيل الوحدة" />
+  <Link href="unitsDetails.html" Class="absolute  inset-0 w-full h-full " aria="تفاصيل الوحدة" />
   <div class="cardButton mt-5">
     <Button type="button" aria={'احجز الان'} ClassName="w-full  btn btn-round relative round-4" >
       <Link

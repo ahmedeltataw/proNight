@@ -10,12 +10,7 @@
             :is(a,label){
                 color: var(--subTitle);
             }
-            label{
-                order: 2;
-            }
-            input{
-                accent-color: var(--hover-main);
-            }
+            @extend %checkBox;
             a:hover{
                 color: var(--hover-main);
             }

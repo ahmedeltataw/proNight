@@ -1,0 +1,12 @@
+---
+interface Props {
+    pageTitle: string;
+}
+const { pageTitle } = Astro.props;
+---
+<section class:list={['layoutPageFilter' , pageTitle ]}>
+    <div class="container d-grid gap-8 ">
+        <slot />
+
+    </div>
+</section>

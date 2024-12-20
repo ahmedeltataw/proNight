@@ -5,7 +5,11 @@
     color: var(--w);
     h2{
         margin-top: 10vh;
+        &.smallMargin{
+            margin-top: 5vh;
+        }
     }
+    
     h2 ,a{
         color: var(--w);
     }

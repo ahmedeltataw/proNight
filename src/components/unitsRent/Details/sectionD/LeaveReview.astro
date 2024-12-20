@@ -1,0 +1,101 @@
+---
+import AsideHeading from "../Aside/AsideHeading.astro";
+import FormGroup from "@components/ui/FormGroup.astro";
+import Button from "@components/ui/Button.astro";
+---
+
+<div class="leaveReview py-4 px-5 round-4 mb-6">
+  <AsideHeading title="اترك تقييمك" />
+  <form class="formReview mt-5">
+    <div
+      class="LeaveRating d-grid align-items-center lg:grid-col-3 grid-col-2 sm-max:grid-col-1 gap-5"
+    >
+      <div class="formGroup d-flex align-items-center gap-3">
+        <span class="fs-18">الخدمة</span>
+        <select class="star-rating leaveRate_1">
+          <option value="">Select a rating</option>
+          <option value="5">Excellent</option>
+          <option value="4">Very Good</option>
+          <option value="3">Average</option>
+          <option value="2">Poor</option>
+          <option value="1">Terrible</option>
+        </select>
+      </div>
+      <div class="formGroup d-flex align-items-center gap-3">
+        <span class="fs-18">الموقع</span>
+        <select class="star-rating leaveRate_2">
+          <option value="">Select a rating</option>
+          <option value="5">Excellent</option>
+          <option value="4">Very Good</option>
+          <option value="3">Average</option>
+          <option value="2">Poor</option>
+          <option value="1">Terrible</option>
+        </select>
+      </div>
+      <div class="formGroup d-flex align-items-center gap-3">
+        <span class="fs-18">قيمة مقابل سعر</span>
+        <select class="star-rating leaveRate_3">
+          <option value="">Select a rating</option>
+          <option value="5">Excellent</option>
+          <option value="4">Very Good</option>
+          <option value="3">Average</option>
+          <option value="2">Poor</option>
+          <option value="1">Terrible</option>
+        </select>
+      </div>
+      <div class="formGroup d-flex align-items-center gap-3">
+        <span class="fs-18">مرافق</span>
+        <select class="star-rating leaveRate_4">
+          <option value="">Select a rating</option>
+          <option value="5">Excellent</option>
+          <option value="4">Very Good</option>
+          <option value="3">Average</option>
+          <option value="2">Poor</option>
+          <option value="1">Terrible</option>
+        </select>
+      </div>
+      <div class="formGroup d-flex align-items-center gap-3">
+        <span class="fs-18">نظافة</span>
+        <select class="star-rating leaveRate_5">
+          <option value="">Select a rating</option>
+          <option value="5">Excellent</option>
+          <option value="4">Very Good</option>
+          <option value="3">Average</option>
+          <option value="2">Poor</option>
+          <option value="1">Terrible</option>
+        </select>
+      </div>
+    </div>
+    <div class="bigGroup mt-5 d-flex align-items-center gap-5 w-full">
+      <FormGroup
+        type="text"
+        title="الاسم بالكامل"
+        name="fullName"
+        place="ادخل الاسم بالكامل"
+        id="fullName"
+        isLabel={true}
+        LabelClassName="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80"
+        InputClassName="w-full h-24 ps-4 round-4 "
+        FormClassName="pb-5 w-full"
+      />
+      <FormGroup
+        type="email"
+        title="البريد الالكتروني"
+        name="email"
+        place="ادخل البريد الالكتروني"
+        id="email"
+        isLabel={true}
+        LabelClassName="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80"
+        InputClassName="w-full h-24 ps-4 round-4 "
+        FormClassName="pb-3 w-full"
+      />
+    </div>
+    <div class="formGroup w-full">
+        <label for="massage" class="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80"></label>
+        <textarea name="massage" id="massage" class="w-full h-100 ps-4 round-4 pt-4"></textarea>
+    </div>
+    <Button type="submit" aria={`اترك تقييمك`} ClassName="   btn btn-round relative round-4 mt-5">
+        <span class="fs-18 fw-700 relative">اترك تقييمك</span>
+    </Button>
+  </form>
+</div>

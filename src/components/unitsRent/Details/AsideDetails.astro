@@ -1,0 +1,16 @@
+---
+import Owner from "./Aside/Owner .astro";
+import ExtraPrices from "./Aside/ExtraPrices.astro";
+import CheckData from "./Aside/CheckData.astro";
+import PriceDetails from "./Aside/PricingDetails.astro";
+import Button from "@components/ui/Button.astro";
+---
+<aside class="bookDetails">
+    <PriceDetails/>
+    <Owner/>
+    <CheckData/>
+    <ExtraPrices/>
+    <Button type="submit" aria={`حجز `} ClassName="w-full  btn btn-round relative round-3">
+        <span class="fs-18 fw-700 relative">حجز</span>
+    </Button>
+</aside>

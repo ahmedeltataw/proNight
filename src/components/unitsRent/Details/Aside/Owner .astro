@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import model from "@assets/model-1.png";
+import AsideHeading from "./AsideHeading.astro";
+---
+<div class="owner py-4 px-5 round-4 mb-6">
+    <AsideHeading title="تفاصيل المالك"/>
+    <div class="ownerBox d-flex align-items-center gap-4 p-3 mt-3 round-4">
+        <figure class="w-36 h-36 round-cricle border-2 border-solid">
+            <Image src={model} alt="model" class={`round-cricle img-cover`} quality={70} format="webp"/>
+        </figure>
+        <div class="ownerDetails">
+            <h4 class="fs-18 fw-700">احمد التطاوي</h4>
+            <div class="rate d-flex align-items-center ">
+                <Icon name="star" class="w-10 h-10" />
+                <Icon name="star" class="w-10 h-10" />
+                <Icon name="star" class="w-10 h-10" />
+                <Icon name="star" class="w-10 h-10" />
+                <Icon name="star" class="w-10 h-10" />
+                <span class="fs-16 o-80 ps-2">(4)</span>
+              </div>
+        </div>
+    </div>
+</div>

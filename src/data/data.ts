@@ -7,19 +7,19 @@ export const linkHeader:LinkType[] = [
     },
     {
         text:"من نحن",
-        href:'#!',
+        href:'Aboutus.html',
     },
     {
         text:"الوحدات",
-        href:'#!',
+        href:'Units.html',
     },
     {
         text:"المفضلة",
-        href:'#!',
+        href:'Favorites.html',
     },
     {
         text:" تواصل معانا",
-        href:'#!',
+        href:'Contactus.html',
     },
     // {
     //     text:"",

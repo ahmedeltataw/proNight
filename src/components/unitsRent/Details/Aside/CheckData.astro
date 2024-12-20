@@ -1,0 +1,60 @@
+---
+import AsideHeading from "./AsideHeading.astro";
+import FormGroup from "@components/ui/FormGroup.astro";
+---
+
+<div class="checkData py-4 px-5 round-4 mb-6">
+  <AsideHeading title="بيانات الحجز" />
+  <form class="extra pt-4">
+    <FormGroup
+      type="date"
+      title="بداية الحجز"
+      name="startBookData"
+      place="بداية الحجز"
+      isDisabled={false}
+      isLabel={true}
+      LabelClassName="fs-16 fw-700 d-inline-block ps-3 pb-2 o-80"
+      InputClassName="w-full h-24 ps-4 round-4 relative"
+      FormClassName="mb-3 "
+      id="startBookDate"
+    />
+    <FormGroup
+      type="date"
+      title="نهاية الحجز"
+      name="EndBookData"
+      place="نهاية الحجز"
+      isDisabled={false}
+      isLabel={true}
+      LabelClassName="fs-16 fw-700 d-inline-block ps-3 pb-2 o-80"
+      InputClassName="w-full h-24 ps-4 round-4 relative"
+      FormClassName="mb-3 "
+      id="EndBookDate"
+    />
+    <div class="bigGroup d-flex align-items-center justify-between gap-3">
+      <FormGroup
+        type="number"
+        title=" عدد البالغين"
+        name="numAdults"
+        place="الأعمار +12"
+        isDisabled={false}
+        isLabel={true}
+        LabelClassName="fs-16 fw-700 d-inline-block ps-3 pb-2 o-80"
+        InputClassName="w-full h-24 ps-4 round-4 relative"
+        FormClassName="mb-3 "
+        id="numAdults"
+      />
+      <FormGroup
+        type="number"
+        title=" عدد الاطفال"
+        name="numChildren"
+        place="الأعمار من 2-12"
+        isDisabled={false}
+        isLabel={true}
+        LabelClassName="fs-16 fw-700 d-inline-block ps-3 pb-2 o-80"
+        InputClassName="w-full h-24 ps-4 round-4 relative"
+        FormClassName="mb-3 "
+        id="numChildren"
+      />
+    </div>
+  </form>
+</div>

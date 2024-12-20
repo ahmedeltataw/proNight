@@ -39,7 +39,7 @@ figure {
     margin: 0;
 }
 
-input , select{
+input , select ,textarea{
     outline: none;
     border: 1px solid var(--border-color);
     background-color: var(--subBG2);
@@ -55,7 +55,10 @@ label{
 }
 
 
+.empty {
+    @extend %empty;
 
+}
 
 
 .overLay {
@@ -75,7 +78,7 @@ label{
 
 }
 
-section:not(.hero , .smallFilter  ,.breadcrumb ,.Auth  ,.clientReview ) {
+section:not(.hero , .smallFilter  ,.breadcrumb ,.Auth  ,.clientReview ,.unitsCard ,.topSection ,.unitDel) {
     min-height: auto;
     height: auto;
     @extend %sectionOffset;
@@ -100,3 +103,11 @@ input::-webkit-inner-spin-button {
   }
 
 
+
+.contact{
+    .d-grid{
+        background-color: var(--w);
+        box-shadow: 0 10px 24px var(--shadowColor);
+        
+    }
+}

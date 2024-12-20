@@ -1,0 +1,159 @@
+---
+import AsideHeading from "../Aside/AsideHeading.astro";
+import { Image } from "astro:assets";
+import model from "@assets/model-1.png";
+import { Icon } from "astro-icon/components";
+---
+
+<div class="Review py-4 px-5 round-4 mb-6">
+  <AsideHeading title=" التعليقات" />
+  <div class="reviewContainer py-3 px-4 d-flex align-items-center mt-3 flex-wrap">
+    <div
+      class="reviewRange border-1 border-solid round-2 p-11 d-flex align-items-center justify-center flex-col"
+    >
+      <h5 class="fs-48 fw-700">4.5<span class="fs-16">/5</span></h5>
+      <p class="fs-16 pb-6">ممتاز</p>
+      <h6 class="fs-18 fw-500">بناءً على 256 تقييمًا</h6>
+    </div>
+    <div class="progressContainer ms-10">
+      <div class="proBox d-flex align-items-center w-full mb-4">
+        <h6 class="fs-18 fw-500">الخدمة</h6>
+        <div class="progress">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 85%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+          </div>
+        </div>
+        <span class="fs-16 fw-500 ms-10 d-inline-block">4.5</span>
+      </div>
+      <div class="proBox d-flex align-items-center w-full mb-4">
+        <h6 class="fs-18 fw-500">الموقع</h6>
+        <div class="progress">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 75%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+          </div>
+        </div>
+        <span class="fs-16 fw-500 ms-10 d-inline-block">4</span>
+      </div>
+      <div class="proBox d-flex align-items-center w-full mb-4">
+        <h6 class="fs-18 fw-500">قيمة مقابل سعر</h6>
+        <div class="progress">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 65%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+          </div>
+        </div>
+        <span class="fs-16 fw-500 ms-10 d-inline-block">3.8</span>
+      </div>
+      <div class="proBox d-flex align-items-center w-full mb-4">
+        <h6 class="fs-18 fw-500">مرافق</h6>
+        <div class="progress">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 75%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+          </div>
+        </div>
+        <span class="fs-16 fw-500 ms-10 d-inline-block">4</span>
+      </div>
+      <div class="proBox d-flex align-items-center w-full mb-4">
+        <h6 class="fs-18 fw-500">نظافة</h6>
+        <div class="progress">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 55%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+          </div>
+        </div>
+        <span class="fs-16 fw-500 ms-10 d-inline-block">3</span>
+      </div>
+    </div>
+  </div>
+  <div class="userReview mt-6 border-1 border-solid py-4 px-5 round-4">
+    <h6 class="fs-18 fw-500 o-80 p-3">عرض 2 تقييمات الضيوف</h6>
+    <div class="userReviewBox py-5 px-6">
+      <div class="userInfo d-flex align-items-center justify-between flex-wrap">
+        <div class="userInfoBox d-flex align-items-center gap-4">
+          <figure class="w-36 h-36 round-cricle border-2 border-solid">
+            <Image
+              src={model}
+              alt="model"
+              class={`round-cricle img-cover`}
+              quality={70}
+              format="webp"
+            />
+          </figure>
+          <div>
+            <h5 class="fs-18 fw-700">احمد التطاوي</h5>
+            <p class="date">2024-12-20</p>
+          </div>
+        </div>
+        <div class="rate d-flex align-items-center">
+          <Icon name="star" class="w-10 h-10" />
+          <Icon name="star" class="w-10 h-10" />
+          <Icon name="star" class="w-10 h-10" />
+          <Icon name="star" class="w-10 h-10" />
+          <Icon name="star" class="w-10 h-10" />
+          <span>(4)</span>
+        </div>
+      </div>
+      <p class="fs-16 fw-400 o-90 mt-4">
+        انتشر هذا النص في ستينيات القرن العشرين مع إصدار أوراق Letraset التي تحتوي على مقاطع من نص Lorem Ipsum، ومؤخرًا مع برامج النشر المكتبي مثل Aldus PageMaker التي تتضمن إصدارات من نص Lorem Ipsum.
+      </p>
+    </div>
+    <div class="userReviewBox py-5 px-6">
+      <div class="userInfo d-flex align-items-center justify-between flex-wrap">
+        <div class="userInfoBox d-flex align-items-center gap-4">
+          <figure class="w-36 h-36 round-cricle border-2 border-solid">
+            <Image
+              src={model}
+              alt="model"
+              class={`round-cricle img-cover`}
+              quality={70}
+              format="webp"
+            />
+          </figure>
+          <div>
+            <h5 class="fs-18 fw-700">احمد التطاوي</h5>
+            <p class="date">2024-12-20</p>
+          </div>
+        </div>
+        <div class="rate d-flex align-items-center">
+          <Icon name="star" class="w-10 h-10" />
+          <Icon name="star" class="w-10 h-10" />
+          <Icon name="star" class="w-10 h-10" />
+          <Icon name="star" class="w-10 h-10" />
+          <Icon name="star" class="w-10 h-10" />
+          <span>(4)</span>
+        </div>
+      </div>
+      <p class="fs-16 fw-400 o-90 mt-4">
+        انتشر هذا النص في ستينيات القرن العشرين مع إصدار أوراق Letraset التي تحتوي على مقاطع من نص Lorem Ipsum، ومؤخرًا مع برامج النشر المكتبي مثل Aldus PageMaker التي تتضمن إصدارات من نص Lorem Ipsum.
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
- new Swiper(".exploreSwiper", {
+import { Navigation ,Thumbs, FreeMode  } from 'swiper/modules';
+new Swiper(".exploreSwiper", {
     modules: [Navigation],
     slidesPerView: 1,
     spaceBetween: 10,
@@ -72,3 +72,26 @@ import { Navigation } from 'swiper/modules';
       },
     },
   });
+  let thumbSwiper = new Swiper('.thumb-swiper', {
+    modules: [FreeMode, Thumbs],
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
+
+ new Swiper('.main-swiper', {
+    modules: [Navigation, Thumbs],
+    loop: true,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    thumbs: {
+      swiper: thumbSwiper,
+    },
+  });
+
+
