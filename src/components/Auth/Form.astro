@@ -1,6 +1,6 @@
 ---
 interface Props {
-    AuthType: 'login' | 'register' ;
+    AuthType: 'login' | 'register' | 'profile';
 }
 const { AuthType } = Astro.props;
 import FormGroup from "@components/ui/FormGroup.astro";
@@ -21,6 +21,7 @@ import Link from "@components/ui/Link.astro";
                         name="email"
                         place="ادخل البريد الالكتروني"
                         id="email"
+                        autocomplete="email"
                         isLabel={true}
                         LabelClassName="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80"
                         InputClassName="w-full h-24 ps-4 round-4 "
@@ -34,7 +35,7 @@ import Link from "@components/ui/Link.astro";
                         id="password"
                         isLabel={true}
                         IsPassword={true}
-                        
+                        autocomplete="current-password"
                         LabelClassName="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80"
                         InputClassName="w-full h-24 ps-4 round-4 "
                         Icons={{openEye:{name:"openEye",ClassName:"w-14 h-14 absolute top-0 inset-e-7 d-none" ,id:'openEye'},closeEye:{name:"closeEye",ClassName:"w-14 h-14 absolute top-0 inset-e-7" ,id:'closeEye'}}}
@@ -77,7 +78,7 @@ import Link from "@components/ui/Link.astro";
                             
                         />
                     </p>
-                ) : 
+                ) : AuthType === 'register' ?
                  (
                     <h4 class="fs-28 fw-700 mb-6 text-center">انشاء حساب</h4>
                     <FormGroup
@@ -97,6 +98,7 @@ import Link from "@components/ui/Link.astro";
                         name="phone"
                         place="ادخل رقم الجوال"
                         id="phone"
+                        autocomplete="tel"
                         isLabel={true}
                         LabelClassName="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80"
                         InputClassName="w-full h-24 ps-4 round-4 "
@@ -108,6 +110,7 @@ import Link from "@components/ui/Link.astro";
                         name="email"
                         place="ادخل البريد الالكتروني"
                         id="email"
+                        autocomplete="email"
                         isLabel={true}
                         LabelClassName="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80"
                         InputClassName="w-full h-24 ps-4 round-4 "
@@ -121,7 +124,7 @@ import Link from "@components/ui/Link.astro";
                         id="password"
                         isLabel={true}
                         IsPassword={true}
-                        
+                        autocomplete="new-password"
                         FormClassName="pb-5"
                         LabelClassName="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80"
                         InputClassName="w-full h-24 ps-4 round-4 "
@@ -159,7 +162,64 @@ import Link from "@components/ui/Link.astro";
                             
                         />
                     </p>
-                ) 
+                ) :(
+                <h4 class="fs-28 fw-700 mb-6 text-center">تعديل حسابك</h4>
+                    <FormGroup
+                        type="text"
+                        title="الاسم بالكامل"
+                        name="fullName"
+                        place="ادخل الاسم بالكامل"
+                        id="fullName"
+                        isLabel={true}
+                        LabelClassName="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80"
+                        InputClassName="w-full h-24 ps-4 round-4 "
+                        FormClassName="pb-5"
+                    />
+                    <FormGroup
+                        type="number"
+                        title="رقم الجوال"
+                        name="phone"
+                        place="ادخل رقم الجوال"
+                        id="phone"
+                        autocomplete="tel"
+                        isLabel={true}
+                        LabelClassName="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80"
+                        InputClassName="w-full h-24 ps-4 round-4 "
+                        FormClassName="pb-5"
+                    />
+                    <FormGroup
+                        type="email"
+                        title="البريد الالكتروني"
+                        name="email"
+                        place="ادخل البريد الالكتروني"
+                        id="email"
+                        autocomplete="email"
+                        isLabel={true}
+                        LabelClassName="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80"
+                        InputClassName="w-full h-24 ps-4 round-4 "
+                        FormClassName="pb-5"
+                    />
+                    <FormGroup
+                        type="password"
+                        title="كلمة المرور"
+                        name="password"
+                        place="ادخل كلمة المرور"
+                        id="password"
+                        isLabel={true}
+                        IsPassword={true}
+                        autocomplete="new-password"
+                        FormClassName="pb-5"
+                        LabelClassName="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80"
+                        InputClassName="w-full h-24 ps-4 round-4 "
+                        Icons={{openEye:{name:"openEye",ClassName:"w-14 h-14 absolute top-0 inset-e-7 d-none" ,id:'openEye'},closeEye:{name:"closeEye",ClassName:"w-14 h-14 absolute top-0 inset-e-7" ,id:'closeEye'}}}
+                    />
+                    <Button type="submit" aria={`حفظ `} ClassName=" w-full mx-auto d-flex justify-center  btn btn-round relative round-4 mt-5">
+                        <span class="fs-18 fw-700 relative">حفظ </span>
+                    </Button>
+                    <Button type="submit" aria={`حذف حسابك `} ClassName=" w-full mx-auto d-flex justify-center  btn btn-noBg relative round-4">
+                        <span class="fs-16 fw-700 relative">حذف حسابك </span>
+                    </Button>
+                )
             }
         </form>
     </div>

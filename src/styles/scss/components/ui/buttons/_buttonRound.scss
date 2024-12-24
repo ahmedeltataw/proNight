@@ -13,6 +13,14 @@
             color: var(--hover-main);
 
         }
+        &.btn-delete{
+            background-color: var(--w);
+            border-color: var(--red);
+            :is(svg, a, span) {
+                color: var(--red);
+
+            }
+        }
     }
 
 
@@ -66,7 +74,9 @@
     &.border::before {
         background-color: var(--hover-main);
     }
-
+    &.btn-delete::before {
+        background-color: var(--red);
+    }
     :is(span , a) {
         transition-duration: 600ms;
     }

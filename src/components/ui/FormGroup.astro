@@ -22,6 +22,7 @@ interface Props {
   InputClassName?: string;
   FormClassName?: string;
   id?: string;
+  autocomplete?:string
   //buttons
   IsButton?: {
     aria?: string;
@@ -51,7 +52,7 @@ const {
   isLabel = true,
   InputClassName,
   IsButton = false,
-
+  autocomplete,
   Icons = false,
   IsPassword = false,
 
@@ -98,6 +99,7 @@ const {
           placeholder={place}
           value={value}
           disabled={isDisabled}
+          autocomplete={autocomplete}
           {...rest}
         />
 
@@ -120,6 +122,7 @@ const {
         placeholder={place}
         value={value}
         disabled={isDisabled}
+        autocomplete={autocomplete}
         {...rest}
       />
     )

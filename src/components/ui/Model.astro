@@ -1,0 +1,27 @@
+---
+interface Props {
+  modelClass: string;
+  id: string;
+}
+const { modelClass, id } = Astro.props;
+import Button from "./Button.astro";
+---
+
+<div
+  class:list={[
+    "model fixed h-full max-w-9/10 max-h-8/10 round-8 top-50 left-50 o-0 d-none",
+    modelClass ? modelClass : "",
+  ]}
+  id={id}
+>
+  <Button
+    type="button"
+    aria={"closeModel"}
+    ariaEx={false}
+    controll={id}
+    ClassName="btn btn-round w-20 h-20 d-flex align-items-center justify-center round-cricle absolute top-3 inset-s-3 btn-closeModel" isBorder
+    icon={{ name: "close", Class: "w-10 h-10 relative", side: "left" }}
+    id=`close${id}`
+  />
+    <slot />
+</div>

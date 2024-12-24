@@ -227,6 +227,21 @@
                     height: 300px;
                 }
 }
+%status{
+    color: var(--w);
+    &.completed{
+        background-color: var(--hover-main);
+        
+    }
+    &.current{
+        background-color: var(--yellow);
+        
+    }
+    &.end{
+        background-color: var(--red);
+        
+    }
+}
 // %aside {
 //     position: fixed;
 //     // bottom: 0;

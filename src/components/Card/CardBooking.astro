@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import test from "@assets/banner/hero-1.jpg";
+import Button from "@components/ui/Button.astro";
+interface Props {
+    status: string;
+    statusClass: string; 
+}
+const { status , statusClass } = Astro.props;
+---
+
+<div class="bookingCard  round-9 p-6">
+  <figure class="cardImg round-8 relative">
+    <p class={`status ${statusClass} absolute py-2 px-4 round-bl-4 round-tr-7 fs-16 fw-700 top-0 inset-s-0`}>{status}</p>
+    <Image
+      src={test}
+      alt="hero"
+      class="img-cover round-8"
+      quality={70}
+      format="webp"
+    />
+  </figure>
+  <div class="cardBody mt-3 px-2">
+    <div class="pb-2 d-flex align-items-center justify-between flex-wrap">
+      <h3 class="fs-24 fw-700 ">فندق الاندلس مول</h3>
+      <div class="location  d-flex align-items-center gap-2">
+        <Icon name="location" class="w-10 h-10" />
+        <span class="fs-16">جدة , الرياض </span>
+      </div>
+    </div>
+    <p class="dateBook fs-18 fw-700 o-80 pb-2">15 مايو2023- 18مايو 2023</p>
+    <div class="price d-flex align-items-center gap-4 pb-2">
+        <del class="oldPrice fs-20">2000</del>
+      <p class="NewPrice fs-24 fw-700">
+        1000<small class="fs-16">ر.ل</small><span class="fs-16">/3 ايام</span>
+      </p>
+    </div>
+  </div>
+  <div class="cardBottom">
+    <Button
+      type="button"
+      aria={`احجز الان`}
+      ClassName=" btn btn-round relative round-4 w-full mb-3 "
+      data-id="openBookingModel"
+    >
+      <span class="fs-16 fw-700 relative"> تفاصيل الحجز </span>
+    </Button>
+    <Button
+      type="button"
+      aria={`احجز الان`}
+      ClassName=" btn btn-round relative round-4 w-full btn-delete"
+      isBorder
+    >
+      <span class="fs-16 fw-700 relative"> الغاء الحجز </span>
+    </Button>
+  </div>
+</div>

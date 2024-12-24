@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "@components/ui/Breadcrumb.astro";
+import CardBooking from "@components/Card/CardBooking.astro";
+import Model from "@components/ui/Model.astro";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import rate_4 from "@assets/Svg/rate-4.svg";
+import SelectForm from "@components/ui/SelectForm.astro";
+---
+
+<Layout title="حجوزاتي">
+  <Breadcrumb title=" حجوزاتي" />
+  <section class="Booking">
+    <div class="container">
+        <form >
+            <SelectForm  id={`BookingStatus`} title="حالة الحجز" ClassName="w-full px-8 py-6" SelectClass="w-100 round-4 h-20 max-w-full" labelClass="d-inline-block o-80 fs-18 fw-700 pe-3">
+                <option value="0">الكل</option>
+                <option value="1">مكتملة</option>
+                <option value="2">حالية</option>
+                <option value="3">مغلي</option>
+            </SelectForm>
+        </form>
+      <div class="d-grid lg:grid-col-3 md:grid-col-2 grid-col-1 gap-5">
+        <CardBooking status="مكتملة" statusClass="completed" />
+        <CardBooking status="حالية" statusClass="current" />
+        <CardBooking status="مغلي" statusClass="end" />
+      </div>
+    </div>
+    <Model modelClass="bookingDetails " id="BookingModel">
+      <h4 class="fs-28 text-center fw-700 mb-4">تفاصيل الحجز</h4>
+      <div class="details">
+        <div class="d-flex align-items-center justify-between ">
+          <div>
+            <h5 class="fs-24 fw-700">فندق الاندلس مول</h5>
+            <figure class="w-50">
+              <Image src={rate_4} alt="rate" class={`img-cover`} quality={70} />
+            </figure>
+          </div>
+          <p class="status completed py-2 px-4 round-bl-4 round-tr-7 fs-16 fw-700">
+            مكتملة
+          </p>
+        </div>
+        <div class="date d-flex align-items-start gap-3 mt-8">
+            <Icon name="calendar" class="w-16 h-16" />
+            <div class="dateInfo d-flex flex-col">
+                <p class="fs-20 fw-700">15 مايو2023</p>
+                <span class=" fs-16 o-80 ">وقت الخروج من 12:00 الي 15:00</span>
+                <span class=" fs-16 o-80">وقت الدخول من 12:00 الي 15:00</span>
+            </div>
+        </div>
+        <div class="location  d-flex align-items-center gap-2 mt-5 o-80">
+            <Icon name="location" class="w-16 h-16" />
+            <span class="fs-18 fw-700"> 80 نورس ستي جدة , الرياض   </span>
+        </div>
+        <hr class="my-5 o-20">
+        <div class="roomDetails">
+            <h5 class="fs-24 fw-700 o-80">تم حجز غرفة واحدة</h5>
+            <div class="d-grid grid-col-1 lg:grid-col-3 sm:grid-col-2 gap-5">
+                <div class="gust d-flex align-items-start gap-3 mt-6">
+                    <Icon name="id" class="w-16 h-16 o-80" />
+                    <div class="dateInfo d-flex flex-col">
+                        <p class="fs-20 fw-700">الضيوف </p>
+                        <span class=" fs-16 o-80 ">   2 بالغين و طفل  </span>
+                    </div>
+                </div>
+                <div class="price d-flex align-items-start gap-3 mt-6">
+                    <Icon name="money" class="w-16 h-16 o-80" />
+                    <div class="dateInfo d-flex flex-col">
+                        <p class="fs-20 fw-700">السعر </p>
+                        <span class=" fs-16 o-80 ">   200 ريال/لليوم </span>
+                    </div>
+                </div>
+                <div class="food d-flex align-items-start gap-3 mt-6">
+                    <Icon name="food" class="w-16 h-16 o-80" />
+                    <div class="dateInfo d-flex flex-col">
+                        <p class="fs-20 fw-700">وجبة الفطار </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+      </div>
+    </Model>
+  </section>
+</Layout>

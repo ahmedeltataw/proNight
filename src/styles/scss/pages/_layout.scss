@@ -111,3 +111,34 @@ input::-webkit-inner-spin-button {
         
     }
 }
+
+.model{
+    z-index: 999999;
+    background-color: var(--w);
+    transform: translate(-50%, -50%) scale(.2);
+    padding: 24px;
+    box-shadow: 0 10px 24px var(--shadowColor);
+    transition: var(--t-l);
+    &.modelInquiry{
+        width: min(100%, 500px);
+    }
+    &.bookingDetails{
+        width: min(100%, 800px);
+        .status{
+            @extend %status;
+        }
+    }
+    .btn-closeModel{
+        padding: 0;
+    }
+    &.open{
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+body:has(.model.open) .overLay {
+    &::before {
+        z-index: 99999;
+    }
+}

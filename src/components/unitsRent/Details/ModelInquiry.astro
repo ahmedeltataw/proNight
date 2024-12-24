@@ -1,0 +1,52 @@
+---
+import Model from "@components/ui/Model.astro";
+import FormGroup from "@components/ui/FormGroup.astro";
+import Button from "@components/ui/Button.astro";
+---
+<Model id="ModelInquiry" modelClass="modelInquiry">
+    <h4 class="fs-24 text-center fw-700 mb-4">الاستعلام</h4>
+    <form class="relative">
+        <FormGroup
+            type="text"
+            title="الاسم بالكامل"
+            name="fullName"
+            place="ادخل الاسم بالكامل"
+            id="fullName"
+            isLabel={true}
+            LabelClassName="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80"
+            InputClassName="w-full h-24 ps-4 round-4 "
+            FormClassName="pb-5 w-full"
+          />
+          <FormGroup
+            type="email"
+            title="البريد الالكتروني"
+            name="email"
+            place="ادخل البريد الالكتروني"
+            id="email"
+            isLabel={true}
+            LabelClassName="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80"
+            InputClassName="w-full h-24 ps-4 round-4 "
+            FormClassName="pb-3 w-full"
+          />
+          <FormGroup
+            type="number"
+            title="رقم الجوال "
+            name="number"
+            place="ادخل رقم الجوال "
+            id="number"
+            isLabel={true}
+            LabelClassName="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80"
+            InputClassName="w-full h-24 ps-4 round-4 "
+            FormClassName="pb-3 w-full"
+          />
+          <div class="formGroup w-full">
+            <label for="massage" class="fs-16 fw-700 ps-3 pb-2 d-inline-block o-80">استعلامك</label>
+            <textarea name="massage" id="massage" class="w-full h-68 ps-4 round-4 pt-4"></textarea>
+        </div>
+        <div class="d-flex align-items-center justify-center">
+            <Button type="submit" aria={`ارسل استعلامك`} ClassName="   btn btn-round relative round-4 mt-5">
+                <span class="fs-18 fw-700 relative">ارسل </span>
+            </Button>
+        </div>
+    </form>
+</Model>

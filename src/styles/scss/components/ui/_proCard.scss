@@ -1,6 +1,6 @@
 @use "../../helpers/extend" as *;
 .Card{
-    background-color: var(--w);
+    
     h3{
         transition: var(--t-s);
     }
@@ -17,13 +17,11 @@
     hr{
         border-top-color: var(--border-color);
     }
-    span ,svg ,del{
-        color: var(--subTitle);
-    }
+    
     .bodyBottom{
         background-color: var(--subBG2);
     }
-    @extend %price;
+    
     .bodyMiddle{
         li{
             flex: 0 0 calc(100% / 3);
@@ -61,4 +59,44 @@
             }
         }
     }
+}
+.bookingCard{
+    .location{
+        svg{
+            color: var(--hover-main);
+        }
+    }
+    .cardBottom{
+        .btn-round{
+            span{
+                color: var(--w);
+            }
+            &:hover{
+                span{
+                    color: var(--hover-main);
+                }
+            }
+            &.border{
+                span{
+                    color: var(--red);
+                
+                }
+                &:hover{
+                    span{
+                        color: var(--w);
+                    }
+                }
+            }
+        }
+    }
+    .status{
+        @extend %status;
+    }
+}
+.Card ,.bookingCard{
+    background-color: var(--w);
+    span ,svg ,del{
+        color: var(--subTitle);
+    }
+    @extend %price;
 }

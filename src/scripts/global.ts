@@ -1,5 +1,3 @@
-
-
 let overlay = document.getElementById("overLay") as HTMLDivElement
 function calcMaxHeight(items: NodeListOf<HTMLLIElement> | HTMLLIElement[]): number {
     let maxHeight: number = 0;
@@ -53,7 +51,7 @@ const setAriaExpanded = (btn: HTMLButtonElement | null, EX: boolean) => {
     btn?.setAttribute('aria-expanded', EX.toString())
 };
 // =====toggle classes ========
-const toggleClass = (Element: HTMLElement | null, Classes: string[], action: 'add' | 'remove' | 'toggle') => {
+const toggleClass: (Element: HTMLElement | null, Classes: string[], action: 'add' | 'remove' | 'toggle') => void = (Element, Classes, action) => {
     if (!Element) return console.log("no element");
     Classes.forEach(cls => {
         if (action === 'add') {
@@ -119,7 +117,7 @@ const toggleAsideMenuSameBtn = (action: 'toggle' | 'remove',asideEl: HTMLUListEl
             const target = e.target as HTMLElement;
             if (!Btn.contains(target) && !asideEl.contains(target)) {
                 toggleAsideMenuSameBtn('remove',asideEl ,'responsiveLink' , 'lg-max:d-none', Btn, true, true)
-                console.log('x')
+                
             }
         };
         document.addEventListener('click', handleClickOutside, { capture: true });
@@ -295,3 +293,53 @@ window.addEventListener('load' , ()=>{
 })
 if(minVal)minVal.addEventListener('input' , ()=>slideMove('less'));
 if(maxVal)maxVal.addEventListener('input' , ()=>slideMove('more'));
+
+// =====model=======
+const toggleModel = (action: 'open' | 'close' , Model:HTMLDivElement , openBtn:HTMLButtonElement | null , closeBtn:HTMLButtonElement | null ,IsOverlay:boolean)=>{
+    if(!openBtn || !closeBtn) return;
+    if(action === 'open'){
+        toggleClass(Model , ['d-none'] , 'remove');
+        setAriaExpanded(openBtn , true);
+        setAriaExpanded(closeBtn , true);
+        requestAnimationFrame(()=>{
+            toggleClass(Model , ['open'] , 'add');
+        })
+        IsOverlay &&  toggleClass(overlay, ['active'], 'add');
+        const handleClickOutside = (e: Event) => {
+            const target = e.target as HTMLElement;
+            if (!openBtn.contains(target) && !Model.contains(target) && !closeBtn.contains(target)) {
+                toggleModel('close',Model ,openBtn , closeBtn, true)
+                
+            }
+        };
+        document.addEventListener('click', handleClickOutside, { capture: true });
+        (openBtn as any).__outsideClickHandler = handleClickOutside;
+    }else{
+        setAriaExpanded(openBtn , false);
+        setAriaExpanded(closeBtn , false);
+        toggleClass(Model , ['open'] , 'remove');
+        IsOverlay &&  toggleClass(overlay, ['active'], 'remove');
+        setTimeout(()=>{
+            toggleClass(Model , ['d-none'] , 'add');
+        },500)
+        const handleClickOutside = (openBtn as any).__outsideClickHandler;
+        if (handleClickOutside) {
+            document.removeEventListener('click', handleClickOutside, { capture: true });
+            delete (openBtn as any).__outsideClickHandler;
+        }
+    }
+}
+
+let openModelInquiry = document.getElementById('openModelInquiry') as HTMLButtonElement;
+let Model = document.getElementById('ModelInquiry') as HTMLDivElement;
+let closeModelInquiry = document.getElementById('closeModelInquiry') as HTMLButtonElement;
+
+if(openModelInquiry)openModelInquiry.addEventListener('click',()=>toggleModel('open' ,Model , openModelInquiry ,closeModelInquiry,true ));
+if(closeModelInquiry)closeModelInquiry.addEventListener('click',()=>toggleModel('close' ,Model , openModelInquiry ,closeModelInquiry,true ));
+
+let Model2 = document.getElementById('BookingModel') as HTMLDivElement;
+let openModel2 = document.querySelector('[data-id="openBookingModel"]') as HTMLButtonElement
+let closeModel2 = document.getElementById('closeBookingModel') as HTMLButtonElement;
+
+if(openModel2) openModel2.addEventListener('click', () => toggleModel('open', Model2, openModel2, closeModel2, true));
+if(closeModel2) closeModel2.addEventListener('click', () => toggleModel('close', Model2, openModel2, closeModel2, true));

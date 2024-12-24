@@ -1,14 +1,17 @@
 import Swiper from 'swiper';
-import { Navigation ,Thumbs, FreeMode  } from 'swiper/modules';
-new Swiper(".exploreSwiper", {
+import { Navigation, Thumbs, FreeMode } from 'swiper/modules';
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  new Swiper(".exploreSwiper", {
     modules: [Navigation],
     slidesPerView: 1,
     spaceBetween: 10,
     loop: true,
     navigation: {
-        nextEl: ".exploreSwiper-navigation .swiper-button-next",
-        prevEl: ".exploreSwiper-navigation .swiper-button-prev",
-      },
+      nextEl: ".exploreSwiper-navigation .swiper-button-next",
+      prevEl: ".exploreSwiper-navigation .swiper-button-prev",
+    },
     breakpoints: {
       640: {
         slidesPerView: 2,
@@ -24,15 +27,15 @@ new Swiper(".exploreSwiper", {
       },
     },
   });
- new Swiper(".cityRentSwiper", {
+  new Swiper(".cityRentSwiper", {
     modules: [Navigation],
     slidesPerView: 1,
     spaceBetween: 10,
     loop: true,
     navigation: {
-        nextEl: ".cityRentSwiper-navigation .swiper-button-next",
-        prevEl: ".cityRentSwiper-navigation .swiper-button-prev",
-      },
+      nextEl: ".cityRentSwiper-navigation .swiper-button-next",
+      prevEl: ".cityRentSwiper-navigation .swiper-button-prev",
+    },
     breakpoints: {
       640: {
         slidesPerView: 1,
@@ -48,15 +51,15 @@ new Swiper(".exploreSwiper", {
       },
     },
   });
- new Swiper(".clientReviewSwiper", {
+  new Swiper(".clientReviewSwiper", {
     modules: [Navigation],
     slidesPerView: 1,
     spaceBetween: 10,
     loop: true,
     navigation: {
-        nextEl: ".clientReviewSwiper-navigation .swiper-button-next",
-        prevEl: ".clientReviewSwiper-navigation .swiper-button-prev",
-      },
+      nextEl: ".clientReviewSwiper-navigation .swiper-button-next",
+      prevEl: ".clientReviewSwiper-navigation .swiper-button-prev",
+    },
     breakpoints: {
       640: {
         slidesPerView: 1,
@@ -72,19 +75,17 @@ new Swiper(".exploreSwiper", {
       },
     },
   });
+
   let thumbSwiper = new Swiper('.thumb-swiper', {
-    modules: [FreeMode, Thumbs],
-    loop: true,
+    modules: [FreeMode],
     spaceBetween: 10,
     slidesPerView: 4,
-    freeMode: true,
     watchSlidesProgress: true,
+    slideToClickedSlide: true,
   });
 
- new Swiper('.main-swiper', {
+  let mainSlider = new Swiper('.main-swiper', {
     modules: [Navigation, Thumbs],
-    loop: true,
-    spaceBetween: 10,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -93,5 +94,4 @@ new Swiper(".exploreSwiper", {
       swiper: thumbSwiper,
     },
   });
-
-
+});
