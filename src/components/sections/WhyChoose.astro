@@ -5,12 +5,12 @@ import type {infoRentCardType} from "../../type/type";
 import {cardWhyChooseData} from "@data/data";
 
 ---
-<section class="whyChoose relative">
+<section class="whyChoose relative" data-aos="fade-up" data-aos-duration="1000">
     <MainHeading title="لماذا تختارنا" dabble={{des:"نحن مبتكرون وشغوفون بالعمل الذي نقوم به."}} aos={{effect:'fade-down',time:800}} />
     <div class="container d-grid lg:grid-col-3 md:grid-col-2 grid-col-1 gap-5">
         {
             cardWhyChooseData.map((card)=>{
-                return <CardWhyChoose title={card.title} src={card.src} aos={card.aos} />
+                return <CardWhyChoose title={card.title} src={card.src}  />
             })
         }
     </div>

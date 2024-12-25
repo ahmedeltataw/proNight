@@ -7,7 +7,7 @@ import { Image } from "astro:assets";
 
 <section class="contact">
   <div class="container">
-    <div class="d-grid grid-col-2 sm-max:grid-col-1 round-6 p-6 gap-5">
+    <div class="d-grid lg:grid-col-2 grid-col-1 round-6 p-6 gap-5">
       <div class="leftSide" data-aos="fade-up" data-aos-duration="1000">
         <form>
             <h3 class="fs-28 fw-700  pb-5">ابقا على تواصل</h3>
@@ -53,7 +53,7 @@ import { Image } from "astro:assets";
         </Button>
         </form>
       </div>
-      <div class="rightSide  " data-aos="fade-down" data-aos-duration="1000">
+      <div class="rightSide  lg-max:d-none" data-aos="fade-down" data-aos-duration="1000">
         <figure class="round-6">
           <Image src={contact} alt={`test`} class={`round-6 img-cover`} quality={50} format="webp"/>
         </figure>

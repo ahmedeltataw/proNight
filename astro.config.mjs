@@ -7,7 +7,8 @@ export default defineConfig({
         assets: '_astro',
         inlineStylesheets: 'auto',
         format: 'file',
-        site: "https://ryn-proNight.com/"
+        site: "https://ryn-proNight.com/",
+        // assetsPrefix: './'
     },
     image: {
         domains: ["astro.build"]
@@ -44,7 +45,7 @@ export default defineConfig({
         
     },
     integrations: [purgecss({
-        safelist: ['a' ,'p' , 'lg-max:w-9/10' , 'sm-max:w-9/10' , 'star-rating' ,'w-9/10'], // Keep these classes
+        safelist: ['a' ,'p' , 'lg-max:w-9/10' , 'sm-max:w-9/10' , 'star-rating' ,'w-9/10' ,'responsiveLink' , 'button'], // Keep these classes
         content: [
             process.cwd() + '/src/**/*.{astro,vue}' // Watching astro and vue sources
         ],

@@ -21,6 +21,14 @@ export const linkHeader:LinkType[] = [
         text:" تواصل معانا",
         href:'Contactus.html',
     },
+    {
+        text:"الملف الشخصي",
+        href:'Profile.html',
+    },
+    {
+        text:"حجوزاتي",
+        href:'Reservations.html',
+    },
     // {
     //     text:"",
     //     href:'#!',

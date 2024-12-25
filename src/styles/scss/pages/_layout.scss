@@ -119,6 +119,8 @@ input::-webkit-inner-spin-button {
     padding: 24px;
     box-shadow: 0 10px 24px var(--shadowColor);
     transition: var(--t-l);
+    max-width: 90%;
+    max-height: 80%;
     &.modelInquiry{
         width: min(100%, 500px);
     }

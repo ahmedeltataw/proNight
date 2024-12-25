@@ -1,11 +1,20 @@
 import AOS from 'aos';
-document.addEventListener('DOMContentLoaded', () => {
-    AOS.init({
-      offset: 0,
-      duration: 700,
-      easing: 'ease-in-out',
-      once: false,
-      mirror: true,
-      anchorPlacement: 'top-bottom'
-    });
+
+window.addEventListener('load', () => {
+  AOS.init({
+    offset: 100,
+    duration: 700,
+    easing: 'ease-in-out',
+    once: false,
+    mirror: false,
+    anchorPlacement: 'center-bottom',
+    disable: false,
+    startEvent: 'DOMContentLoaded',
+    disableMutationObserver: false,
   });
+
+  // Refresh AOS when all content is loaded
+  setTimeout(() => {
+    AOS.refresh();
+  }, 500);
+});
