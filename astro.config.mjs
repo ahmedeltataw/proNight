@@ -45,7 +45,7 @@ export default defineConfig({
         
     },
     integrations: [purgecss({
-        safelist: ['a' ,'p' , 'lg-max:w-9/10' , 'sm-max:w-9/10' , 'star-rating' ,'w-9/10' ,'responsiveLink' , 'button'], // Keep these classes
+        safelist: ['a' ,'p' , 'lg-max:w-9/10' , 'sm-max:w-9/10'  ,'w-9/10' ,'responsiveLink' , 'button' , 'border'], // Keep these classes
         content: [
             process.cwd() + '/src/**/*.{astro,vue}' // Watching astro and vue sources
         ],

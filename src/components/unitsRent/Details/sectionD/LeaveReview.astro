@@ -10,60 +10,80 @@ import Button from "@components/ui/Button.astro";
     <div
       class="LeaveRating d-grid align-items-center lg:grid-col-3 grid-col-2 sm-max:grid-col-1 gap-5"
     >
-      <div class="formGroup d-flex align-items-center gap-3">
-        <span class="fs-18">الخدمة</span>
-        <select class="star-rating leaveRate_1">
-          <option value="">Select a rating</option>
-          <option value="5">Excellent</option>
-          <option value="4">Very Good</option>
-          <option value="3">Average</option>
-          <option value="2">Poor</option>
-          <option value="1">Terrible</option>
-        </select>
+      <div class="formGroup d-flex align-items-start gap-3">
+        <span class="fs-18 ">الخدمة</span>
+        <div class="star-rating d-flex align-items-center gap-2 ">
+          <input type="radio" name="service" id="service_1">
+          <label for="service_1"></label>
+          <input type="radio" name="service" id="service_2">
+          <label for="service_2"></label>
+          <input type="radio" name="service" id="service_3">
+          <label for="service_3"></label>
+          <input type="radio" name="service" id="service_4">
+          <label for="service_4"></label>
+          <input type="radio" name="service" id="service_5">
+          <label for="service_5"></label>
+        </div>
       </div>
-      <div class="formGroup d-flex align-items-center gap-3">
+      <div class="formGroup d-flex align-items-start gap-3">
         <span class="fs-18">الموقع</span>
-        <select class="star-rating leaveRate_2">
-          <option value="">Select a rating</option>
-          <option value="5">Excellent</option>
-          <option value="4">Very Good</option>
-          <option value="3">Average</option>
-          <option value="2">Poor</option>
-          <option value="1">Terrible</option>
-        </select>
+        <div class="star-rating d-flex align-items-center gap-2">
+          <input type="radio" name="location" id="location_1">
+          <label for="location_1"></label>
+          <input type="radio" name="location" id="location_2">
+          <label for="location_2"></label>
+          <input type="radio" name="location" id="location_3">
+          <label for="location_3"></label>
+          <input type="radio" name="location" id="location_4">
+          <label for="location_4"></label>
+          <input type="radio" name="location" id="location_5">
+          <label for="location_5"></label>
+        </div>
       </div>
-      <div class="formGroup d-flex align-items-center gap-3">
+      <div class="formGroup d-flex align-items-start gap-3">
         <span class="fs-18">قيمة مقابل سعر</span>
-        <select class="star-rating leaveRate_3">
-          <option value="">Select a rating</option>
-          <option value="5">Excellent</option>
-          <option value="4">Very Good</option>
-          <option value="3">Average</option>
-          <option value="2">Poor</option>
-          <option value="1">Terrible</option>
-        </select>
+        <div class="star-rating d-flex align-items-center gap-2">
+          <input type="radio" name="money" id="money_1">
+          <label for="money_1"></label>
+          <input type="radio" name="money" id="money_2">
+          <label for="money_2"></label>
+          <input type="radio" name="money" id="money_3">
+          <label for="money_3"></label>
+          <input type="radio" name="money" id="money_4">
+          <label for="money_4"></label>
+          <input type="radio" name="money" id="money_5">
+          <label for="money_5"></label>
+        </div>
       </div>
-      <div class="formGroup d-flex align-items-center gap-3">
+      <div class="formGroup d-flex align-items-start gap-3">
         <span class="fs-18">مرافق</span>
-        <select class="star-rating leaveRate_4">
-          <option value="">Select a rating</option>
-          <option value="5">Excellent</option>
-          <option value="4">Very Good</option>
-          <option value="3">Average</option>
-          <option value="2">Poor</option>
-          <option value="1">Terrible</option>
-        </select>
+        <div class="star-rating d-flex align-items-center gap-2">
+          <input type="radio" name="facilities" id="facilities_1">
+          <label for="facilities_1"></label>
+          <input type="radio" name="facilities" id="facilities_2">
+          <label for="facilities_2"></label>
+          <input type="radio" name="facilities" id="facilities_3">
+          <label for="facilities_3"></label>
+          <input type="radio" name="facilities" id="facilities_4">
+          <label for="facilities_4"></label>
+          <input type="radio" name="facilities" id="facilities_5">
+          <label for="facilities_5"></label>
+        </div>
       </div>
-      <div class="formGroup d-flex align-items-center gap-3">
+      <div class="formGroup d-flex align-items-start gap-3">
         <span class="fs-18">نظافة</span>
-        <select class="star-rating leaveRate_5">
-          <option value="">Select a rating</option>
-          <option value="5">Excellent</option>
-          <option value="4">Very Good</option>
-          <option value="3">Average</option>
-          <option value="2">Poor</option>
-          <option value="1">Terrible</option>
-        </select>
+        <div class="star-rating d-flex align-items-center gap-2">
+          <input type="radio" name="cleanliness" id="cleanliness_1">
+          <label for="cleanliness_1"></label>
+          <input type="radio" name="cleanliness" id="cleanliness_2">
+          <label for="cleanliness_2"></label>
+          <input type="radio" name="cleanliness" id="cleanliness_3">
+          <label for="cleanliness_3"></label>
+          <input type="radio" name="cleanliness" id="cleanliness_4">
+          <label for="cleanliness_4"></label>
+          <input type="radio" name="cleanliness" id="cleanliness_5">
+          <label for="cleanliness_5"></label>
+        </div>
       </div>
     </div>
     <div class="bigGroup mt-5 d-flex align-items-center gap-5 w-full">

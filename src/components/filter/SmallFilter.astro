@@ -10,7 +10,7 @@ const { page } = Astro.props;
 
 <section class:list={['smallFilter relative' ,page]}>
   <div class="container">
-    <form class="d-grid gap-4  lg:grid-col-5 md:grid-col-3 sm:grid-col-2 lg:p-11 md:p-9 p-8 round-5">
+    <form class="d-grid gap-4  lg:grid-col-6 md:grid-col-3 sm:grid-col-2 lg:p-11 md:p-9 p-8 round-5">
       <SelectForm
         id={`city`}
         title={`المدينة`}
@@ -45,17 +45,30 @@ const { page } = Astro.props;
         InputClassName="w-full h-24 ps-4 round-4 relative"
         data-value="false"
       />
-      <FormGroup
+      <div class="largeGroup d-flex align-items-start gap-2 lg:col-s-4 lg:col-e-6 md:col-s-1 md:col-e-3">
+        <FormGroup
         type="text"
         isLabel={true}
-        place="بالغ-طفل"
-        name="NumberOfGuests"
-        id="Guests"
-        title="الضيوف"
+        place="الأعمار +12"
+        name="NumberOfGuests_adult"
+        id="GuestsAdult"
+        title="عدد البالغين"
         FormClassName=""
         LabelClassName="fs-18 fw-700 ps-3 pb-2 d-inline-block o-80"
         InputClassName="w-full h-24 ps-4 round-4 "
       />
+        <FormGroup
+        type="text"
+        isLabel={true}
+        place="الأعمار من 2-12"
+        name="NumberOfGuests_children"
+        id="GuestsChildren"
+        title="عدد الاطفال"
+        FormClassName=""
+        LabelClassName="fs-18 fw-700 ps-3 pb-2 d-inline-block o-80"
+        InputClassName="w-full h-24 ps-4 round-4 "
+      />
+      </div>
       <Button type="submit" aria={`ابحث`} ClassName="btn btn-round relative round-4 h-24 md:mt-12 md-max:0 "  >
         <span class="fs-18 fw-700 relative">بحث</span>
       </Button>
