@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="اكتشف أفضل عروض الإيجارات عبر موقعنا المتخصص في تأجير المنازل، الشقق، والعقارات التجارية. نوفر لك خيارات متنوعة تناسب احتياجاتك بأسعار تنافسية ومواقع مميزة. سهولة البحث، تفاصيل دقيقة، ودعم عملاء مميز يجعل تجربتك معنا فريدة ومثالية. تصفح الآن واستمتع بإيجاد العقار المثالي بكل سهولة وسرعة.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="generator" content="Astro v5.0.9"><!-- Font preloads -->
+    <link as="font" crossorigin rel="preload" href="./fonts/Almarai-Light.woff2" type="font/woff2">
+    <link as="font" crossorigin rel="preload" href="./fonts/Almarai-Regular.woff2" type="font/woff2">
+    <link as="font" crossorigin rel="preload" href="./fonts/Almarai-Bold.woff2" type="font/woff2">
+    <style>
+        @font-face {
+            font-weight: 300;
+            font-style: normal;
+            font-family: Almarai;
+            font-display: swap;
+            src: url(./fonts/Almarai-Light.woff2)
+        }
+
+        @font-face {
+            font-weight: 400;
+            font-style: normal;
+            font-family: Almarai;
+            font-display: swap;
+            src: url(./fonts/Almarai-Regular.woff2)
+        }
+
+        @font-face {
+            font-weight: 700;
+            font-style: normal;
+            font-family: Almarai;
+            font-display: swap;
+            src: url(./fonts/Almarai-Bold.woff2)
+        }
+
+        body {
+            font-family: Almarai, '_font_fallback_1667623879680', sans-serif;
+        }
+
+        @font-face {
+            font-family: '_font_fallback_1667623879680';
+            size-adjust: 95.71%;
+            src: local('Arial');
+            ascent-override: 94.55%;
+            descent-override: 22.04%;
+            line-gap-override: 0.00%;
+        }
+    </style><!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><!-- Primary Meta Tags -->
+    <title>proNight | المفضلة</title>
+    <meta name="title" content="proNight | المفضلة">
+    <meta name="description"
+        content="اكتشف أفضل عروض الإيجارات عبر موقعنا المتخصص في تأجير المنازل، الشقق، والعقارات التجارية. نوفر لك خيارات متنوعة تناسب احتياجاتك بأسعار تنافسية ومواقع مميزة. سهولة البحث، تفاصيل دقيقة، ودعم عملاء مميز يجعل تجربتك معنا فريدة ومثالية. تصفح الآن واستمتع بإيجاد العقار المثالي بكل سهولة وسرعة.">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        [data-astro-image] {
+            width: 100%;
+            height: auto;
+            -o-object-fit: var(--fit);
+            object-fit: var(--fit);
+            -o-object-position: var(--pos);
+            object-position: var(--pos);
+            aspect-ratio: var(--w)/var(--h)
+        }
+
+        [data-astro-image=responsive] {
+            max-width: calc(var(--w)*1px);
+            max-height: calc(var(--h)*1px)
+        }
+
+        [data-astro-image=fixed] {
+            width: calc(var(--w)*1px);
+            height: calc(var(--h)*1px)
+        }
+    </style>
+</head>
+
+<body>
+    <header class="absolute w-full top-0">
+        <div class="container-full lg:px-10">
+            <nav class="d-flex align-items-center justify-between py-6 p-in-8 mt-5 round-8">
+                <div class="firstSide d-flex align-items-center gap-4"> <button class=" icon-nav-base2 lg:d-none"
+                        type="button" aria-label="mobileMenu" id="mobileMenu" aria-expanded="false"
+                        aria-controls="responsiveMenu"> <span></span> <span></span> <span></span> </button> <a href="/"
+                        class="logo h-28" aria-label="logo proNight"> <img
+                            src="./assets/image/logo-BKe-xv8Q_Z26kokX.webp" alt="logo" width="150" height="58"
+                            loading="lazy" decoding="async" class="img-cover"> </a> </div>
+                <ul id="responsiveMenu"
+                    class="navLinks d-flex align-items-center gap-9  lg-max:flex-col lg-max:fixed lg-max:ps-10 lg-max:inset-s-0 lg-max:align-items-start lg-max:w-120 lg-max:max-w-full lg-max:h-screen lg-max:py-8 lg-max:d-none">
+                    <li class="lg-max:w-9/10 relative"> <a href="/" class="navLink fs-16 fw-700 relative"
+                            aria-label="الرئيسية"> الرئيسية </a> </li>
+                    <li class="lg-max:w-9/10 relative"> <a href="Aboutus.html" class="navLink fs-16 fw-700 relative"
+                            aria-label="من نحن"> من نحن </a> </li>
+                    <li class="lg-max:w-9/10 relative"> <a href="Units.html" class="navLink fs-16 fw-700 relative"
+                            aria-label="الوحدات"> الوحدات </a> </li>
+                    <li class="lg-max:w-9/10 relative"> <a href="Favorites.html" class="navLink fs-16 fw-700 relative"
+                            aria-label="المفضلة"> المفضلة </a> </li>
+                    <li class="lg-max:w-9/10 relative"> <a href="Contactus.html" class="navLink fs-16 fw-700 relative"
+                            aria-label=" تواصل معانا"> تواصل معانا </a> </li>
+                    <li class="lg-max:w-9/10 relative"> <a href="Profile.html" class="navLink fs-16 fw-700 relative"
+                            aria-label="الملف الشخصي"> الملف الشخصي </a> </li>
+                    <li class="lg-max:w-9/10 relative"> <a href="Reservations.html"
+                            class="navLink fs-16 fw-700 relative" aria-label="حجوزاتي"> حجوزاتي </a> </li>
+                    <li class="lg:d-none lg-max:w-9/10 relative"> <a href="signIn.html" class="navLink fs-16 fw-700 "
+                            aria-label="تسجيل الدخول"> تسجيل الدخول </a> </li>
+                    <li class="lg:d-none lg-max:w-9/10 relative"> <a href="signUp.html" class="navLink fs-16 fw-700 "
+                            aria-label="تسجيل "> تسجيل </a> </li>
+                    <li class="lg:d-none lg-max:w-9/10 relative"> <a href="Profile.html" class="navLink fs-16 fw-700 "
+                            aria-label="الملف الشخصي"> الملف الشخصي </a> </li>
+                    <li class="lg:d-none lg-max:w-9/10 relative"> <a href="Reservations.html"
+                            class="navLink fs-16 fw-700 " aria-label="حجوزاتي"> حجوزاتي </a> </li>
+                </ul>
+                <div class="leftSide d-flex align-items-center gap-3"> <button
+                        class=" btn btn-round relative round-4 lg-max:d-none" type="button" aria-label="button"> <a
+                            href="signIn.html" class="fs-16 fw-700 relative" aria-label="تسجيل الدخول"> تسجيل الدخول
+                        </a> </button>
+                    <div class="dropDownMenu relative " id="langDropMenu"> <button
+                            class=" btn btn-round  relative round-4 btn-dropDown d-flex align-items-center gap-2 border"
+                            type="button" aria-label="button" aria-expanded="false" aria-controls="langDropMenu"> <span
+                                class="fs-16 fw-700 relative"> اللغة العرية</span> <svg width="24" height="24"
+                                class="w-10 h-10 relative arrowSvg" data-icon="arrow-down">
+                                <symbol id="ai:local:arrow-down" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" d="m7 10 5 5 5-5" />
+                                </symbol>
+                                <use href="#ai:local:arrow-down"></use>
+                            </svg> </button>
+                        <ul class="dropDownMenuList d-none h-fit absolute round-4 p-in-4 o-0 inset-s--8">
+                            <li> <a href="#!" class="fs-16 fw-500 d-flex align-items-center gap-3" aria-label="العربية">
+                                    <img src="./assets/image/flagAr-DRYt8NbC_ZITLLs.webp" alt="العربية" width="40"
+                                        height="30" loading="lazy" decoding="async" class="img-cover w-12"> العربية </a>
+                            </li>
+                            <li> <a href="#!" class="fs-16 fw-500 d-flex align-items-center gap-3" aria-label="English">
+                                    <img src="./assets/image/flagEn-BhBBs6MN_Zmubjz.webp" alt="English" width="40"
+                                        height="30" loading="lazy" decoding="async" class="img-cover w-12"> English </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="breadcrumb relative overflow-hidden">
+            <figure class="pattern2 absolute top-0 inset-e-0 o-30  w-100 h-full lg-max:d-none "> <img
+                    src="./assets/image/pattern-1-7A3EppHt_Z2cN0iE.webp" alt="pattern" width="240" height="495"
+                    loading="lazy" decoding="async" class="img-cover"> </figure>
+            <div class="container h-full d-flex align-items-center justify-center flex-col gap-3 relative">
+                <figure class="pattern absolute   w-56 h-56 lg-max:d-none"> <img
+                        src="./assets/image/breadcrumb-DjOdsZ8N_uu5Ti.webp" alt="pattern" width="100" height="105"
+                        loading="lazy" decoding="async" class="img-contain"> </figure>
+                <h2 class="fs-36 fw-700">المفضلة</h2>
+                <ul class="d-flex align-items-center gap-2">
+                    <li> <a href="/" class="fs-18 fw-500" aria-label="home"> الرئيسية </a> </li>
+                    <li class="fs-18 o-80">/</li>
+                    <li class="fs-18 fw-500">المفضلة</li>
+                </ul>
+            </div>
+        </section>
+        <section class="Favorites">
+            <div class="container d-grid gap-5 lg:grid-col-3 md:grid-col-2 grid-col-1">
+                <div class="Card p-7 round-7 relative"> <!-- cardImg -->
+                    <div class="cardImg  mb-5 relative"> <button
+                            class=" btn btn-heart absolute round-4 w-22 h-22 round-cricle  inset-s-2 active"
+                            type="button" aria-label="test"> <svg width="24" height="24"
+                                class="w-14 h-14 relative mx-auto " data-icon="heart">
+                                <symbol id="ai:local:heart" viewBox="0 0 24 24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="1.5"
+                                        d="M7.75 3.5C5.127 3.5 3 5.76 3 8.547 3 14.125 12 20.5 12 20.5s9-6.375 9-11.953C21 5.094 18.873 3.5 16.25 3.5c-1.86 0-3.47 1.136-4.25 2.79-.78-1.654-2.39-2.79-4.25-2.79" />
+                                </symbol>
+                                <use href="#ai:local:heart"></use>
+                            </svg> </button>
+                        <figure class="overflow-hidden round-6"> <img src="./assets/image/hero-1-BrSVIaZS_1H19lm.webp"
+                                alt="test" width="899" height="600" loading="lazy" decoding="async"
+                                class="round-6 img-cover"> </figure>
+                        <div
+                            class="tag dis round-cricle p-2 w-30 h-30 border-4 border-solid absolute inset-e-5 d-flex align-items-center justify-center">
+                            <p class="fs-24 fw-700">50 <small class="fs-16">%</small></p>
+                        </div>
+                    </div>
+                    <div class="cardBody"> <!-- bodyTop -->
+                        <div class="bodyTop pb-5">
+                            <h3 class="fs-20 md:fs-24 fw-700">فندق الاندلس مول </h3>
+                            <div class="rate d-flex align-items-center "> <svg width="1em" height="1em"
+                                    class="w-12 h-12" data-icon="star">
+                                    <symbol id="ai:local:star" viewBox="0 0 24 24">
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path fill="currentColor"
+                                            d="m12 17.27 4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08z" />
+                                    </symbol>
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <span class="fs-18 o-80 ps-2">(170)</span> </div>
+                        </div>
+                        <hr class="pb-5 border-t-1 border-t-solid border-none o-50"> <!-- bodyMiddle -->
+                        <ul class="bodyMiddle d-flex align-items-center  pb-5">
+                            <li class="d-flex align-items-center gap-3"> <img
+                                    src="./assets/image/bed-CvYBHHbO_Z1mur8v.svg" alt="bed" width="21" height="23"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">2</span> </li>
+                            <li class="d-flex align-items-center gap-2"> <img
+                                    src="./assets/image/bathroom-EpvaUuHk_Z1u15eh.svg" alt="bed" width="21" height="24"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">2</span> </li>
+                            <li class="d-flex align-items-center gap-2"> <img
+                                    src="./assets/image/ruler-9w79ooLt_pxPUi.svg" alt="bed" width="22" height="23"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">120م</span> </li>
+                        </ul> <!-- bodyBottom  -->
+                        <div class="bodyBottom p-5 d-flex align-items-center justify-between round-6">
+                            <p class="city d-flex align-items-center gap-1"> <svg width="1em" height="1em"
+                                    class="w-12 h-12" data-icon="location">
+                                    <symbol id="ai:local:location" viewBox="0 0 32 32">
+                                        <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2">
+                                            <circle cx="16" cy="11" r="4" />
+                                            <path d="M24 15c-3 7-8 15-8 15s-5-8-8-15 2-13 8-13 11 6 8 13" />
+                                        </g>
+                                    </symbol>
+                                    <use href="#ai:local:location"></use>
+                                </svg> <span class="fs-18">جدة</span> </p>
+                            <div class="price d-flex align-items-center gap-4"> <del class="oldPrice fs-20">2000</del>
+                                <p class="NewPrice fs-24 fw-700">
+                                    1000<small class="fs-16">ر.ل</small><span class="fs-16">/لليوم</span> </p>
+                            </div>
+                        </div>
+                    </div> <a href="unitsDetails.html" class="absolute  inset-0 w-full h-full "
+                        aria-label="تفاصيل الوحدة"> </a>
+                    <div class="cardButton mt-5"> <button class=" w-full  btn btn-round relative round-4" type="button"
+                            aria-label="احجز الان"> <a href="#!" class="fs-16 fw-700 relative " aria-label="احجز الان">
+                                احجز الان </a> </button> </div>
+                </div>
+                <div class="Card p-7 round-7 relative"> <!-- cardImg -->
+                    <div class="cardImg  mb-5 relative"> <button
+                            class=" btn btn-heart absolute round-4 w-22 h-22 round-cricle  inset-s-2 active"
+                            type="button" aria-label="test"> <svg width="24" height="24" viewBox="0 0 24 24"
+                                class="w-14 h-14 relative mx-auto " data-icon="heart">
+                                <use href="#ai:local:heart"></use>
+                            </svg> </button>
+                        <figure class="overflow-hidden round-6"> <img src="./assets/image/hero-1-BrSVIaZS_1H19lm.webp"
+                                alt="test" width="899" height="600" loading="lazy" decoding="async"
+                                class="round-6 img-cover"> </figure>
+                        <div
+                            class="tag dis round-cricle p-2 w-30 h-30 border-4 border-solid absolute inset-e-5 d-flex align-items-center justify-center">
+                            <p class="fs-24 fw-700">50 <small class="fs-16">%</small></p>
+                        </div>
+                    </div>
+                    <div class="cardBody"> <!-- bodyTop -->
+                        <div class="bodyTop pb-5">
+                            <h3 class="fs-20 md:fs-24 fw-700">فندق الاندلس مول </h3>
+                            <div class="rate d-flex align-items-center "> <svg width="1em" height="1em"
+                                    viewBox="0 0 24 24" class="w-12 h-12" data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <span class="fs-18 o-80 ps-2">(170)</span> </div>
+                        </div>
+                        <hr class="pb-5 border-t-1 border-t-solid border-none o-50"> <!-- bodyMiddle -->
+                        <ul class="bodyMiddle d-flex align-items-center  pb-5">
+                            <li class="d-flex align-items-center gap-3"> <img
+                                    src="./assets/image/bed-CvYBHHbO_Z1mur8v.svg" alt="bed" width="21" height="23"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">2</span> </li>
+                            <li class="d-flex align-items-center gap-2"> <img
+                                    src="./assets/image/bathroom-EpvaUuHk_Z1u15eh.svg" alt="bed" width="21" height="24"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">2</span> </li>
+                            <li class="d-flex align-items-center gap-2"> <img
+                                    src="./assets/image/ruler-9w79ooLt_pxPUi.svg" alt="bed" width="22" height="23"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">120م</span> </li>
+                        </ul> <!-- bodyBottom  -->
+                        <div class="bodyBottom p-5 d-flex align-items-center justify-between round-6">
+                            <p class="city d-flex align-items-center gap-1"> <svg width="1em" height="1em"
+                                    viewBox="0 0 32 32" class="w-12 h-12" data-icon="location">
+                                    <use href="#ai:local:location"></use>
+                                </svg> <span class="fs-18">جدة</span> </p>
+                            <div class="price d-flex align-items-center gap-4"> <del class="oldPrice fs-20">2000</del>
+                                <p class="NewPrice fs-24 fw-700">
+                                    1000<small class="fs-16">ر.ل</small><span class="fs-16">/لليوم</span> </p>
+                            </div>
+                        </div>
+                    </div> <a href="unitsDetails.html" class="absolute  inset-0 w-full h-full "
+                        aria-label="تفاصيل الوحدة"> </a>
+                    <div class="cardButton mt-5"> <button class=" w-full  btn btn-round relative round-4" type="button"
+                            aria-label="احجز الان"> <a href="#!" class="fs-16 fw-700 relative " aria-label="احجز الان">
+                                احجز الان </a> </button> </div>
+                </div>
+                <div class="Card p-7 round-7 relative"> <!-- cardImg -->
+                    <div class="cardImg  mb-5 relative"> <button
+                            class=" btn btn-heart absolute round-4 w-22 h-22 round-cricle  inset-s-2 active"
+                            type="button" aria-label="test"> <svg width="24" height="24" viewBox="0 0 24 24"
+                                class="w-14 h-14 relative mx-auto " data-icon="heart">
+                                <use href="#ai:local:heart"></use>
+                            </svg> </button>
+                        <figure class="overflow-hidden round-6"> <img src="./assets/image/hero-1-BrSVIaZS_1H19lm.webp"
+                                alt="test" width="899" height="600" loading="lazy" decoding="async"
+                                class="round-6 img-cover"> </figure>
+                        <div
+                            class="tag dis round-cricle p-2 w-30 h-30 border-4 border-solid absolute inset-e-5 d-flex align-items-center justify-center">
+                            <p class="fs-24 fw-700">50 <small class="fs-16">%</small></p>
+                        </div>
+                    </div>
+                    <div class="cardBody"> <!-- bodyTop -->
+                        <div class="bodyTop pb-5">
+                            <h3 class="fs-20 md:fs-24 fw-700">فندق الاندلس مول </h3>
+                            <div class="rate d-flex align-items-center "> <svg width="1em" height="1em"
+                                    viewBox="0 0 24 24" class="w-12 h-12" data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <span class="fs-18 o-80 ps-2">(170)</span> </div>
+                        </div>
+                        <hr class="pb-5 border-t-1 border-t-solid border-none o-50"> <!-- bodyMiddle -->
+                        <ul class="bodyMiddle d-flex align-items-center  pb-5">
+                            <li class="d-flex align-items-center gap-3"> <img
+                                    src="./assets/image/bed-CvYBHHbO_Z1mur8v.svg" alt="bed" width="21" height="23"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">2</span> </li>
+                            <li class="d-flex align-items-center gap-2"> <img
+                                    src="./assets/image/bathroom-EpvaUuHk_Z1u15eh.svg" alt="bed" width="21" height="24"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">2</span> </li>
+                            <li class="d-flex align-items-center gap-2"> <img
+                                    src="./assets/image/ruler-9w79ooLt_pxPUi.svg" alt="bed" width="22" height="23"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">120م</span> </li>
+                        </ul> <!-- bodyBottom  -->
+                        <div class="bodyBottom p-5 d-flex align-items-center justify-between round-6">
+                            <p class="city d-flex align-items-center gap-1"> <svg width="1em" height="1em"
+                                    viewBox="0 0 32 32" class="w-12 h-12" data-icon="location">
+                                    <use href="#ai:local:location"></use>
+                                </svg> <span class="fs-18">جدة</span> </p>
+                            <div class="price d-flex align-items-center gap-4"> <del class="oldPrice fs-20">2000</del>
+                                <p class="NewPrice fs-24 fw-700">
+                                    1000<small class="fs-16">ر.ل</small><span class="fs-16">/لليوم</span> </p>
+                            </div>
+                        </div>
+                    </div> <a href="unitsDetails.html" class="absolute  inset-0 w-full h-full "
+                        aria-label="تفاصيل الوحدة"> </a>
+                    <div class="cardButton mt-5"> <button class=" w-full  btn btn-round relative round-4" type="button"
+                            aria-label="احجز الان"> <a href="#!" class="fs-16 fw-700 relative " aria-label="احجز الان">
+                                احجز الان </a> </button> </div>
+                </div>
+                <div class="Card p-7 round-7 relative"> <!-- cardImg -->
+                    <div class="cardImg  mb-5 relative"> <button
+                            class=" btn btn-heart absolute round-4 w-22 h-22 round-cricle  inset-s-2 active"
+                            type="button" aria-label="test"> <svg width="24" height="24" viewBox="0 0 24 24"
+                                class="w-14 h-14 relative mx-auto " data-icon="heart">
+                                <use href="#ai:local:heart"></use>
+                            </svg> </button>
+                        <figure class="overflow-hidden round-6"> <img src="./assets/image/hero-1-BrSVIaZS_1H19lm.webp"
+                                alt="test" width="899" height="600" loading="lazy" decoding="async"
+                                class="round-6 img-cover"> </figure>
+                        <div
+                            class="tag dis round-cricle p-2 w-30 h-30 border-4 border-solid absolute inset-e-5 d-flex align-items-center justify-center">
+                            <p class="fs-24 fw-700">50 <small class="fs-16">%</small></p>
+                        </div>
+                    </div>
+                    <div class="cardBody"> <!-- bodyTop -->
+                        <div class="bodyTop pb-5">
+                            <h3 class="fs-20 md:fs-24 fw-700">فندق الاندلس مول </h3>
+                            <div class="rate d-flex align-items-center "> <svg width="1em" height="1em"
+                                    viewBox="0 0 24 24" class="w-12 h-12" data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <span class="fs-18 o-80 ps-2">(170)</span> </div>
+                        </div>
+                        <hr class="pb-5 border-t-1 border-t-solid border-none o-50"> <!-- bodyMiddle -->
+                        <ul class="bodyMiddle d-flex align-items-center  pb-5">
+                            <li class="d-flex align-items-center gap-3"> <img
+                                    src="./assets/image/bed-CvYBHHbO_Z1mur8v.svg" alt="bed" width="21" height="23"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">2</span> </li>
+                            <li class="d-flex align-items-center gap-2"> <img
+                                    src="./assets/image/bathroom-EpvaUuHk_Z1u15eh.svg" alt="bed" width="21" height="24"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">2</span> </li>
+                            <li class="d-flex align-items-center gap-2"> <img
+                                    src="./assets/image/ruler-9w79ooLt_pxPUi.svg" alt="bed" width="22" height="23"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">120م</span> </li>
+                        </ul> <!-- bodyBottom  -->
+                        <div class="bodyBottom p-5 d-flex align-items-center justify-between round-6">
+                            <p class="city d-flex align-items-center gap-1"> <svg width="1em" height="1em"
+                                    viewBox="0 0 32 32" class="w-12 h-12" data-icon="location">
+                                    <use href="#ai:local:location"></use>
+                                </svg> <span class="fs-18">جدة</span> </p>
+                            <div class="price d-flex align-items-center gap-4"> <del class="oldPrice fs-20">2000</del>
+                                <p class="NewPrice fs-24 fw-700">
+                                    1000<small class="fs-16">ر.ل</small><span class="fs-16">/لليوم</span> </p>
+                            </div>
+                        </div>
+                    </div> <a href="unitsDetails.html" class="absolute  inset-0 w-full h-full "
+                        aria-label="تفاصيل الوحدة"> </a>
+                    <div class="cardButton mt-5"> <button class=" w-full  btn btn-round relative round-4" type="button"
+                            aria-label="احجز الان"> <a href="#!" class="fs-16 fw-700 relative " aria-label="احجز الان">
+                                احجز الان </a> </button> </div>
+                </div>
+                <div class="Card p-7 round-7 relative"> <!-- cardImg -->
+                    <div class="cardImg  mb-5 relative"> <button
+                            class=" btn btn-heart absolute round-4 w-22 h-22 round-cricle  inset-s-2 active"
+                            type="button" aria-label="test"> <svg width="24" height="24" viewBox="0 0 24 24"
+                                class="w-14 h-14 relative mx-auto " data-icon="heart">
+                                <use href="#ai:local:heart"></use>
+                            </svg> </button>
+                        <figure class="overflow-hidden round-6"> <img src="./assets/image/hero-1-BrSVIaZS_1H19lm.webp"
+                                alt="test" width="899" height="600" loading="lazy" decoding="async"
+                                class="round-6 img-cover"> </figure>
+                        <div
+                            class="tag dis round-cricle p-2 w-30 h-30 border-4 border-solid absolute inset-e-5 d-flex align-items-center justify-center">
+                            <p class="fs-24 fw-700">50 <small class="fs-16">%</small></p>
+                        </div>
+                    </div>
+                    <div class="cardBody"> <!-- bodyTop -->
+                        <div class="bodyTop pb-5">
+                            <h3 class="fs-20 md:fs-24 fw-700">فندق الاندلس مول </h3>
+                            <div class="rate d-flex align-items-center "> <svg width="1em" height="1em"
+                                    viewBox="0 0 24 24" class="w-12 h-12" data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <span class="fs-18 o-80 ps-2">(170)</span> </div>
+                        </div>
+                        <hr class="pb-5 border-t-1 border-t-solid border-none o-50"> <!-- bodyMiddle -->
+                        <ul class="bodyMiddle d-flex align-items-center  pb-5">
+                            <li class="d-flex align-items-center gap-3"> <img
+                                    src="./assets/image/bed-CvYBHHbO_Z1mur8v.svg" alt="bed" width="21" height="23"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">2</span> </li>
+                            <li class="d-flex align-items-center gap-2"> <img
+                                    src="./assets/image/bathroom-EpvaUuHk_Z1u15eh.svg" alt="bed" width="21" height="24"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">2</span> </li>
+                            <li class="d-flex align-items-center gap-2"> <img
+                                    src="./assets/image/ruler-9w79ooLt_pxPUi.svg" alt="bed" width="22" height="23"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">120م</span> </li>
+                        </ul> <!-- bodyBottom  -->
+                        <div class="bodyBottom p-5 d-flex align-items-center justify-between round-6">
+                            <p class="city d-flex align-items-center gap-1"> <svg width="1em" height="1em"
+                                    viewBox="0 0 32 32" class="w-12 h-12" data-icon="location">
+                                    <use href="#ai:local:location"></use>
+                                </svg> <span class="fs-18">جدة</span> </p>
+                            <div class="price d-flex align-items-center gap-4"> <del class="oldPrice fs-20">2000</del>
+                                <p class="NewPrice fs-24 fw-700">
+                                    1000<small class="fs-16">ر.ل</small><span class="fs-16">/لليوم</span> </p>
+                            </div>
+                        </div>
+                    </div> <a href="unitsDetails.html" class="absolute  inset-0 w-full h-full "
+                        aria-label="تفاصيل الوحدة"> </a>
+                    <div class="cardButton mt-5"> <button class=" w-full  btn btn-round relative round-4" type="button"
+                            aria-label="احجز الان"> <a href="#!" class="fs-16 fw-700 relative " aria-label="احجز الان">
+                                احجز الان </a> </button> </div>
+                </div>
+                <div class="Card p-7 round-7 relative"> <!-- cardImg -->
+                    <div class="cardImg  mb-5 relative"> <button
+                            class=" btn btn-heart absolute round-4 w-22 h-22 round-cricle  inset-s-2 active"
+                            type="button" aria-label="test"> <svg width="24" height="24" viewBox="0 0 24 24"
+                                class="w-14 h-14 relative mx-auto " data-icon="heart">
+                                <use href="#ai:local:heart"></use>
+                            </svg> </button>
+                        <figure class="overflow-hidden round-6"> <img src="./assets/image/hero-1-BrSVIaZS_1H19lm.webp"
+                                alt="test" width="899" height="600" loading="lazy" decoding="async"
+                                class="round-6 img-cover"> </figure>
+                        <div
+                            class="tag dis round-cricle p-2 w-30 h-30 border-4 border-solid absolute inset-e-5 d-flex align-items-center justify-center">
+                            <p class="fs-24 fw-700">50 <small class="fs-16">%</small></p>
+                        </div>
+                    </div>
+                    <div class="cardBody"> <!-- bodyTop -->
+                        <div class="bodyTop pb-5">
+                            <h3 class="fs-20 md:fs-24 fw-700">فندق الاندلس مول </h3>
+                            <div class="rate d-flex align-items-center "> <svg width="1em" height="1em"
+                                    viewBox="0 0 24 24" class="w-12 h-12" data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-12 h-12"
+                                    data-icon="star">
+                                    <use href="#ai:local:star"></use>
+                                </svg> <span class="fs-18 o-80 ps-2">(170)</span> </div>
+                        </div>
+                        <hr class="pb-5 border-t-1 border-t-solid border-none o-50"> <!-- bodyMiddle -->
+                        <ul class="bodyMiddle d-flex align-items-center  pb-5">
+                            <li class="d-flex align-items-center gap-3"> <img
+                                    src="./assets/image/bed-CvYBHHbO_Z1mur8v.svg" alt="bed" width="21" height="23"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">2</span> </li>
+                            <li class="d-flex align-items-center gap-2"> <img
+                                    src="./assets/image/bathroom-EpvaUuHk_Z1u15eh.svg" alt="bed" width="21" height="24"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">2</span> </li>
+                            <li class="d-flex align-items-center gap-2"> <img
+                                    src="./assets/image/ruler-9w79ooLt_pxPUi.svg" alt="bed" width="22" height="23"
+                                    loading="lazy" decoding="async" class="w-18 h-18 round-2 img-cover "> <span
+                                    class="fs-18 ">120م</span> </li>
+                        </ul> <!-- bodyBottom  -->
+                        <div class="bodyBottom p-5 d-flex align-items-center justify-between round-6">
+                            <p class="city d-flex align-items-center gap-1"> <svg width="1em" height="1em"
+                                    viewBox="0 0 32 32" class="w-12 h-12" data-icon="location">
+                                    <use href="#ai:local:location"></use>
+                                </svg> <span class="fs-18">جدة</span> </p>
+                            <div class="price d-flex align-items-center gap-4"> <del class="oldPrice fs-20">2000</del>
+                                <p class="NewPrice fs-24 fw-700">
+                                    1000<small class="fs-16">ر.ل</small><span class="fs-16">/لليوم</span> </p>
+                            </div>
+                        </div>
+                    </div> <a href="unitsDetails.html" class="absolute  inset-0 w-full h-full "
+                        aria-label="تفاصيل الوحدة"> </a>
+                    <div class="cardButton mt-5"> <button class=" w-full  btn btn-round relative round-4" type="button"
+                            aria-label="احجز الان"> <a href="#!" class="fs-16 fw-700 relative " aria-label="احجز الان">
+                                احجز الان </a> </button> </div>
+                </div>
+                <div class="empty mx-auto d-none"> <dotlottie-player
+                        src="https://lottie.host/8fd46bec-8e7a-4094-8395-394d974e1f0b/FC3EPZRECg.lottie"
+                        background="transparent" speed="1" style="width: 100%; height: 100%" loop
+                        autoplay></dotlottie-player> </div>
+            </div> <button class=" btn btn-noBg w-full  relative round-4 w-100 mt-8" type="button"
+                aria-label="اظهار المزيد"> <svg width="24" height="24" class="w-28 h-28 relative mx-auto"
+                    data-icon="loader">
+                    <symbol id="ai:local:loader" viewBox="0 0 24 24">
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <g>
+                            <circle cx="12" cy="3" r="1" fill="currentColor">
+                                <animate id="b" attributeName="r" begin="0;a.end-0.5s" calcMode="spline" dur="0.6s"
+                                    keySplines=".27,.42,.37,.99;.53,0,.61,.73" values="1;2;1" />
+                            </circle>
+                            <circle cx="16.5" cy="4.21" r="1" fill="currentColor">
+                                <animate id="d" attributeName="r" begin="b.begin+0.1s" calcMode="spline" dur="0.6s"
+                                    keySplines=".27,.42,.37,.99;.53,0,.61,.73" values="1;2;1" />
+                            </circle>
+                            <circle cx="7.5" cy="4.21" r="1" fill="currentColor">
+                                <animate id="a" attributeName="r" begin="c.begin+0.1s" calcMode="spline" dur="0.6s"
+                                    keySplines=".27,.42,.37,.99;.53,0,.61,.73" values="1;2;1" />
+                            </circle>
+                            <circle cx="19.79" cy="7.5" r="1" fill="currentColor">
+                                <animate id="f" attributeName="r" begin="d.begin+0.1s" calcMode="spline" dur="0.6s"
+                                    keySplines=".27,.42,.37,.99;.53,0,.61,.73" values="1;2;1" />
+                            </circle>
+                            <circle cx="4.21" cy="7.5" r="1" fill="currentColor">
+                                <animate id="c" attributeName="r" begin="e.begin+0.1s" calcMode="spline" dur="0.6s"
+                                    keySplines=".27,.42,.37,.99;.53,0,.61,.73" values="1;2;1" />
+                            </circle>
+                            <circle cx="21" cy="12" r="1" fill="currentColor">
+                                <animate id="h" attributeName="r" begin="f.begin+0.1s" calcMode="spline" dur="0.6s"
+                                    keySplines=".27,.42,.37,.99;.53,0,.61,.73" values="1;2;1" />
+                            </circle>
+                            <circle cx="3" cy="12" r="1" fill="currentColor">
+                                <animate id="e" attributeName="r" begin="g.begin+0.1s" calcMode="spline" dur="0.6s"
+                                    keySplines=".27,.42,.37,.99;.53,0,.61,.73" values="1;2;1" />
+                            </circle>
+                            <circle cx="19.79" cy="16.5" r="1" fill="currentColor">
+                                <animate id="j" attributeName="r" begin="h.begin+0.1s" calcMode="spline" dur="0.6s"
+                                    keySplines=".27,.42,.37,.99;.53,0,.61,.73" values="1;2;1" />
+                            </circle>
+                            <circle cx="4.21" cy="16.5" r="1" fill="currentColor">
+                                <animate id="g" attributeName="r" begin="i.begin+0.1s" calcMode="spline" dur="0.6s"
+                                    keySplines=".27,.42,.37,.99;.53,0,.61,.73" values="1;2;1" />
+                            </circle>
+                            <circle cx="16.5" cy="19.79" r="1" fill="currentColor">
+                                <animate id="l" attributeName="r" begin="j.begin+0.1s" calcMode="spline" dur="0.6s"
+                                    keySplines=".27,.42,.37,.99;.53,0,.61,.73" values="1;2;1" />
+                            </circle>
+                            <circle cx="7.5" cy="19.79" r="1" fill="currentColor">
+                                <animate id="i" attributeName="r" begin="k.begin+0.1s" calcMode="spline" dur="0.6s"
+                                    keySplines=".27,.42,.37,.99;.53,0,.61,.73" values="1;2;1" />
+                            </circle>
+                            <circle cx="12" cy="21" r="1" fill="currentColor">
+                                <animate id="k" attributeName="r" begin="l.begin+0.1s" calcMode="spline" dur="0.6s"
+                                    keySplines=".27,.42,.37,.99;.53,0,.61,.73" values="1;2;1" />
+                            </circle>
+                            <animateTransform attributeName="transform" dur="6s" repeatCount="indefinite" type="rotate"
+                                values="360 12 12;0 12 12" />
+                        </g>
+                    </symbol>
+                    <use href="#ai:local:loader"></use>
+                </svg> </button>
+        </section>
+    </main>
+    <div class="overLay" id="overLay"></div>
+    <footer class="relative">
+        <figure class="pattern absolute top-0 inset-0 o-20  w-full h-full  "> <img
+                src="./assets/image/footer-pattern-l0W0y7uN_2o2dsO.webp" alt="pattern" width="1920" height="762"
+                loading="lazy" decoding="async" class="img-cover"> </figure>
+        <div class="container d-grid lg:grid-col-4 md:grid-col-3 sm:grid-col-2 sm-max:grid-col-2">
+            <div class="footerMeta" data-aos="fade-down" data-aos-duration="800" data-aos-delay="100">
+                <h6 class="fs-24 fw-700 pb-4 relative d-inline-block ">الدعم الفني</h6>
+                <ul class="pt-8">
+                    <li class="pb-8"> <a href="#!" class="fs-16 fw-500 o-70" aria-label="حسابي"> حسابي </a> </li>
+                    <li class="pb-8"> <a href="#!" class="fs-16 fw-500 o-70" aria-label="سياسة الخصوصية"> سياسة الخصوصية
+                        </a> </li>
+                    <li class="pb-8"> <a href="#!" class="fs-16 fw-500 o-70" aria-label="شروط الاستخدام"> شروط الاستخدام
+                        </a> </li>
+                    <li class="pb-8"> <a href="#!" class="fs-16 fw-500 o-70" aria-label="الاعدادت"> الاعدادت </a> </li>
+                </ul>
+            </div>
+            <div class="footerMeta" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">
+                <h6 class="fs-24 fw-700 pb-4 relative d-inline-block ">روابط سريعة</h6>
+                <ul class="pt-8">
+                    <li class="pb-8"> <a href="#!" class="fs-16 fw-500 o-70" aria-label="الرئيسة"> الرئيسة </a> </li>
+                    <li class="pb-8"> <a href="#!" class="fs-16 fw-500 o-70" aria-label="من نحن"> من نحن </a> </li>
+                    <li class="pb-8"> <a href="#!" class="fs-16 fw-500 o-70" aria-label="تسجيل كمقدم خدمة "> تسجيل كمقدم
+                            خدمة </a> </li>
+                    <li class="pb-8"> <a href="#!" class="fs-16 fw-500 o-70" aria-label="المفضلة"> المفضلة </a> </li>
+                </ul>
+            </div>
+            <div class="footerMeta" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300">
+                <h6 class="fs-24 fw-700 pb-4 relative d-inline-block ">الشركة</h6>
+                <ul class="pt-8">
+                    <li class="pb-8"> <a href="#!" class="fs-16 fw-500 o-70" aria-label="من نحن"> من نحن </a> </li>
+                    <li class="pb-8"> <a href="#!" class="fs-16 fw-500 o-70" aria-label="المجتمع"> المجتمع </a> </li>
+                    <li class="pb-8"> <a href="#!" class="fs-16 fw-500 o-70" aria-label=" التوظيف "> التوظيف </a> </li>
+                    <li class="pb-8"> <a href="#!" class="fs-16 fw-500 o-70" aria-label="فريق العمل"> فريق العمل </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footerMeta" data-aos="fade-down" data-aos-duration="800" data-aos-delay="400">
+                <h6 class="fs-24 fw-700 pb-4 relative d-inline-block ">تواصل معنا</h6>
+                <ul class="pt-8">
+                    <li class="pb-8"> <a href="#!" class="fs-16 fw-500 o-100 d-flex align-items-center gap-3"
+                            aria-label="+966567239173"> <svg width="24" height="24" class="w-16 h-16 p-2 round-3"
+                                data-icon="phone">
+                                <symbol id="ai:local:phone" viewBox="0 0 32 32">
+                                    <path fill="none" d="M0 0h32v32H0z" />
+                                    <path fill="currentColor"
+                                        d="M26 29h-.17C6.18 27.87 3.39 11.29 3 6.23A3 3 0 0 1 5.76 3h5.51a2 2 0 0 1 1.86 1.26L14.65 8a2 2 0 0 1-.44 2.16l-2.13 2.15a9.37 9.37 0 0 0 7.58 7.6l2.17-2.15a2 2 0 0 1 2.17-.41l3.77 1.51A2 2 0 0 1 29 20.72V26a3 3 0 0 1-3 3M6 5a1 1 0 0 0-1 1v.08C5.46 12 8.41 26 25.94 27a1 1 0 0 0 1.06-.94v-5.34l-3.77-1.51-2.87 2.85-.48-.06c-8.7-1.09-9.88-9.79-9.88-9.88l-.06-.48 2.84-2.87L11.28 5Z" />
+                                </symbol>
+                                <use href="#ai:local:phone"></use>
+                            </svg> +966567239173 </a> </li>
+                    <li class="pb-8"> <a href="#!" class="fs-16 fw-500 o-100 d-flex align-items-center gap-3"
+                            aria-label="info@pronight.com"> <svg width="24" height="24" class="w-16 h-16 p-2 round-3"
+                                data-icon="email">
+                                <symbol id="ai:local:email" viewBox="0 0 24 24">
+                                    <path fill="none" d="M0 0h24v24H0z" />
+                                    <g fill="none">
+                                        <path fill="currentColor"
+                                            d="M3 5v-.75a.75.75 0 0 0-.75.75zm18 0h.75a.75.75 0 0 0-.75-.75zM3 5.75h18v-1.5H3zM20.25 5v12h1.5V5zM19 18.25H5v1.5h14zM3.75 17V5h-1.5v12zM5 18.25c-.69 0-1.25-.56-1.25-1.25h-1.5A2.75 2.75 0 0 0 5 19.75zM20.25 17c0 .69-.56 1.25-1.25 1.25v1.5A2.75 2.75 0 0 0 21.75 17z" />
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="1.5" d="m3 5 9 9 9-9" />
+                                    </g>
+                                </symbol>
+                                <use href="#ai:local:email"></use>
+                            </svg> info@pronight.com </a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyRight w-full text-center py-7 mt-5 relative lg:absolute bottom-0">
+            <div class="container">
+                <p>© 2024 <a href="#!" class aria-label="copyRight link"> proNight </a> جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="./assets/js/aos.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+</body>
+
+</html>
