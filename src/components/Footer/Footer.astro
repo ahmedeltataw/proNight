@@ -6,7 +6,7 @@ import { footerListData ,footerContactData } from "@data/data";
 import {Image} from "astro:assets";
 import FooterImg from "@assets/pattern/footer-pattern.png";
 ---
-<footer class="relative">
+<footer class="relative" transition:persist="Footer">
     <figure class="pattern absolute top-0 inset-0 o-20  w-full h-full  ">
         <Image src={FooterImg} alt="pattern" class="img-cover" quality={70} format="webp" />
     </figure>

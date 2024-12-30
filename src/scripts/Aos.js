@@ -2,7 +2,7 @@ import AOS from 'aos';
 
 window.addEventListener('load', () => {
   AOS.init({
-    offset: 100,
+    offset: 150,
     duration: 700,
     easing: 'ease-in-out',
     once: false,
