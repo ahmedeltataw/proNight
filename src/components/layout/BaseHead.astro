@@ -8,6 +8,8 @@ interface Props {
 }
 const { title, description } = Astro.props;
 import Font from "./Font.astro";
+
+import { ClientRouter   } from 'astro:transitions';
 ---
 
 <meta charset="UTF-8" />
@@ -15,6 +17,8 @@ import Font from "./Font.astro";
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <meta name="generator" content={Astro.generator} />
+<!--  -->
+<ClientRouter  fallback="swap" />
 <!-- Font preloads -->
 <Font />
 <!-- aos -->

@@ -8,12 +8,13 @@ export default defineConfig({
         inlineStylesheets: 'auto',
         format: 'file',
         site: "https://ryn-proNight.com/",
-        // assetsPrefix: './'
+        assetsPrefix: './'
     },
     image: {
         domains: ["astro.build"]
     },
     compressHTML: true,
+    
     output: 'static',
     vite: {
         build: {

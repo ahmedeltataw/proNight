@@ -1,4 +1,5 @@
-let overlay = document.getElementById("overLay") as HTMLDivElement
+document.addEventListener('astro:page-load', () => {
+    let overlay = document.getElementById("overLay") as HTMLDivElement
 function calcMaxHeight(items: NodeListOf<HTMLLIElement> | HTMLLIElement[]): number {
     let maxHeight: number = 0;
     // mobileResponsive.classList.add("open")
@@ -188,8 +189,7 @@ function ChangeDate() {
         })
     })
 }
-document.addEventListener('DOMContentLoaded', ChangeDate);
-
+ChangeDate();
 let mobileMenu = document.getElementById("mobileMenu") as HTMLButtonElement;
 let responsiveMenu = document.getElementById("responsiveMenu") as HTMLDivElement;
 if(mobileMenu)mobileMenu.addEventListener('click', () => toggleAsideMenuSameBtn('toggle',responsiveMenu ,'responsiveLink' , 'lg-max:d-none', mobileMenu, true, true));
@@ -250,7 +250,8 @@ const accordionWork = ()=>{
         btn.addEventListener('click' , ()=>toggleAccordion(btn))
     })
 }
-document.addEventListener('DOMContentLoaded', accordionWork);
+// document.addEventListener('DOMContentLoaded', );
+accordionWork();
 
 // Price Range Slider
 
@@ -287,10 +288,8 @@ const setRange =()=>{
     tooltipMin.style.right = `calc(${minPercent}% + 15px)`;
     tooltipMax.style.left = `calc(${100 - maxPercent}% - 18px)`;
 }
-window.addEventListener('load' , ()=>{
-    slideMove('less');
-    slideMove('more');
-})
+slideMove('less');
+slideMove('more');
 if(minVal)minVal.addEventListener('input' , ()=>slideMove('less'));
 if(maxVal)maxVal.addEventListener('input' , ()=>slideMove('more'));
 
@@ -336,10 +335,15 @@ let closeModelInquiry = document.getElementById('closeModelInquiry') as HTMLButt
 
 if(openModelInquiry)openModelInquiry.addEventListener('click',()=>toggleModel('open' ,Model , openModelInquiry ,closeModelInquiry,true ));
 if(closeModelInquiry)closeModelInquiry.addEventListener('click',()=>toggleModel('close' ,Model , openModelInquiry ,closeModelInquiry,true ));
-
-let Model2 = document.getElementById('BookingModel') as HTMLDivElement;
+(function openModel2() {
+    let Model2 = document.getElementById('BookingModel') as HTMLDivElement;
 let openModel2 = document.querySelector('[data-id="openBookingModel"]') as HTMLButtonElement
 let closeModel2 = document.getElementById('closeBookingModel') as HTMLButtonElement;
 
 if(openModel2) openModel2.addEventListener('click', () => toggleModel('open', Model2, openModel2, closeModel2, true));
 if(closeModel2) closeModel2.addEventListener('click', () => toggleModel('close', Model2, openModel2, closeModel2, true));
+console.log('احذفها يا جمي يا عرص')
+}())
+
+
+});

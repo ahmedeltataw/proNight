@@ -2,7 +2,7 @@ import Swiper from 'swiper';
 import { Navigation, Thumbs, FreeMode } from 'swiper/modules';
 
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('astro:page-load', () => {
   new Swiper(".exploreSwiper", {
     modules: [Navigation],
     slidesPerView: 1,

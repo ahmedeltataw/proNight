@@ -3,8 +3,9 @@ interface Props {
     pageTitle: string;
 }
 const { pageTitle } = Astro.props;
+import { slide } from 'astro:transitions';
 ---
-<section class:list={['layoutPageFilter' , pageTitle ]}>
+<section class:list={['layoutPageFilter' , pageTitle ]} transition:animate="slide" transition:animate={slide({ duration: '0.2s' })}>
     <div class="container d-grid gap-8 ">
         <slot />
 

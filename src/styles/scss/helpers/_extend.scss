@@ -191,7 +191,7 @@
 %rate{
     .rate{
         svg{
-            color: var(--yellow);
+            color: var(--hover-main);
             &:nth-child(5){
                 color: #DBDBDB;
             }
@@ -230,11 +230,11 @@
 %status{
     color: var(--w);
     &.completed{
-        background-color: var(--hover-main);
+        background-color: var(--yellow);
         
     }
     &.current{
-        background-color: var(--yellow);
+        background-color: var(--hover-main);
         
     }
     &.end{
