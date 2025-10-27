@@ -342,7 +342,7 @@ let closeModel2 = document.getElementById('closeBookingModel') as HTMLButtonElem
 
 if(openModel2) openModel2.addEventListener('click', () => toggleModel('open', Model2, openModel2, closeModel2, true));
 if(closeModel2) closeModel2.addEventListener('click', () => toggleModel('close', Model2, openModel2, closeModel2, true));
-console.log('احذفها يا جمي يا عرص')
+console.log('احذفها يا جمي ')
 }())
 
 
